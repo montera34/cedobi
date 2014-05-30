@@ -53,7 +53,7 @@ function cedobi_remove_dashboard_item() {
 // set up media options
 function cedobi_media_options() {
 	/* Add theme support for post thumbnails (featured images). */
-	add_theme_support( 'post-thumbnails', array( 'page','brigadista','fotografia','documento','actualidad','publicacion' ) );
+	add_theme_support( 'post-thumbnails', array( 'page','brigadista','fotografia','documento','noticia','convocatoria','publicacion' ) );
 	//set_post_thumbnail_size( 231, 0 ); // default Post Thumbnail dimensions
 
 	// add icon and extra sizes
@@ -193,20 +193,20 @@ function cedobi_create_post_type() {
 		'_builtin' => false,
 		'_edit_link' => 'post.php?post=%d',
 	));
-	// Actualidad custom post type
-	register_post_type( 'actualidad', array(
+	// Noticias custom post type
+	register_post_type( 'noticia', array(
 		'labels' => array(
-			'name' => __( 'Noticias y convocatorias' ),
-			'singular_name' => __( 'Noticia / Convocatoria' ),
-			'add_new_item' => __( 'Add a noticia o convocatoria' ),
+			'name' => __( 'Noticias' ),
+			'singular_name' => __( 'Noticia' ),
+			'add_new_item' => __( 'Add a noticia' ),
 			'edit' => __( 'Edit' ),
-			'edit_item' => __( 'Edit this noticia o convocatoria' ),
-			'new_item' => __( 'New noticia o convocatoria' ),
-			'view' => __( 'View noticia o convocatoria' ),
-			'view_item' => __( 'View this noticia o convocatoria' ),
-			'search_items' => __( 'Search noticia o convocatoria' ),
-			'not_found' => __( 'No noticia o convocatoria found' ),
-			'not_found_in_trash' => __( 'No noticias or convocatorias in trash' ),
+			'edit_item' => __( 'Edit this noticia' ),
+			'new_item' => __( 'New noticia' ),
+			'view' => __( 'View noticia' ),
+			'view_item' => __( 'View this noticia' ),
+			'search_items' => __( 'Search noticias' ),
+			'not_found' => __( 'No noticia found' ),
+			'not_found_in_trash' => __( 'No noticias in trash' ),
 			'parent' => __( 'Parent' )
 		),
 		'description' => '',
@@ -219,7 +219,38 @@ function cedobi_create_post_type() {
 		'hierarchical' => false, // if true this post type will be as pages
 		'query_var' => true,
 		'supports' => array('title', 'editor','excerpt','author','comments','trackbacks' ),
-		'rewrite' => array('slug'=>'actualidad','with_front'=>false),
+		'rewrite' => array('slug'=>'noticia','with_front'=>false),
+		'can_export' => true,
+		'_builtin' => false,
+		'_edit_link' => 'post.php?post=%d',
+	));
+	// Convocatorias custom post type
+	register_post_type( 'convocatoria', array(
+		'labels' => array(
+			'name' => __( 'Convocatorias' ),
+			'singular_name' => __( 'Convocatoria' ),
+			'add_new_item' => __( 'Add a convocatoria' ),
+			'edit' => __( 'Edit' ),
+			'edit_item' => __( 'Edit this convocatoria' ),
+			'new_item' => __( 'New convocatoria' ),
+			'view' => __( 'View convocatoria' ),
+			'view_item' => __( 'View this convocatoria' ),
+			'search_items' => __( 'Search convocatorias' ),
+			'not_found' => __( 'No convocatoria found' ),
+			'not_found_in_trash' => __( 'No convocatorias in trash' ),
+			'parent' => __( 'Parent' )
+		),
+		'description' => '',
+		'has_archive' => true,
+		'public' => true,
+		'publicly_queryable' => true,
+		'exclude_from_search' => false,
+		'menu_position' => 5,
+		//'menu_icon' => get_template_directory_uri() . '/images/icon-post.type-integrantes.png',
+		'hierarchical' => false, // if true this post type will be as pages
+		'query_var' => true,
+		'supports' => array('title', 'editor','excerpt','author','comments','trackbacks' ),
+		'rewrite' => array('slug'=>'convocatoria','with_front'=>false),
 		'can_export' => true,
 		'_builtin' => false,
 		'_edit_link' => 'post.php?post=%d',
@@ -277,7 +308,106 @@ function cedobi_build_taxonomies() {
 		'rewrite' => array( 'slug' => 'origen', 'with_front' => false ),
 		'show_admin_column' => true
 	) );
-
+	// Colección taxonomy
+	register_taxonomy( 'coleccion', array('publicacion'), array(
+		'hierarchical' => false,
+		'label' => __( 'Colección' ),
+		'name' => __( 'Colecciones' ),
+		'query_var' => 'coleccion',
+		'rewrite' => array( 'slug' => 'coleccion', 'with_front' => false ),
+		'show_admin_column' => true
+	) );
+	// Fondo taxonomy
+	register_taxonomy( 'fondo', array('fotografia'), array(
+		'hierarchical' => false,
+		'label' => __( 'Fondo' ),
+		'name' => __( 'Fondos' ),
+		'query_var' => 'fondo',
+		'rewrite' => array( 'slug' => 'fondo', 'with_front' => false ),
+		'show_admin_column' => true
+	) );
 } // end register taxonomies
 
+//Add metaboxes to several post types edit screen
+function cedobi_metaboxes( $meta_boxes ) {
+	$prefix = '_cedobi_'; // Prefix for all fields
+
+	// CUSTOM FIELDS FOR BRIGADISTAS
+	$meta_boxes[] = array(
+		'id' => 'cedobi_dates',
+		'title' => 'Fechas',
+		'pages' => array('brigadista'), // post type
+		'context' => 'side', //  'normal', 'advanced', or 'side'
+		'priority' => 'default',  //  'high', 'core', 'default' or 'low'
+		'show_names' => true, // Show field names on the left
+		'fields' => array(
+			array(
+				'name' => 'Fecha de nacimiento',
+				'id'   => $prefix . 'date_birth',
+				'type' => 'text_date_timestamp',
+				'repeatable' => false,
+			),
+			array(
+				'name' => 'Fecha de defunción',
+				'id'   => $prefix . 'date_dead',
+				'type' => 'text_date_timestamp',
+				'repeatable' => false,
+			),
+		),
+	);
+	// CUSTOM FIELDS FOR FOTOGRAFÍAS, PUBLICACIONES, MATERIAL
+	$meta_boxes[] = array(
+		'id' => 'cedobi_author',
+		'title' => 'Autor',
+		'pages' => array('fotografia','documento','publicacion'), // post type
+		'context' => 'normal', //  'normal', 'advanced', or 'side'
+		'priority' => 'high',  //  'high', 'core', 'default' or 'low'
+		'show_names' => true, // Show field names on the left
+		'fields' => array(
+			array(
+				'name' => 'Nombre',
+				'desc' => '',
+				'id' => $prefix . 'author_firstname',
+				'type' => 'text',
+			),
+			array(
+				'name' => 'Apellidos',
+				'desc' => '',
+				'id' => $prefix . 'author_lastname',
+				'type' => 'text',
+			),
+		),
+	);
+	// CUSTOM FIELDS FOR CONVOCATORIAS
+	$meta_boxes[] = array(
+		'id' => 'cedobi_current',
+		'title' => 'Fechas',
+		'pages' => array('convocatoria'), // post type
+		'context' => 'side', //  'normal', 'advanced', or 'side'
+		'priority' => 'default',  //  'high', 'core', 'default' or 'low'
+		'show_names' => true, // Show field names on the left
+		'fields' => array(
+			array(
+				'name' => 'Fecha de inicio',
+				'id'   => $prefix . 'date_ini',
+				'type' => 'text_date_timestamp',
+				'repeatable' => false,
+			),
+			array(
+				'name' => 'Fecha de fin',
+				'id'   => $prefix . 'date_end',
+				'type' => 'text_date_timestamp',
+				'repeatable' => false,
+			),
+		),
+	);
+	return $meta_boxes;
+} // end Add metaboxes
+
+// Initialize the metabox class
+function cedobi_init_metaboxes() {
+	if ( !class_exists( 'cmb_Meta_Box' ) ) {
+		require_once( 'lib/metabox/init.php' );
+	}
+} // end Init metaboxes
 ?>
