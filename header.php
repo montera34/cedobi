@@ -71,7 +71,6 @@ if ( is_single() || is_page() ) {
 <meta property="og:url" content="<?php echo $metaperma ?>" />
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 
 <link rel="alternate" type="application/rss+xml" title="<?php echo MONTERA34_BLOGNAME; ?> RSS Feed suscription" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="alternate" type="application/atom+xml" title="<?php echo MONTERA34_BLOGNAME; ?> Atom Feed suscription" href="<?php bloginfo('atom_url'); ?>" /> 
@@ -80,6 +79,7 @@ if ( is_single() || is_page() ) {
 <?php
 //if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 wp_head(); ?>
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 
 </head>
 
