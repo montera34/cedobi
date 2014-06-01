@@ -18,7 +18,7 @@ function cedobi_theme_setup() {
 
 	/* Set up media options: sizes, featured images... */
 	add_action( 'init', 'cedobi_media_options' );
-//	add_filter( 'image_size_names_choose', 'cedobi_custom_sizes' );
+	add_filter( 'image_size_names_choose', 'cedobi_custom_sizes' );
 
 	/* Add your nav menus function to the 'init' action hook. */
 	add_action( 'init', 'cedobi_register_menus' );
@@ -57,28 +57,29 @@ function cedobi_media_options() {
 	//set_post_thumbnail_size( 231, 0 ); // default Post Thumbnail dimensions
 
 	// add icon and extra sizes
-	//add_image_size( 'icon', '32', '32', true );
+	add_image_size( 'icon', '32', '32', true );
 	//add_image_size( 'bigicon', '48', '48', true );
 	//add_image_size( 'small', '234', '0', false );
 	//add_image_size( 'extralarge', '819', '0', false );
 
 	/* set up image sizes*/
-	update_option('thumbnail_size_w', 117);
+	update_option('thumbnail_size_w', 96);
 	update_option('thumbnail_size_h', 0);
-	update_option('medium_size_w', 351);
+	update_option('thumbnail_crop', 1);
+	update_option('medium_size_w', 288);
 	update_option('medium_size_h', 0);
-	update_option('large_size_w', 468);
+	update_option('large_size_w', 576);
 	update_option('large_size_h', 0);
 
 } // end set up media options
 
-//function cedobi_custom_sizes( $sizes ) {
-//	return array_merge( $sizes, array(
-//		'icon' => __('Icon'),
+function cedobi_custom_sizes( $sizes ) {
+	return array_merge( $sizes, array(
+		'icon' => __('Icon'),
 //		'small' => __('Small'),
 //		'extralarge' => __('Extra Large'),
-//	) );
-//}
+	) );
+}
 
 
 // register custom menus
