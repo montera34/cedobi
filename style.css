@@ -17,3 +17,72 @@ Tags: HTML5, CSS3
 	http://www.opensource.org/licenses/gpl-license.php
 
 */
+
+/* JOKERS */
+.aligncenter { text-align: center; }
+.hideout {
+	text-indent: -9999px;
+	height: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/* typo headers */
+h1, h2, h3 {
+	font-family: 'Junction';
+	font-weight: 700;
+}
+
+/* HEADER */
+#pre {
+	margin-top: 20px;
+}
+#pre-nav {
+	background-image: none;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	text-transform: uppercase;
+}
+#pre-nav .container-fluid {
+	padding: 0;
+}
+#pre-nav .navbar-nav>li {
+	margin: 0 5px 0 0;
+}
+#pre-nav .navbar-nav>li>a {
+	padding: 3px 7px;
+	line-height: 1em;
+	background-color: #000;
+}
+#pre-nav .navbar-nav>li>a:hover,
+#pre-nav .navbar-nav .active {
+	background-color: #fe0000;
+}
+#logo {
+	font-family: 'Junction';
+	font-size: 3em;
+	line-height: 1em;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+#tagline {
+	font-family: 'Junction';
+	font-size: 1.1em;
+	line-height: 1em;
+	font-weight: 300;
+}
+
+#pre-margeni {
+	text-align: right;
+}
+
+/* CONTENT MAIN */
+#main {
+	background-color: #fff;
+}
+
+@media (min-width: 768px) {
+	#cedobi-pre-nav-collapse {
+		padding: 0;
+	}
+}
