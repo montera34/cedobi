@@ -59,7 +59,7 @@ function cedobi_media_options() {
 	// add icon and extra sizes
 	add_image_size( 'icon', '32', '32', true );
 	//add_image_size( 'bigicon', '48', '48', true );
-	//add_image_size( 'small', '234', '0', false );
+	add_image_size( 'small', '192', '0', false );
 	//add_image_size( 'extralarge', '819', '0', false );
 
 	/* set up image sizes*/
@@ -76,7 +76,7 @@ function cedobi_media_options() {
 function cedobi_custom_sizes( $sizes ) {
 	return array_merge( $sizes, array(
 		'icon' => __('Icon'),
-//		'small' => __('Small'),
+		'small' => __('Small'),
 //		'extralarge' => __('Extra Large'),
 	) );
 }
