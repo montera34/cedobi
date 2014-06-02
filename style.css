@@ -32,6 +32,10 @@ h1, h2, h3 {
 	font-family: 'Junction';
 	font-weight: 700;
 }
+h1 {
+	font-size: 24px;
+	text-transform: uppercase;
+}
 
 /* HEADER */
 #pre {
@@ -78,8 +82,56 @@ h1, h2, h3 {
 
 /* CONTENT MAIN */
 #main {
+}
+#views {
+	margin-top: 20px;
+	font-size: 24px;
+	text-align: right;
+}
+#views a {
+	color: #000;
+}
+#views a:hover,
+#views .view-active {
+	color: #fa0000;
+}
+
+/* MOSAC */
+.mosac-item {
+	position: relative;
+	padding: 5px;
+}
+.mosac-popup {
+	position: absolute;
+	top: 92px;
+	left: 0;
+	width: 185px;
+	margin: 0 5px;
+	background-color: #fa0000;
+	color: #fff;
+	z-index: 999;
+}
+.item-fondo {
+	position: absolute;
+	top: 44px;
+	width: 88px;
+	z-index: -999;
+	opacity: 0.8;
 	background-color: #fff;
 }
+.item-fondo a {
+	display: block;
+}
+.mosac-popup .item-tit,
+.mosac-popup .item-desc {
+	padding: 5px;
+}
+.mosac-popup .item-tit {
+	font-size: 1em;
+	text-transform: uppercase;
+	margin: 0;
+}
+
 
 @media (min-width: 768px) {
 	#cedobi-pre-nav-collapse {

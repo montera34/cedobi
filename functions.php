@@ -33,9 +33,9 @@ function cedobi_theme_setup() {
 	add_action( 'init', 'cedobi_build_taxonomies', 0 );
 
 	// Extra meta boxes in editor
-	//add_filter( 'cmb_meta_boxes', 'montera34_metaboxes' );
+	add_filter( 'cmb_meta_boxes', 'cedobi_metaboxes' );
 	// Initialize the metabox class
-	//add_action( 'init', 'montera34_init_metaboxes', 9999 );
+	add_action( 'init', 'cedobi_init_metaboxes', 9999 );
 
 	// excerpt support in pages
 	add_post_type_support( 'page', 'excerpt' );
@@ -64,7 +64,7 @@ function cedobi_media_options() {
 
 	/* set up image sizes*/
 	update_option('thumbnail_size_w', 96);
-	update_option('thumbnail_size_h', 0);
+	update_option('thumbnail_size_h', 96);
 	update_option('thumbnail_crop', 1);
 	update_option('medium_size_w', 288);
 	update_option('medium_size_h', 0);
@@ -106,6 +106,16 @@ function cedobi_load_scripts() {
 		'3.1.1',
 		FALSE
 	);
+	if ( is_home() ) {
+	wp_enqueue_script(
+		'mosac-js',
+		get_template_directory_uri() . '/js/mosac.js',
+		array( 'bootstrap-js' ),
+		'0.1',
+		FALSE
+	);
+	}
+
 } // end load js scripts to avoid conflicts
 
 // register post types
@@ -135,7 +145,7 @@ function cedobi_create_post_type() {
 		//'menu_icon' => get_template_directory_uri() . '/images/icon-post.type-integrantes.png',
 		'hierarchical' => false, // if true this post type will be as pages
 		'query_var' => true,
-		'supports' => array('title', 'editor','excerpt','author','comments','trackbacks' ),
+		'supports' => array('title', 'editor','excerpt','author','comments','trackbacks','thumbnail' ),
 		'rewrite' => array('slug'=>'brigadista','with_front'=>false),
 		'can_export' => true,
 		'_builtin' => false,
@@ -166,7 +176,7 @@ function cedobi_create_post_type() {
 		//'menu_icon' => get_template_directory_uri() . '/images/icon-post.type-integrantes.png',
 		'hierarchical' => false, // if true this post type will be as pages
 		'query_var' => true,
-		'supports' => array('title', 'editor','excerpt','author','comments','trackbacks' ),
+		'supports' => array('title', 'editor','excerpt','author','comments','trackbacks','thumbnail' ),
 		'rewrite' => array('slug'=>'fotografia','with_front'=>false),
 		'can_export' => true,
 		'_builtin' => false,
@@ -197,7 +207,7 @@ function cedobi_create_post_type() {
 		//'menu_icon' => get_template_directory_uri() . '/images/icon-post.type-integrantes.png',
 		'hierarchical' => false, // if true this post type will be as pages
 		'query_var' => true,
-		'supports' => array('title', 'editor','excerpt','author','comments','trackbacks' ),
+		'supports' => array('title', 'editor','excerpt','author','comments','trackbacks','thumbnail' ),
 		'rewrite' => array('slug'=>'documento','with_front'=>false),
 		'can_export' => true,
 		'_builtin' => false,
@@ -228,7 +238,7 @@ function cedobi_create_post_type() {
 		//'menu_icon' => get_template_directory_uri() . '/images/icon-post.type-integrantes.png',
 		'hierarchical' => false, // if true this post type will be as pages
 		'query_var' => true,
-		'supports' => array('title', 'editor','excerpt','author','comments','trackbacks' ),
+		'supports' => array('title', 'editor','excerpt','author','comments','trackbacks','thumbnail' ),
 		'rewrite' => array('slug'=>'noticia','with_front'=>false),
 		'can_export' => true,
 		'_builtin' => false,
@@ -259,7 +269,7 @@ function cedobi_create_post_type() {
 		//'menu_icon' => get_template_directory_uri() . '/images/icon-post.type-integrantes.png',
 		'hierarchical' => false, // if true this post type will be as pages
 		'query_var' => true,
-		'supports' => array('title', 'editor','excerpt','author','comments','trackbacks' ),
+		'supports' => array('title', 'editor','excerpt','author','comments','trackbacks','thumbnail' ),
 		'rewrite' => array('slug'=>'convocatoria','with_front'=>false),
 		'can_export' => true,
 		'_builtin' => false,
@@ -290,7 +300,7 @@ function cedobi_create_post_type() {
 		//'menu_icon' => get_template_directory_uri() . '/images/icon-post.type-integrantes.png',
 		'hierarchical' => false, // if true this post type will be as pages
 		'query_var' => true,
-		'supports' => array('title', 'editor','excerpt','author','comments','trackbacks' ),
+		'supports' => array('title', 'editor','excerpt','author','comments','trackbacks','thumbnail' ),
 		'rewrite' => array('slug'=>'publicacion','with_front'=>false),
 		'can_export' => true,
 		'_builtin' => false,
@@ -420,4 +430,18 @@ function cedobi_init_metaboxes() {
 		require_once( 'lib/metabox/init.php' );
 	}
 } // end Init metaboxes
+
+
+add_filter( 'pre_get_posts', 'cedobi_filter_loop' );
+function cedobi_filter_loop( $query ) {
+	if ( is_home() && is_main_query() ) {
+		//if ( array_key_exists('pt', $_POST) ) {
+		//} else {
+		$pts = array('brigadista','fotografia','documento');
+		//}
+		$query->set( 'post_type', $pts );
+	}
+	return $query;
+}
+
 ?>
