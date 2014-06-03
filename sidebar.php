@@ -38,10 +38,10 @@ foreach ( $rels as $key => $rel ) {
 ?>
 
 
-<div id="margeni" class="col-md-2 col-md-pull-6">
+<div id="margeni" class="col-md-3 col-md-pull-16">
 	<?php get_search_form(); ?>
 </div><!-- #margeni -->
 
-<div id="margend" class="col-md-4">
+<div id="margend" class="col-md-5">
 	<?php  ?>
 </div><!-- #margeni -->

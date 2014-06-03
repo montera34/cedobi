@@ -3,7 +3,7 @@
 
 <footer id="epi" class="container">
 	<div class="row">
-		<div class="col-md-6 col-md-offset-2">
+		<div class="col-md-16 col-md-offset-3">
 			<?php echo CEDOBI_BLOGDESC ?>
 		</div>
 	</div>

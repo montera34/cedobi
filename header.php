@@ -88,10 +88,10 @@ wp_head(); ?>
 
 <div id="pre" class="container">
 	<div class="row">
-		<div id="pre-margeni" class="col-md-2">
+		<div id="pre-margeni" class="col-md-3">
 			<a href="<?php echo CEDOBI_BLOGURL ?>" title="<?php echo CEDOBI_BLOGDESC ?>"><img src="<?php echo CEDOBI_BLOGTHEME. "/images/cedobi-imago.png"; ?>" alt="<?php echo CEDOBI_BLOGNAME ?>" /></a>
 		</div><!-- #pre-margeni -->
-		<div id="pre-main" class="col-md-6">
+		<div id="pre-main" class="col-md-16">
 				<div>
 				<?php echo "<span id='logo'>" .CEDOBI_BLOGNAME. "</span> <span id='tagline'>" .CEDOBI_BLOGDESC. "</span>"; ?>
 				</div>

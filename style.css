@@ -35,6 +35,7 @@ h1, h2, h3 {
 h1 {
 	font-size: 24px;
 	text-transform: uppercase;
+	margin-bottom: 0;
 }
 
 /* HEADER */
@@ -80,13 +81,19 @@ h1 {
 	text-align: right;
 }
 
-/* CONTENT MAIN */
+/* CONTENT */
 #main {
 }
-#views {
-	margin-top: 20px;
+#margeni {
+	margin-top: 5px;
+}
+
+/* FILTERS FORM */
+#content-filter input[type="radio"] {
+	display: none;
+}
+#content-filter .glyphicon {
 	font-size: 24px;
-	text-align: right;
 }
 #views a {
 	color: #000;
