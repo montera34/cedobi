@@ -1,4 +1,6 @@
 <?php // related loops
+
+global $wp_post_types; // custom post types info
 $rels = array(
 	'noticia' => array(
 		'args' => array(
@@ -26,13 +28,27 @@ $rels = array(
 		'cols' => 3
 	),
 );
+$related_out = "";
 foreach ( $rels as $key => $rel ) {
-
-	$noticias = get_posts($rel['args']);
-	foreach ( $rel as $item ) {
-		$rel_tit = $item->post_title;
-		$rel_perma = get_permalink($item->ID);
-		if ( has_post_thumbnail($item->ID) ) { $rel_img = get_the_post_thumbnail($item->ID,$rel['img_size'],array('class' => 'img-responsive')); } else { $rel_img = ""; }
+	$related_tit = $wp_post_types[$key]->labels->name;
+	$related_posts = get_posts($rel['args']);
+	if ( count($related_posts) != 0 ) {
+		$related_out .= "<section id='related-" .$key. "' class='related'><h2 class='related-tit'>" .$related_tit. "</h2>";
+		foreach ( $related_posts as $item ) {
+			$rel_tit = $item->post_title;
+			$rel_perma = get_permalink($item->ID);
+			$rel_desc = $item->post_excerpt;
+			// if ( has_post_thumbnail($item->ID) ) { $rel_img = get_the_post_thumbnail($item->ID,$rel['img_size'],array('class' => 'img-responsive')); } else { $rel_img = ""; }
+			$related_out .= "
+			<article class='rel-item row'>
+				<div class='rel-tit-text col-md-24'>
+					<header><h3 class='rel-item-tit'><a href='" .$rel_perma. "' title='" .$rel_tit. "' rel='bookmark'>" .$rel_tit. "</a></h3></header>
+					<div class='rel-item-desc'>" .$rel_desc. "</div>
+				</div>
+			</article><!-- .rel-item -->
+			";
+		}
+		$related_out .= "</section>";
 	}
 }
 ?>
@@ -43,5 +59,5 @@ foreach ( $rels as $key => $rel ) {
 </div><!-- #margeni -->
 
 <div id="margend" class="col-md-5">
-	<?php  ?>
+	<?php echo $related_out ?>
 </div><!-- #margeni -->

@@ -434,7 +434,7 @@ function cedobi_init_metaboxes() {
 
 add_filter( 'pre_get_posts', 'cedobi_filter_loop' );
 function cedobi_filter_loop( $query ) {
-	if ( is_home() && is_main_query() ) {
+	if ( is_home() && $query->is_main_query() ) {
 		//if ( array_key_exists('pt', $_POST) ) {
 		//} else {
 		$pts = array('brigadista','fotografia','documento');
