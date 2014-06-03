@@ -11,13 +11,14 @@ if ( array_key_exists('view', $_GET) ) {
 
 
 ?>
+<div id="content" class="container">
 
-<header class="row">
-	<h1 class="col-md-16 col-md-offset-3">Archivo digital de las Brigadas Internacionales</h1>
-</header>
+<div class="row">
+	<header class="col-md-16 col-md-offset-3">
+	<h1>Archivo digital de las Brigadas Internacionales</h1>
+	</header>
 
-<div id="views" class="row">
-	<div class="col-md-16 col-md-offset-3">
+	<div id="views" class="col-md-16 col-md-offset-3">
 		<form id="content-filter" class="form-inline" method="get" action="<?php echo $form_action ?>" role="form">
 			<div id="view" class="form-group">
 				<label>Ver como</label>
@@ -51,12 +52,13 @@ if ( array_key_exists('view', $_GET) ) {
 			<a href="?view=list"><span class="glyphicon glyphicon-th-list"></span></a>
 			<a href="?view=comprim"><span class="glyphicon glyphicon-align-justify"></span></a>
 		</div>
-	</div>
-</div>
+	</div><!-- #views -->
+</div><!-- .row -->
 
-<div id="main" class="row">
+<div class="row">
 	<section class="col-md-16 col-md-push-3 <?php echo $view ?>">
-		<div class="row">
+	<div class="row">
+
 	<?php if ( have_posts() ) {
 	$desktop_count = 0;
 	while ( have_posts() ) : the_post();
@@ -84,12 +86,14 @@ if ( array_key_exists('view', $_GET) ) {
 	<?php endwhile;
 	} // end if posts
 	?>
-		</div>
+
+	</div><!-- .row -->
 	</section><!-- .<?php echo $view ?> -->
 
 	<?php get_sidebar(); ?>
 
-</div><!-- #main -->
+</div><!-- .row -->
 
+</div><!-- #content .container -->
 
 <?php get_footer(); ?>

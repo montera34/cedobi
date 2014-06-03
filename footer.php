@@ -1,6 +1,3 @@
-</div><!-- .row -->
-</div><!-- #content .container -->
-
 <footer id="epi" class="container">
 	<div class="row">
 		<div class="col-md-16 col-md-offset-3">

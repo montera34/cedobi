@@ -119,6 +119,3 @@ wp_head(); ?>
 		</div><!-- #pre-main -->
 	</div><!-- .row -->
 </div><!-- #pre .container -->
-
-<div id="content" class="container">
-<div class="row">
