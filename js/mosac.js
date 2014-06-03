@@ -1,7 +1,7 @@
 // minimum jQuery gallery
 // click on thumbs nav system
 jQuery(document).ready(function($) {
-	$('.item-text').hide();
+	$('.mosac-popup').hide();
 	$('.mosac-item').hover(function(){
 		$(this).find('div.item-text').fadeIn('slow');
 		$(this).find('div.item-fondo').animate({

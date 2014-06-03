@@ -37,10 +37,10 @@ if ( array_key_exists('view', $_GET) ) {
 
 <div class="btn-group" data-toggle="buttons">
   <label class="btn btn-default">
-    <input type="radio" name="view" id="mosaico" value="mosaico" /> Option 1
+    <input type="radio" name="view" id="mosaico" value="mosac" /> Option 1
   </label>
   <label class="btn btn-default">
-    <input type="radio" name="view" id="lista" value="lista" /> Option 2
+    <input type="radio" name="view" id="lista" value="list" /> Option 2
   </label>
 </div>
 
@@ -56,38 +56,26 @@ if ( array_key_exists('view', $_GET) ) {
 </div><!-- .row -->
 
 <div class="row">
-	<section class="col-md-16 col-md-push-3 <?php echo $view ?>">
-	<div class="row">
+	<section id="main" class="col-md-16 col-md-push-3 <?php echo $view ?>">
 
 	<?php if ( have_posts() ) {
-	$desktop_count = 0;
-	while ( have_posts() ) : the_post();
 
-		$item_pt =  get_post_type();
-		$item_name = get_the_title();
-		$item_perma = get_permalink();
-		$item_desc = get_the_excerpt();
-		$item_text_out = "<div class='item-text mosac-popup'><h2 class='item-tit'>" .$item_name. "</h2><div class='item-desc'>" .$item_desc. "</div></div>";
-		$item_fondo_out = "<div class='item-fondo'><a href='" .$item_perma. "' title='" .$item_name. "' rel='bookmark'><img src='" .CEDOBI_BLOGTHEME. "/images/icon-" .$item_pt. ".png' alt='' /></a></div>";
-		$item_img_size = "thumbnail";
-		if ( has_post_thumbnail() ) {
-			$item_img_out = "<div class='item-img'><a href='" .$item_perma. "' title='" .$item_name. "' rel='bookmark'>" .get_the_post_thumbnail($post->ID,$item_img_size,array('class' => 'img-responsive')). "</a></div>";
-		} else {
-			$item_img_out = "";
-		}
-				if ( $desktop_count == 8 ) { $desktop_count = 0; echo '<div class="clearfix visible-md visible-lg"></div>';  }
+		if ( $view == 'mosac' ) { $desktop_count = 0; $view_cols_desktop = 8; echo "<div class='row'>"; }
+
+		while ( have_posts() ) : the_post();
+
+			if ( $view == 'mosac' ) {
+				if ( $desktop_count == $view_cols_desktop ) { $desktop_count = 0; echo '<div class="clearfix visible-md visible-lg"></div>';  }
 				$desktop_count++;
-		?>
-		<article class="mosac-item col-md-3">
-			<?php echo $item_img_out ?>
-			<?php echo $item_fondo_out ?>
-			<?php echo $item_text_out ?>
-		</article>
-	<?php endwhile;
+			}
+			include "loop.mosac.list.php";
+
+		endwhile;
+		if ( $view == 'mosac' ) { echo "</div><!-- .row -->"; }
+
 	} // end if posts
 	?>
-
-	</div><!-- .row -->
+	
 	</section><!-- .<?php echo $view ?> -->
 
 	<?php get_sidebar(); ?>
