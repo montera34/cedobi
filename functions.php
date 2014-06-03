@@ -108,6 +108,13 @@ function cedobi_load_scripts() {
 	);
 	if ( is_home() ) {
 	wp_enqueue_script(
+		'masonry-js',
+		get_template_directory_uri() . '/js/masonry.pkgd.min.js',
+		array( 'jquery' ),
+		'3.1.5',
+		FALSE
+	);
+	wp_enqueue_script(
 		'mosac-js',
 		get_template_directory_uri() . '/js/mosac.js',
 		array( 'bootstrap-js' ),
