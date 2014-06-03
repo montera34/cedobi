@@ -291,7 +291,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #b20000;
+  color: #000000;
   text-decoration: underline;
 }
 a:focus {
@@ -318,10 +318,10 @@ img {
   border-radius: 0px;
 }
 .img-thumbnail {
-  padding: 4px;
+  padding: 0;
   line-height: 1.42857143;
-  background-color: #eeeeee;
-  border: 1px solid #dddddd;
+  background-color: transparent;
+  border: 1px solid transparent;
   border-radius: 0px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -336,7 +336,7 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #999999;
+  border-top: 1px solid #eeeeee;
 }
 .sr-only {
   position: absolute;
@@ -1994,11 +1994,11 @@ th {
   padding: 8px;
   line-height: 1.42857143;
   vertical-align: top;
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid #999999;
 }
 .table > thead > tr > th {
   vertical-align: bottom;
-  border-bottom: 2px solid #eeeeee;
+  border-bottom: 2px solid #999999;
 }
 .table > caption + thead > tr:first-child > th,
 .table > colgroup + thead > tr:first-child > th,
@@ -2009,7 +2009,7 @@ th {
   border-top: 0;
 }
 .table > tbody + tbody {
-  border-top: 2px solid #eeeeee;
+  border-top: 2px solid #999999;
 }
 .table .table {
   background-color: #eeeeee;
@@ -2023,7 +2023,7 @@ th {
   padding: 5px;
 }
 .table-bordered {
-  border: 1px solid #eeeeee;
+  border: 1px solid #999999;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > tbody > tr > th,
@@ -2031,7 +2031,7 @@ th {
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
-  border: 1px solid #eeeeee;
+  border: 1px solid #999999;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {
@@ -2039,7 +2039,7 @@ th {
 }
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
-  background-color: #eeeeee;
+  background-color: #999999;
 }
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th {
@@ -2163,7 +2163,7 @@ table th[class*="col-"] {
     overflow-y: hidden;
     overflow-x: scroll;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-    border: 1px solid #eeeeee;
+    border: 1px solid #999999;
     -webkit-overflow-scrolling: touch;
   }
   .table-responsive > .table {
@@ -2880,7 +2880,7 @@ fieldset[disabled] .btn-link {
 }
 .btn-link:hover,
 .btn-link:focus {
-  color: #b20000;
+  color: #000000;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -4540,7 +4540,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
 .navbar-default .navbar-nav > .disabled > a:focus {
-  color: #cccccc;
+  color: #999999;
   background-color: transparent;
 }
 .navbar-default .navbar-toggle {
@@ -4581,7 +4581,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-    color: #cccccc;
+    color: #999999;
     background-color: transparent;
   }
 }
@@ -4681,10 +4681,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #ffffff;
 }
 .breadcrumb {
-  padding: 8px 15px;
+  padding: 8px 0px;
   margin-bottom: 20px;
   list-style: none;
-  background-color: #f5f5f5;
+  background-color: transparent;
   border-radius: 0px;
 }
 .breadcrumb > li {
@@ -4972,11 +4972,11 @@ a.list-group-item.active > .badge,
 }
 .thumbnail {
   display: block;
-  padding: 4px;
+  padding: 0;
   margin-bottom: 20px;
   line-height: 1.42857143;
-  background-color: #eeeeee;
-  border: 1px solid #dddddd;
+  background-color: transparent;
+  border: 1px solid transparent;
   border-radius: 0px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -4992,7 +4992,7 @@ a.thumbnail.active {
   border-color: #fe0000;
 }
 .thumbnail .caption {
-  padding: 9px;
+  padding: 6px;
   color: #000000;
 }
 .alert {
@@ -5436,7 +5436,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel > .panel-body + .table,
 .panel > .panel-body + .table-responsive {
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid #999999;
 }
 .panel > .table > tbody:first-child > tr:first-child th,
 .panel > .table > tbody:first-child > tr:first-child td {
