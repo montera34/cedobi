@@ -1,16 +1,12 @@
 <?php get_header();
 
-$form_action = CEDOBI_BLOGURL;
 // views
 if ( array_key_exists('view', $_GET) ) {
 	$view = sanitize_text_field( $_GET['view'] );
 } else {
 	$view = "mosac";
-}
+} ?>
 
-
-
-?>
 <div id="content" class="container">
 
 <div id="header" class="row">
@@ -44,7 +40,19 @@ if ( array_key_exists('view', $_GET) ) {
 	<?php if ( have_posts() ) {
 
 		if ( $view == 'mosac' ) { $desktop_count = 0; $view_cols_desktop = 4; echo "<div id='" .$view. "' class='row'>"; }
-		if ( $view == 'list' ) { echo "<div id='" .$view. "' class='row'>"; }
+		if ( $view == 'list' ) {
+			echo "<table id='" .$view. "' class='table table-hover table-condensed table-responsive'>
+				<thead>
+				<tr>
+					<td>Imagen</td>
+					<td>Nombre</td>
+					<td>Tipo</td>
+					<td>Descripción</td>
+				</tr>
+				</thead>
+				<tbody>
+			";
+		}
 
 		while ( have_posts() ) : the_post();
 
@@ -55,8 +63,8 @@ if ( array_key_exists('view', $_GET) ) {
 			include "loop." .$view. ".php";
 
 		endwhile;
-		if ( $view == 'mosac' ) { echo "</div><!-- .row -->"; }
-		if ( $view == 'list' ) { echo "</div><!-- .row -->"; }
+		if ( $view == 'mosac' ) { echo "</div><!-- #" .$view. " -->"; }
+		if ( $view == 'list' ) { echo "</tbody></table><!-- #" .$view. " -->"; }
 
 	} // end if posts
 	?>

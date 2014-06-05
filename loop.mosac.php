@@ -6,7 +6,7 @@ $item_perma = get_permalink();
 $item_desc = get_the_excerpt();
 
 $item_classes = "class='mosac-item col-md-6'";
-$item_img_size = "medium";
+$item_img_size = "small";
 
 if ( has_post_thumbnail() ) { // image
 	$item_out = "

@@ -178,16 +178,10 @@ h1 {
 }
 
 /* LIST*/
-.list-item {
-}
-.thumbnail,
-.img-thumbnail {
-	box-shadow: none;
-	-webkit-box-shadow: none;
-}
-.list-item .item-tit {
-	margin: 0;
-	font-size: 1em;
+#list thead {
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 0.85em;
 }
 
 /* RELATED SIDEBAR */
