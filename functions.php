@@ -165,7 +165,7 @@ function cedobi_create_post_type() {
 		'publicly_queryable' => true,
 		'exclude_from_search' => false,
 		'menu_position' => 5,
-		//'menu_icon' => get_template_directory_uri() . '/images/icon-post.type-integrantes.png',
+		'menu_icon' => get_template_directory_uri() . '/images/cedobi-dashboard-pt-brigadista.png',
 		'hierarchical' => false, // if true this post type will be as pages
 		'query_var' => true,
 		'supports' => array('title', 'editor','excerpt','author','comments','trackbacks','thumbnail' ),
@@ -196,7 +196,7 @@ function cedobi_create_post_type() {
 		'publicly_queryable' => true,
 		'exclude_from_search' => false,
 		'menu_position' => 5,
-		//'menu_icon' => get_template_directory_uri() . '/images/icon-post.type-integrantes.png',
+		'menu_icon' => get_template_directory_uri() . '/images/cedobi-dashboard-pt-fotografia.png',
 		'hierarchical' => false, // if true this post type will be as pages
 		'query_var' => true,
 		'supports' => array('title', 'editor','excerpt','author','comments','trackbacks','thumbnail' ),
@@ -227,7 +227,7 @@ function cedobi_create_post_type() {
 		'publicly_queryable' => true,
 		'exclude_from_search' => false,
 		'menu_position' => 5,
-		//'menu_icon' => get_template_directory_uri() . '/images/icon-post.type-integrantes.png',
+		'menu_icon' => get_template_directory_uri() . '/images/cedobi-dashboard-pt-documento.png',
 		'hierarchical' => false, // if true this post type will be as pages
 		'query_var' => true,
 		'supports' => array('title', 'editor','excerpt','author','comments','trackbacks','thumbnail' ),
