@@ -13,46 +13,29 @@ if ( array_key_exists('view', $_GET) ) {
 ?>
 <div id="content" class="container">
 
-<div class="row">
+<div id="header" class="row">
 	<header class="col-md-16 col-md-offset-3">
 	<h1>Archivo digital de las Brigadas Internacionales</h1>
 	</header>
+</div><!-- .row -->
 
-	<div id="views" class="col-md-16 col-md-offset-3">
-		<form id="content-filter" class="form-inline" method="get" action="<?php echo $form_action ?>" role="form">
-			<div id="view" class="form-group">
-				<label>Ver como</label>
-				<button type="button" value="mosaico"> <span class="glyphicon glyphicon-th"></span> Mosaico</button>
-				<button type="button" name="vie" value="lista"> <span class="glyphicon glyphicon-th-list"></span> Lista</button>
-			</div>
-
-<div class="btn-group" data-toggle="buttons">
-  <label class="btn btn-default">
-    <input type="checkbox" name="pt1" id="brigadista" value="brigadista" /> Option 1
-  </label>
-  <label class="btn btn-default">
-    <input type="checkbox" name="pt2" id="fotografia" value="fotografia" /> Option 2
-  </label>
-</div>
-
-<div class="btn-group" data-toggle="buttons">
-  <label class="btn btn-default">
-    <input type="radio" name="view" id="mosaico" value="mosac" /> Option 1
-  </label>
-  <label class="btn btn-default">
-    <input type="radio" name="view" id="lista" value="list" /> Option 2
-  </label>
-</div>
-
-			<input type="submit" value="Filtrar" />
-		</form>
-		<div class="view-tit">Mostrar</div>
-		<div class="view-options">
-			<span class="glyphicon glyphicon-th view-active"></span>
-			<a href="?view=list"><span class="glyphicon glyphicon-th-list"></span></a>
-			<a href="?view=comprim"><span class="glyphicon glyphicon-align-justify"></span></a>
+<div id="filters" class="row">
+	<div class="col-md-12 col-md-offset-3">
+		<div class="filters-tit"><strong>Mostrar</strong></div>
+		<div class="filters-btn row">
+			<div class="col-md-6 filter-brigadista"><a href="/brigadista">Archivo de brigadistas</a></div>
+			<div class="col-md-6 filter-fotografia"><a href="/fotofrafia">Fondos fotográficos</a></div>
+			<div class="col-md-6 filter-documento"><a href="/documento">Recursos digitales</a></div>
+			<div class="col-md-6 filter-archivo"><a href="/">Archivo completo</a></div>
 		</div>
-	</div><!-- #views -->
+	</div><!-- .col-md-8 -->
+	<div class="col-md-4">
+		<div class="filters-tit"><strong>Vista</strong></div>
+		<div class="filters-btn vista-btn row">
+			<div class="col-md-12 vista-mosac"><a href="?view=mosac">Mosaico</a></div>
+			<div class="col-md-12 vista-list"><a href="?view=list">Lista</a></div>
+		</div>
+	</div><!-- .col-md-8 -->
 </div><!-- .row -->
 
 <div class="row">

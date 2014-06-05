@@ -30,10 +30,9 @@ Tags: HTML5, CSS3
 /* typo headers */
 h1, h2, h3 {
 	font-family: 'Junction';
-	font-weight: 700;
 }
 h1 {
-	text-transform: uppercase;
+	font-weight: 300;
 	margin-bottom: 0;
 }
 
@@ -83,19 +82,75 @@ h1 {
 /* CONTENT */
 
 /* FILTERS FORM */
-#content-filter input[type="radio"] {
-	display: none;
+#filters {
+	font-size: 0.85em;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding-bottom: 14px;
 }
-#content-filter .glyphicon {
-	font-size: 24px;
+.filters-tit {
+	padding: 14px 0 7px;
 }
-#views a {
-	color: #000;
+.filters-btn div {
+	padding-left: 30px;
+	background-image: url('images/cedobi-icons.png');
+	background-repeat: no-repeat;
+	height: 25px;
+	line-height: 1.1em;
 }
-#views a:hover,
-#views .view-active {
-	color: #fa0000;
+.vista-btn div {
 }
+.filters-btn a {
+	color: #4d4d4d;
+	display: block;
+}
+.vista-btn a {
+	height: 25px;
+	line-height: 25px;
+}
+
+.filter-brigadista {
+	background-position: 0 -225px;
+}
+.filter-fotografia {
+	background-position: 0 -175px;
+}
+.filter-documento {
+	background-position: 0 -125px;
+}
+.filter-archivo {
+	background-position: 0 -75px;
+}
+.vista-mosac {
+	background-position: 0 -275px;
+}
+.vista-list {
+	background-position: 0 -25px;
+}
+
+.filters-btn a:hover {
+	color: #fe0000;
+	text-decoration: none;
+}
+.filter-brigadista:hover {
+	background-position: 0 -200px;
+}
+.filter-fotografia:hover {
+	background-position: 0 -150px;
+}
+.filter-documento:hover {
+	background-position: 0 -100px;
+}
+.filter-archivo:hover {
+	background-position: 0 -50px;
+}
+.vista-mosac:hover {
+	background-position: 0 -250px;
+}
+.vista-list:hover {
+	background-position: 0 0;
+}
+
 
 /* MOSAC */
 .mosac-item {
