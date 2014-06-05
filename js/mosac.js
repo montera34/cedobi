@@ -1,22 +1,44 @@
-// minimum jQuery gallery
-// click on thumbs nav system
-jQuery(document).ready(function($) {
-	$('.mosac-popup').hide();
-	$('.mosac-item').hover(function(){
-		$(this).find('div.item-text').fadeIn('slow');
-		$(this).find('div.item-fondo').animate({
-			'z-index': 999,
-		}, 100, function() {
-    			// Animation complete.
+function isMobile(){
+    return (
+        (navigator.userAgent.match(/Android/i)) ||
+		(navigator.userAgent.match(/webOS/i)) ||
+		(navigator.userAgent.match(/iPhone/i)) ||
+		(navigator.userAgent.match(/iPod/i)) ||
+		(navigator.userAgent.match(/iPad/i)) ||
+		(navigator.userAgent.match(/BlackBerry/))
+    );
+}
+function projectThumbInit() {
+	
+	if(!isMobile()) {		
+	
+		jQuery(".mosac-item .inside a").hover(
+			function() {
+				jQuery(this).find('img:last').stop().fadeTo("fast", .2);
+				jQuery(this).find('img:last').attr('title','');	
+			},
+			function() {
+				jQuery(this).find('img:last').stop().fadeTo("fast", 1);	
 		});
-	},
-	function(){
-		$(this).find('div.item-text').fadeOut('fast');
-		$(this).find('div.item-fondo').animate({
-			'z-index': -999,
-		}, 100, function() {
-    			// Animation complete.
+			
+		jQuery(".mosac-item .inside").hover(	
+			function() {				
+				jQuery(this).find('.mosac-item-text').stop().fadeTo("fast", 1);
+				jQuery(this).find('.mosac-item-type').stop().fadeTo("fast", 1);
+				jQuery(this).find('img:last').attr('title','');				
+			},
+			function() {				
+				jQuery(this).find('.mosac-item-text').stop().fadeTo("fast", 0);							
+				jQuery(this).find('.mosac-item-type').stop().fadeTo("fast", 0);							
 		});
-	});
+		
+	}
+	
+//	jQuery(".mosac-item").css("opacity", "1");
+	jQuery(".mosac-item-text").css("opacity", "0");
+	jQuery(".mosac-item-type").css("opacity", "0");
+}
 
+jQuery(document).ready(function(){
+	projectThumbInit();
 });

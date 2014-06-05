@@ -23,9 +23,9 @@ if ( array_key_exists('view', $_GET) ) {
 	<div class="col-md-12 col-md-offset-3">
 		<div class="filters-tit"><strong>Mostrar</strong></div>
 		<div class="filters-btn row">
-			<div class="col-md-6 filter-brigadista"><a href="/brigadista">Archivo de brigadistas</a></div>
-			<div class="col-md-6 filter-fotografia"><a href="/fotofrafia">Fondos fotográficos</a></div>
-			<div class="col-md-6 filter-documento"><a href="/documento">Recursos digitales</a></div>
+			<div class="col-md-6 filter-brigadista"><a href="?post_type=brigadista">Archivo de brigadistas</a></div>
+			<div class="col-md-6 filter-fotografia"><a href="?post_type=fotografia">Fondos fotográficos</a></div>
+			<div class="col-md-6 filter-documento"><a href="?post_type=documento">Recursos digitales</a></div>
 			<div class="col-md-6 filter-archivo"><a href="/">Archivo completo</a></div>
 		</div>
 	</div><!-- .col-md-8 -->
@@ -39,12 +39,12 @@ if ( array_key_exists('view', $_GET) ) {
 </div><!-- .row -->
 
 <div class="row">
-	<section id="main" class="col-md-16 col-md-push-3 <?php echo $view ?>">
+	<section id="main" class="col-md-16 col-md-push-3">
 
 	<?php if ( have_posts() ) {
 
-		if ( $view == 'mosac' ) { $desktop_count = 0; $view_cols_desktop = 8; echo "<div class='row'>"; }
-		if ( $view == 'list' ) { echo "<div id='list' class='row'>"; }
+		if ( $view == 'mosac' ) { $desktop_count = 0; $view_cols_desktop = 4; echo "<div id='" .$view. "' class='row'>"; }
+		if ( $view == 'list' ) { echo "<div id='" .$view. "' class='row'>"; }
 
 		while ( have_posts() ) : the_post();
 
@@ -52,7 +52,7 @@ if ( array_key_exists('view', $_GET) ) {
 				if ( $desktop_count == $view_cols_desktop ) { $desktop_count = 0; echo '<div class="clearfix visible-md visible-lg"></div>';  }
 				$desktop_count++;
 			}
-			include "loop.mosac.list.php";
+			include "loop." .$view. ".php";
 
 		endwhile;
 		if ( $view == 'mosac' ) { echo "</div><!-- .row -->"; }
