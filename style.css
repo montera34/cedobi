@@ -135,11 +135,17 @@ h1 {
 
 /* LIST*/
 .list-item {
-	margin-bottom: 3em;
+}
+.thumbnail,
+.img-thumbnail {
+	box-shadow: none;
+	-webkit-box-shadow: none;
 }
 .list-item .item-tit {
 	margin: 0;
+	font-size: 1em;
 }
+
 /* RELATED SIDEBAR */
 .related {
 	margin: 0 0 1em 0;

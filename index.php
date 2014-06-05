@@ -61,6 +61,7 @@ if ( array_key_exists('view', $_GET) ) {
 	<?php if ( have_posts() ) {
 
 		if ( $view == 'mosac' ) { $desktop_count = 0; $view_cols_desktop = 8; echo "<div class='row'>"; }
+		if ( $view == 'list' ) { echo "<div id='list' class='row'>"; }
 
 		while ( have_posts() ) : the_post();
 
@@ -72,6 +73,7 @@ if ( array_key_exists('view', $_GET) ) {
 
 		endwhile;
 		if ( $view == 'mosac' ) { echo "</div><!-- .row -->"; }
+		if ( $view == 'list' ) { echo "</div><!-- .row -->"; }
 
 	} // end if posts
 	?>
