@@ -98,6 +98,29 @@ function cedobi_load_scripts() {
 	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css' );
 	wp_enqueue_style( 'bootstrap-theme-css', get_template_directory_uri() . '/bootstrap/css/bootstrap-theme.min.css' );
 	wp_enqueue_style( 'fontsquirrel-css', get_template_directory_uri() . '/fonts/junction.css' );
+	if ( is_home() ) {
+	wp_enqueue_script(
+		'imagesloaded-js',
+		get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js',
+		array(),
+		'3.1.7',
+		TRUE
+	);
+	wp_enqueue_script(
+		'masonry-js',
+		get_template_directory_uri() . '/js/masonry.pkgd.min.js',
+		array('imagesloaded-js'),
+		'3.1.5',
+		TRUE
+	);
+	wp_enqueue_script(
+		'masonry-options-js',
+		get_template_directory_uri() . '/js/masonry.options.js',
+		array('masonry-js'),
+		'0.1',
+		TRUE
+	);
+	}
 	wp_enqueue_script('jquery');
 	wp_enqueue_script(
 		'bootstrap-js',
@@ -107,13 +130,6 @@ function cedobi_load_scripts() {
 		FALSE
 	);
 	if ( is_home() ) {
-	wp_enqueue_script(
-		'masonry-js',
-		get_template_directory_uri() . '/js/masonry.pkgd.min.js',
-		array( 'jquery' ),
-		'3.1.5',
-		FALSE
-	);
 	wp_enqueue_script(
 		'mosac-js',
 		get_template_directory_uri() . '/js/mosac.js',
@@ -326,8 +342,17 @@ function cedobi_build_taxonomies() {
 		'rewrite' => array( 'slug' => 'fecha', 'with_front' => false ),
 		'show_admin_column' => true
 	) );
+	// Fecha taxonomy
+	register_taxonomy( 'autor', array('fotografia','documento','publicacion'), array(
+		'hierarchical' => false,
+		'label' => __( 'Autor' ),
+		'name' => __( 'Autores' ),
+		'query_var' => 'autor',
+		'rewrite' => array( 'slug' => 'autor', 'with_front' => false ),
+		'show_admin_column' => true
+	) );
 	// Origen taxonomy
-	register_taxonomy( 'origen', array('brigadistas'), array(
+	register_taxonomy( 'origen', array('brigadista'), array(
 		'hierarchical' => true,
 		'label' => __( 'Origen' ),
 		'name' => __( 'Origen' ),
@@ -370,41 +395,43 @@ function cedobi_metaboxes( $meta_boxes ) {
 		'fields' => array(
 			array(
 				'name' => 'Fecha de nacimiento',
+				'desc' => 'Formato: dd/mm/aa',
 				'id'   => $prefix . 'date_birth',
-				'type' => 'text_date_timestamp',
+				'type' => 'text_date',
 				'repeatable' => false,
 			),
 			array(
 				'name' => 'Fecha de defunción',
+				'desc' => 'Formato: dd/mm/aa',
 				'id'   => $prefix . 'date_dead',
-				'type' => 'text_date_timestamp',
+				'type' => 'text_date',
 				'repeatable' => false,
 			),
 		),
 	);
 	// CUSTOM FIELDS FOR FOTOGRAFÍAS, PUBLICACIONES, MATERIAL
-	$meta_boxes[] = array(
-		'id' => 'cedobi_author',
-		'title' => 'Autor',
-		'pages' => array('fotografia','documento','publicacion'), // post type
-		'context' => 'normal', //  'normal', 'advanced', or 'side'
-		'priority' => 'high',  //  'high', 'core', 'default' or 'low'
-		'show_names' => true, // Show field names on the left
-		'fields' => array(
-			array(
-				'name' => 'Nombre',
-				'desc' => '',
-				'id' => $prefix . 'author_firstname',
-				'type' => 'text',
-			),
-			array(
-				'name' => 'Apellidos',
-				'desc' => '',
-				'id' => $prefix . 'author_lastname',
-				'type' => 'text',
-			),
-		),
-	);
+//	$meta_boxes[] = array(
+//		'id' => 'cedobi_author',
+//		'title' => 'Autor',
+//		'pages' => array('fotografia','documento','publicacion'), // post type
+//		'context' => 'normal', //  'normal', 'advanced', or 'side'
+//		'priority' => 'high',  //  'high', 'core', 'default' or 'low'
+//		'show_names' => true, // Show field names on the left
+//		'fields' => array(
+//			array(
+//				'name' => 'Nombre',
+//				'desc' => '',
+//				'id' => $prefix . 'author_firstname',
+//				'type' => 'text',
+//			),
+//			array(
+//				'name' => 'Apellidos',
+//				'desc' => '',
+//				'id' => $prefix . 'author_lastname',
+//				'type' => 'text',
+//			),
+//		),
+//	);
 	// CUSTOM FIELDS FOR CONVOCATORIAS
 	$meta_boxes[] = array(
 		'id' => 'cedobi_current',
