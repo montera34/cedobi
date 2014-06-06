@@ -1,4 +1,4 @@
-var container = document.querySelector('#mosac');
+var container = document.querySelector('#mosaico');
 var msnry;
 // initialize Masonry after all images have loaded
 imagesLoaded( container, function() {

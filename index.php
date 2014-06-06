@@ -1,11 +1,44 @@
 <?php get_header();
 
-// views
+// custom post types info
+global $wp_post_types;
+// get view
 if ( array_key_exists('view', $_GET) ) {
-	$view = sanitize_text_field( $_GET['view'] );
+	$view_current = sanitize_text_field( $_GET['view'] );
 } else {
-	$view = "mosac";
-} ?>
+	$view_current = "mosaico";
+}
+// get post type
+if ( array_key_exists('post_type', $_GET) ) {
+	$pt_current = sanitize_text_field( $_GET['post_type'] );
+} else {
+	$pt_current = "archivo";
+}
+// build filters
+$base = CEDOBI_BLOGURL;
+$pts = array("brigadista","fotografia","documento","archivo");
+$filters_out = "";
+foreach ( $pts as $pt ) {
+	if ( $pt == $pt_current ) { $active_class = " class='active'"; }
+	else { $active_class = ""; }
+	if ( $pt == 'archivo' ) {
+		$filters_out .= "<div class='col-md-6 filter-" .$pt. "'><a" .$active_class. " href='" .$base. "?view=" .$view_current. "'>Archivo completo</a></div>";
+	} else {
+		$pt_tit = $wp_post_types[$pt]->labels->name;
+		$filters_out .= "<div class='col-md-6 filter-" .$pt. "'><a" .$active_class. " href='" .$base. "?post_type=" .$pt. "&view=" .$view_current. "'>" .$pt_tit. "</a></div>";
+	}
+
+}
+// build views
+$views = array("mosaico","lista");
+$views_out = "";
+foreach ( $views as $view ) {
+	if ( $view == $view_current ) { $active_class = " class='active'"; }
+	else { $active_class = ""; }
+	$views_out .= "<div class='col-md-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .$base. "?post_type=" .$pt_current. "&view=" .$view. "'>" .$view. "</a></div>";
+
+}
+?>
 
 <div id="content" class="container">
 
@@ -19,17 +52,13 @@ if ( array_key_exists('view', $_GET) ) {
 	<div class="col-md-12 col-md-offset-3">
 		<div class="filters-tit"><strong>Mostrar</strong></div>
 		<div class="filters-btn row">
-			<div class="col-md-6 filter-brigadista"><a href="?post_type=brigadista">Archivo de brigadistas</a></div>
-			<div class="col-md-6 filter-fotografia"><a href="?post_type=fotografia">Fondos fotográficos</a></div>
-			<div class="col-md-6 filter-documento"><a href="?post_type=documento">Recursos digitales</a></div>
-			<div class="col-md-6 filter-archivo"><a href="/">Archivo completo</a></div>
+			<?php echo $filters_out ?>
 		</div>
 	</div><!-- .col-md-8 -->
 	<div class="col-md-4">
 		<div class="filters-tit"><strong>Vista</strong></div>
 		<div class="filters-btn vista-btn row">
-			<div class="col-md-12 vista-mosac"><a href="?view=mosac">Mosaico</a></div>
-			<div class="col-md-12 vista-list"><a href="?view=list">Lista</a></div>
+			<?php echo $views_out ?>
 		</div>
 	</div><!-- .col-md-8 -->
 </div><!-- .row -->
@@ -39,9 +68,9 @@ if ( array_key_exists('view', $_GET) ) {
 
 	<?php if ( have_posts() ) {
 
-		if ( $view == 'mosac' ) { $desktop_count = 0; $view_cols_desktop = 4; echo "<div id='" .$view. "' class='row'>"; }
-		if ( $view == 'list' ) {
-			echo "<table id='" .$view. "' class='table table-hover table-condensed table-responsive'>
+		if ( $view_current == 'mosaico' ) { $desktop_count = 0; $view_cols_desktop = 4; echo "<div id='" .$view_current. "' class='row'>"; }
+		if ( $view_current == 'lista' ) {
+			echo "<table id='" .$view_current. "' class='table table-hover table-condensed table-responsive'>
 				<thead>
 				<tr>
 					<td>Imagen</td>
@@ -56,20 +85,20 @@ if ( array_key_exists('view', $_GET) ) {
 
 		while ( have_posts() ) : the_post();
 
-			if ( $view == 'mosac' ) {
+			if ( $view_current == 'mosaico' ) {
 				if ( $desktop_count == $view_cols_desktop ) { $desktop_count = 0; echo '<div class="clearfix visible-md visible-lg"></div>';  }
 				$desktop_count++;
 			}
-			include "loop." .$view. ".php";
+			include "loop." .$view_current. ".php";
 
 		endwhile;
-		if ( $view == 'mosac' ) { echo "</div><!-- #" .$view. " -->"; }
-		if ( $view == 'list' ) { echo "</tbody></table><!-- #" .$view. " -->"; }
+		if ( $view_current == 'mosaico' ) { echo "</div><!-- #" .$view_current. " -->"; }
+		if ( $view_current == 'lista' ) { echo "</tbody></table><!-- #" .$view_current. " -->"; }
 
 	} // end if posts
 	?>
 	
-	</section><!-- .<?php echo $view ?> -->
+	</section><!-- .<?php echo $view_current ?> -->
 
 	<?php get_sidebar(); ?>
 

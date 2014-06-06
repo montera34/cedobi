@@ -99,7 +99,7 @@ function cedobi_load_scripts() {
 	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css' );
 	wp_enqueue_style( 'bootstrap-theme-css', get_template_directory_uri() . '/bootstrap/css/bootstrap-theme.min.css' );
 	wp_enqueue_style( 'fontsquirrel-css', get_template_directory_uri() . '/fonts/junction.css' );
-	if ( is_home() ) {
+	if ( !is_singular() || !is_404() ) {
 	wp_enqueue_script(
 		'imagesloaded-js',
 		get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js',
@@ -121,6 +121,14 @@ function cedobi_load_scripts() {
 		'0.1',
 		TRUE
 	);
+	wp_enqueue_script(
+		'mosac-js',
+		get_template_directory_uri() . '/js/mosac.js',
+		array( 'bootstrap-js' ),
+		'0.1',
+		FALSE
+	);
+
 	}
 	wp_enqueue_script('jquery');
 	wp_enqueue_script(
@@ -130,14 +138,7 @@ function cedobi_load_scripts() {
 		'3.1.1',
 		FALSE
 	);
-	if ( is_home() ) {
-	wp_enqueue_script(
-		'mosac-js',
-		get_template_directory_uri() . '/js/mosac.js',
-		array( 'bootstrap-js' ),
-		'0.1',
-		FALSE
-	);
+	if ( !is_singular() || !is_404() ) {
 	}
 	wp_enqueue_script(
 		'search-js',
@@ -154,7 +155,7 @@ function cedobi_create_post_type() {
 	// Brigadistas custom post type
 	register_post_type( 'brigadista', array(
 		'labels' => array(
-			'name' => __( 'Brigadistas' ),
+			'name' => __( 'Archivo de brigadistas' ),
 			'singular_name' => __( 'Brigadista' ),
 			'add_new_item' => __( 'Add a brigadista' ),
 			'edit' => __( 'Edit' ),
@@ -185,7 +186,7 @@ function cedobi_create_post_type() {
 	// Fotografia custom post type
 	register_post_type( 'fotografia', array(
 		'labels' => array(
-			'name' => __( 'Fotografías' ),
+			'name' => __( 'Fondos fotográficos' ),
 			'singular_name' => __( 'Fotografía' ),
 			'add_new_item' => __( 'Add a fotografía' ),
 			'edit' => __( 'Edit' ),
