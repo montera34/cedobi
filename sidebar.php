@@ -33,7 +33,10 @@ foreach ( $rels as $key => $rel ) {
 	$related_tit = $wp_post_types[$key]->labels->name;
 	$related_posts = get_posts($rel['args']);
 	if ( count($related_posts) != 0 ) {
-		$related_out .= "<section id='related-" .$key. "' class='related'><h2 class='related-tit'>" .$related_tit. "</h2>";
+		$related_out .= "
+		<section id='related-" .$key. "' class='related'>
+			<h2 class='related-tit'><a href='" .CEDOBI_BLOGURL. "?post_type=" .$key. "' title='Archivo de " .$related_tit. "'>" .$related_tit. "</a></h2>
+		";
 		foreach ( $related_posts as $item ) {
 			$rel_tit = $item->post_title;
 			$rel_perma = get_permalink($item->ID);
@@ -48,6 +51,7 @@ foreach ( $rels as $key => $rel ) {
 			</article><!-- .rel-item -->
 			";
 		}
+			
 		$related_out .= "</section>";
 	}
 }

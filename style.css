@@ -53,9 +53,10 @@ h1 {
 	margin: 0 5px 0 0;
 }
 #pre-nav .navbar-nav>li>a {
-	padding: 3px 7px;
+	padding: 5px 5px 3px;
 	line-height: 1em;
 	background-color: #000;
+	font-size: 0.85em;
 }
 #pre-nav .navbar-nav>li>a:hover,
 #pre-nav .navbar-nav .active {
@@ -202,13 +203,19 @@ h1 {
 .related-tit {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin: 0;
-	padding: 4px 5px 2px;
 	font-size: 1em;
 	font-weight: normal;
 	text-transform: uppercase;
+}
+.related-tit a {
 	display: inline-block;
+	padding: 4px 5px 2px;
 	color: #fff;
 	background-color: #000;
+}
+.related-tit a:hover {
+	background-color: #fe0000;
+	text-decoration: none;
 }
 .rel-item {
 	padding: 1em 0 0 0;
