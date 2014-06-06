@@ -139,6 +139,13 @@ function cedobi_load_scripts() {
 		FALSE
 	);
 	}
+	wp_enqueue_script(
+		'search-js',
+		get_template_directory_uri() . '/js/search.js',
+		array( 'bootstrap-js' ),
+		'0.1',
+		FALSE
+	);
 
 } // end load js scripts to avoid conflicts
 

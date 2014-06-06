@@ -58,6 +58,6 @@ foreach ( $rels as $key => $rel ) {
 	<?php get_search_form(); ?>
 </div><!-- #margeni -->
 
-<div id="margend" class="col-md-5">
+<div id="margend" class="col-md-4 col-md-offset-1">
 	<?php echo $related_out ?>
 </div><!-- #margeni -->
