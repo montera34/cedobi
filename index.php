@@ -14,13 +14,17 @@ if ( array_key_exists('post_type', $_GET) ) {
 } else {
 	$pt_current = "archivo";
 }
-// build filters
+// build filters buttons and page main title
 $base = CEDOBI_BLOGURL;
 $pts = array("brigadista","fotografia","documento","archivo");
 $filters_out = "";
 foreach ( $pts as $pt ) {
-	if ( $pt == $pt_current ) { $active_class = " class='active'"; }
-	else { $active_class = ""; }
+	if ( $pt == $pt_current ) {
+		$active_class = " class='active'";
+		if ( $pt_current == "archivo" ) { $tit = "Archivo digital de las Brigadas Internacionales"; }
+		else { $tit = $wp_post_types[$pt]->labels->name; }
+
+	} else { $active_class = ""; }
 	if ( $pt == 'archivo' ) {
 		$filters_out .= "<div class='col-md-6 filter-" .$pt. "'><a" .$active_class. " href='" .$base. "?view=" .$view_current. "'>Archivo completo</a></div>";
 	} else {
@@ -29,7 +33,7 @@ foreach ( $pts as $pt ) {
 	}
 
 }
-// build views
+// build views buttons
 $views = array("mosaico","lista");
 $views_out = "";
 foreach ( $views as $view ) {
@@ -44,7 +48,7 @@ foreach ( $views as $view ) {
 
 <div id="header" class="row">
 	<header class="col-md-16 col-md-offset-3">
-	<h1>Archivo digital de las Brigadas Internacionales</h1>
+	<h1><?php echo $tit ?></h1>
 	</header>
 </div><!-- .row -->
 
