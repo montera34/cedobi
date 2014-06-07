@@ -74,13 +74,13 @@ foreach ( $views as $view ) {
 
 		if ( $view_current == 'mosaico' ) { $desktop_count = 0; $view_cols_desktop = 4; echo "<div id='" .$view_current. "' class='row'>"; }
 		if ( $view_current == 'lista' ) {
-			echo "<table id='" .$view_current. "' class='table table-hover table-condensed table-responsive'>
+			echo "<table id='" .$view_current. "' class='table table-hover table-responsive'>
 				<thead>
 				<tr>
-					<td>Imagen</td>
-					<td>Nombre</td>
-					<td>Tipo</td>
-					<td>Descripción</td>
+					<th>Imagen</th>
+					<th>Nombre</th>
+					<th>Tipo</th>
+					<th>Descripción</th>
 				</tr>
 				</thead>
 				<tbody>
@@ -101,7 +101,7 @@ foreach ( $views as $view ) {
 
 	} // end if posts
 	?>
-	
+
 	</section><!-- .<?php echo $view_current ?> -->
 
 	<?php get_sidebar(); ?>

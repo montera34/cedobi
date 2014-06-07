@@ -1,40 +1,31 @@
+<?php
+$s_query = get_search_query();
+if ( $s_query != '' ) { $search_active = " active"; }
+?>
 <form id="archivo-search" action="<?php echo CEDOBI_BLOGURL ?>" method="get" role="form">
-	<div class="form-group has-feedback">
+	<div id="search-basic" class="form-group has-feedback<?php echo $search_active ?>">
 		<label class="sr-only" for="s">Buscar</label>
-		<input type="text" class="form-control" id="s" name="s" placeholder="" />
+		<input type="text" class="form-control" id="s" name="s" placeholder="<?php echo $s_query ?>" />
 		<span class="glyphicon glyphicon-search form-control-feedback"></span>
 	</div>
 
-	<div class="form-group">
-		<a id="search-advanced-btn" href="#">Avanzada <span class="caret"></span></a>
+	<div id="search-advanced-btn" class="form-group">
+		<a href="#">Avanzada <span class="caret"></span></a>
+	</div>
 
-		<div id="search-advanced">
-			<div class="checkbox">
-				<label>
-				<input type="checkbox" name="brigadista" /> Brigadistas
-				</label>
-			</div>
-			<div class="checkbox">
-				<label>
-				<input type="checkbox" name="fotografia" /> Fondos fotográficos
-				</label>
-			</div>
-			<div class="checkbox">
-				<label>
-				<input type="checkbox" name="documento" /> Recursos digitales
-				</label>
-			</div>
-			<div class="checkbox">
-				<label>
-				<input type="checkbox" name="noticias" /> Noticias
-				</label>
-			</div>
-			<div class="checkbox">
-				<label>
-				<input type="checkbox" name="publicacion" /> Publicaciones
-				</label>
-			</div>
-			<input type="submit" class="form-control" id="submit" name="submit" value="Buscar" />
-		</div>
+	<div id="search-advanced">
+	<div class="form-group">
+		<select class="form-control" name="post_type">
+			<option value="">Archivo completo</option>
+			<option value="brigadista">Brigadistas</option>
+			<option value="fotografia">Fondos fotográficos</option>
+			<option value="documento">Recursos digitales</option>
+			<option value="noticia">Noticias</option>
+			<option value="publicacion">Publicaciones</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<input class="btn" type="submit" class="form-control" id="submit" value="Buscar" />
+	</div>
 	</div>
 </form><!-- #archivo-search -->

@@ -5,5 +5,6 @@ jQuery(document).ready(function($){
 		// prevent default anchor click behavior
 		e.preventDefault();
 		advanced.toggle();
+		$(this).toggleClass("active");
 	});
 });
