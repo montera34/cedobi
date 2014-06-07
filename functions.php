@@ -99,7 +99,11 @@ function cedobi_load_scripts() {
 	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css' );
 	wp_enqueue_style( 'bootstrap-theme-css', get_template_directory_uri() . '/bootstrap/css/bootstrap-theme.min.css' );
 	wp_enqueue_style( 'fontsquirrel-css', get_template_directory_uri() . '/fonts/junction.css' );
-	if ( !is_singular() || !is_404() ) {
+	if ( !is_singular() && !array_key_exists('view', $_GET)
+		|| !is_singular() && array_key_exists('view', $_GET) && sanitize_text_field( $_GET['view'] ) == 'mosaico'
+		|| !is_404() && !array_key_exists('view', $_GET)
+		|| !is_404() && array_key_exists('view', $_GET) && sanitize_text_field( $_GET['view'] ) == 'mosaico'
+	) {
 	wp_enqueue_script(
 		'imagesloaded-js',
 		get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js',
