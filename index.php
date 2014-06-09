@@ -54,13 +54,13 @@ foreach ( $views as $view ) {
 
 <div id="filters" class="row">
 	<div class="col-md-12 col-md-offset-3">
-		<div class="filters-tit"><strong>Mostrar</strong></div>
+		<div class="filters-tit">Mostrar</div>
 		<div class="filters-btn row">
 			<?php echo $filters_out ?>
 		</div>
 	</div><!-- .col-md-8 -->
 	<div class="col-md-4">
-		<div class="filters-tit"><strong>Vista</strong></div>
+		<div class="filters-tit">Vista</div>
 		<div class="filters-btn vista-btn row">
 			<?php echo $views_out ?>
 		</div>
