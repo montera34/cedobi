@@ -391,6 +391,15 @@ function cedobi_build_taxonomies() {
 		'rewrite' => array( 'slug' => 'fondo', 'with_front' => false ),
 		'show_admin_column' => true
 	) );
+	// Tipo taxonomy
+	register_taxonomy( 'tipo', array('documento'), array(
+		'hierarchical' => true,
+		'label' => __( 'Tipo' ),
+		'name' => __( 'Tipos' ),
+		'query_var' => 'tipo',
+		'rewrite' => array( 'slug' => 'tipo', 'with_front' => false ),
+		'show_admin_column' => true
+	) );
 } // end register taxonomies
 
 //Add metaboxes to several post types edit screen
