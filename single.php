@@ -46,7 +46,7 @@ $views_out = "";
 foreach ( $views as $view ) {
 	if ( $view == $view_current ) { $active_class = " class='active'"; }
 	else { $active_class = ""; }
-	$views_out .= "<div class='col-md-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .$base. "?post_type=" .$pt_current. "&view=" .$view. "'>" .$view. "</a></div>";
+	$views_out .= "<div class='col-md-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .$base. "?view=" .$view. "'>" .$view. "</a></div>";
 
 }
 ?>

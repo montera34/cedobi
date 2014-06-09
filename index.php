@@ -9,11 +9,8 @@ if ( array_key_exists('view', $_GET) ) {
 	$view_current = "mosaico";
 }
 // get post type
-if ( array_key_exists('post_type', $_GET) ) {
-	$pt_current = sanitize_text_field( $_GET['post_type'] );
-} else {
-	$pt_current = "archivo";
-}
+if ( is_home() ) { $pt_current = "archivo"; }
+else { $pt_current = get_post_type(); }
 // build filters buttons and page main title
 $base = CEDOBI_BLOGURL;
 $pts = array("brigadista","fotografia","documento","archivo");
@@ -29,7 +26,7 @@ foreach ( $pts as $pt ) {
 		$filters_out .= "<div class='col-md-6 filter-" .$pt. "'><a" .$active_class. " href='" .$base. "?view=" .$view_current. "'>Archivo completo</a></div>";
 	} else {
 		$pt_tit = $wp_post_types[$pt]->labels->name;
-		$filters_out .= "<div class='col-md-6 filter-" .$pt. "'><a" .$active_class. " href='" .$base. "?post_type=" .$pt. "&view=" .$view_current. "'>" .$pt_tit. "</a></div>";
+		$filters_out .= "<div class='col-md-6 filter-" .$pt. "'><a" .$active_class. " href='" .$base. "/" .$pt. "?view=" .$view_current. "'>" .$pt_tit. "</a></div>";
 	}
 
 }
@@ -39,7 +36,11 @@ $views_out = "";
 foreach ( $views as $view ) {
 	if ( $view == $view_current ) { $active_class = " class='active'"; }
 	else { $active_class = ""; }
-	$views_out .= "<div class='col-md-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .$base. "?post_type=" .$pt_current. "&view=" .$view. "'>" .$view. "</a></div>";
+	if ( $pt_current == 'archivo' ) {
+		$views_out .= "<div class='col-md-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .$base. "?view=" .$view. "'>" .$view. "</a></div>";
+	} else {
+		$views_out .= "<div class='col-md-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .$base. "/" .$pt_current. "?view=" .$view. "'>" .$view. "</a></div>";
+	}
 
 }
 ?>

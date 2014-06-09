@@ -7,7 +7,7 @@ foreach ( $pts as $pt ) {
 	else { $active_class = ""; }
 
 	$pt_tit = $wp_post_types[$pt]->labels->name;
-	$filters_out .= "<div class='filter-" .$pt. "'><a" .$active_class. " href='" .$base. "?post_type=" .$pt. "&view=" .$view_current. "'>" .$pt_tit. "</a></div>";
+	$filters_out .= "<div class='filter-" .$pt. "'><a" .$active_class. " href='" .$base. "/" .$pt. "'>" .$pt_tit. "</a></div>";
 }
 
 global $wp_post_types; // custom post types info
