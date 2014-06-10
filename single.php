@@ -69,14 +69,18 @@ foreach ( $fields as $filter_tit => $field ) {
 			<div class='filters-tit'>" .$filter_tit. "</div>
 	";
 	$terms_out = "";
+	$autor_count = 0;
 	foreach ( $field as $name => $type ) {
-		if ( $type == 'tax' ) {
-			$terms_out .= get_the_term_list( $post->ID, $name, '<div class="' .$name. '-terms">', '', '</div>' );
-		} else {
-			$term = get_post_meta( $post->ID, $name, true );
-			if ( $term != '' ) {
-				$terms_out .= "<div class='cfield'>" .$term. "</div>";
+		if ( $filter_tit == 'Autor' ) {
+			$autor_count++;
+			$term[$autor_count] = get_post_meta( $post->ID, $name, true );
+			if ( count($term) == 2 ) {
+				$terms_out .= "<div class='cfield'>" .$term[1]. " " .$term[2]. "</div>";
+				$autor_count = 0;
+				$term = "";
 			}
+		} else {
+			$terms_out .= get_the_term_list( $post->ID, $name, '<div class="' .$name. '-terms">', '', '</div>' );
 		}
 	}
 		$filters_out .= "
