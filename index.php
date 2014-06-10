@@ -5,6 +5,8 @@ global $wp_post_types;
 // get view
 if ( array_key_exists('view', $_GET) ) {
 	$view_current = sanitize_text_field( $_GET['view'] );
+} elseif ( !array_key_exists('view', $_GET) && array_key_exists('s', $_GET) ) {
+	$view_current = "lista";
 } else {
 	$view_current = "mosaico";
 }
@@ -36,7 +38,7 @@ $views_out = "";
 foreach ( $views as $view ) {
 	if ( $view == $view_current ) { $active_class = " class='active'"; }
 	else { $active_class = ""; }
-	if ( $pt_current == 'archivo' ) {
+	if ( $pt_current == 'archivo' || array_key_exists('s', $_GET) ) {
 		$views_out .= "<div class='col-md-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .$base. "?view=" .$view. "'>" .$view. "</a></div>";
 	} else {
 		$views_out .= "<div class='col-md-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .$base. "/" .$pt_current. "?view=" .$view. "'>" .$view. "</a></div>";
