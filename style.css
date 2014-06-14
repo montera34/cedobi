@@ -299,6 +299,17 @@ h1 {
 	color: #fe0000;
 }
 
+/* PAGINATION*/
+.pagination>li>a,
+.pagination>li>span {
+	padding: 1px 6px;
+}
+.pagination .next {
+	margin-left: 6px;
+}
+.pagination .prev {
+	margin-right: 6px;
+}
 
 @media (min-width: 768px) {
 	#cedobi-pre-nav-collapse {

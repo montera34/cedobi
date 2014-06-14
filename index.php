@@ -103,9 +103,11 @@ foreach ( $views as $view ) {
 		if ( $view_current == 'lista' ) { echo "</tbody></table><!-- #" .$view_current. " -->"; }
 
 	} // end if posts
+
+	include "pagination.php";
 	?>
 
-	</section><!-- .<?php echo $view_current ?> -->
+	</section><!-- #main -->
 
 	<?php get_sidebar(); ?>
 
