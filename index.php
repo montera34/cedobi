@@ -25,10 +25,10 @@ foreach ( $pts as $pt ) {
 
 	} else { $active_class = ""; }
 	if ( $pt == 'archivo' ) {
-		$filters_out .= "<div class='col-md-6 filter-" .$pt. "'><a" .$active_class. " href='" .$base. "?view=" .$view_current. "'>Archivo completo</a></div>";
+		$filters_out .= "<div class='col-md-6 col-sm-6 col-xs-12 filter-" .$pt. "'><a" .$active_class. " href='" .$base. "?view=" .$view_current. "'>Archivo completo</a></div>";
 	} else {
 		$pt_tit = $wp_post_types[$pt]->labels->name;
-		$filters_out .= "<div class='col-md-6 filter-" .$pt. "'><a" .$active_class. " href='" .$base. "/" .$pt. "?view=" .$view_current. "'>" .$pt_tit. "</a></div>";
+		$filters_out .= "<div class='col-md-6 col-sm-6 col-xs-12 filter-" .$pt. "'><a" .$active_class. " href='" .$base. "/" .$pt. "?view=" .$view_current. "'>" .$pt_tit. "</a></div>";
 	}
 
 }
@@ -39,9 +39,9 @@ foreach ( $views as $view ) {
 	if ( $view == $view_current ) { $active_class = " class='active'"; }
 	else { $active_class = ""; }
 	if ( $pt_current == 'archivo' || array_key_exists('s', $_GET) ) {
-		$views_out .= "<div class='col-md-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .$base. "?view=" .$view. "'>" .$view. "</a></div>";
+		$views_out .= "<div class='col-lg-4 col-md-6 col-sm-5 col-xs-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .$base. "?view=" .$view. "'>" .$view. "</a></div>";
 	} else {
-		$views_out .= "<div class='col-md-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .$base. "/" .$pt_current. "?view=" .$view. "'>" .$view. "</a></div>";
+		$views_out .= "<div class='col-lg-4 col-md-6 col-sm-5 col-xs-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .$base. "/" .$pt_current. "?view=" .$view. "'>" .$view. "</a></div>";
 	}
 
 }
@@ -50,19 +50,19 @@ foreach ( $views as $view ) {
 <div id="content" class="container">
 
 <div id="header" class="row">
-	<header class="col-md-16 col-md-offset-3">
+	<header class="col-md-16 col-md-offset-3 col-sm-24">
 	<h1><?php echo $tit ?></h1>
 	</header>
 </div><!-- .row -->
 
 <div id="filters" class="row">
-	<div class="col-md-12 col-md-offset-3">
+	<div class="col-lg-12 col-lg-offset-3 col-md-13 col-md-offset-3 col-sm-18">
 		<div class="filters-tit">Mostrar</div>
 		<div class="filters-btn row">
 			<?php echo $filters_out ?>
 		</div>
-	</div><!-- .col-md-8 -->
-	<div class="col-md-4">
+	</div><!-- .col-* .col-offset-* -->
+	<div class="col-lg-4 col-md-3 col-sm-6">
 		<div class="filters-tit">Vista</div>
 		<div class="filters-btn vista-btn row">
 			<?php echo $views_out ?>
@@ -103,9 +103,11 @@ foreach ( $views as $view ) {
 		if ( $view_current == 'lista' ) { echo "</tbody></table><!-- #" .$view_current. " -->"; }
 
 	} // end if posts
-
-	include "pagination.php";
 	?>
+
+	<div class="row"><div class="col-sm-24">
+	<?php include "pagination.php"; ?>
+	</div></div>
 
 	</section><!-- #main -->
 

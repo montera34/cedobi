@@ -34,7 +34,7 @@ foreach ( $rels as $key => $rel ) {
 	$related_posts = get_posts($rel['args']);
 	if ( count($related_posts) != 0 ) {
 		$related_out .= "
-		<section id='related-" .$key. "' class='related'>
+		<section id='related-" .$key. "' class='related col-md-24 col-sm-8'>
 			<h2 class='related-tit'><a href='" .CEDOBI_BLOGURL. "?post_type=" .$key. "' title='Archivo de " .$related_tit. "'>" .$related_tit. "</a></h2>
 		";
 		foreach ( $related_posts as $item ) {
@@ -44,7 +44,7 @@ foreach ( $rels as $key => $rel ) {
 			// if ( has_post_thumbnail($item->ID) ) { $rel_img = get_the_post_thumbnail($item->ID,$rel['img_size'],array('class' => 'img-responsive')); } else { $rel_img = ""; }
 			$related_out .= "
 			<article class='rel-item row'>
-				<div class='rel-tit-text col-md-24'>
+				<div class='rel-tit-text col-md-24 col-sm-23'>
 					<header><h3 class='rel-item-tit'><a href='" .$rel_perma. "' title='" .$rel_tit. "' rel='bookmark'>" .$rel_tit. "</a></h3></header>
 					<div class='rel-item-desc'>" .$rel_desc. "</div>
 				</div>
@@ -63,5 +63,7 @@ foreach ( $rels as $key => $rel ) {
 </div><!-- #margeni -->
 
 <div id="margend" class="col-md-4 col-md-offset-1">
+	<div class="row">
 	<?php echo $related_out ?>
+	</div>
 </div><!-- #margeni -->

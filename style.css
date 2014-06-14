@@ -48,6 +48,7 @@ h1 {
 	box-shadow: none;
 	-webkit-box-shadow: none;
 	text-transform: uppercase;
+	margin-
 }
 #pre-nav .container-fluid {
 	padding: 0;
@@ -65,6 +66,11 @@ h1 {
 #pre-nav .navbar-nav .active {
 	background-color: #fe0000;
 }
+#pre-nav .navbar-toggle {
+	float: left;
+	margin-top: 10px;
+	margin-left: 5px;
+}
 #logo {
 	font-family: 'Junction';
 	font-size: 3em;
@@ -77,10 +83,6 @@ h1 {
 	font-size: 1.1em;
 	line-height: 1em;
 	font-weight: 300;
-}
-
-#pre-margeni {
-	text-align: right;
 }
 
 /* CONTENT */
@@ -311,8 +313,43 @@ h1 {
 	margin-right: 6px;
 }
 
-@media (min-width: 768px) {
-	#cedobi-pre-nav-collapse {
-		padding: 0;
+/* MEDIA QUERIES */
+/* styles just for mobiles */
+@media (max-width: 767px) {
+	.related {
+		margin-top: 3em;
+	}
+	.filters-btn a {
+		margin-bottom: 1em;
 	}
 }
+
+/* styles just for tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* styles for mobiles and tablets */
+@media (min-width: 992px) {
+	#pre-margeni {
+		text-align: right;
+	}
+	#tagline {
+		padding-top: 20px;
+	}
+}
+
+/* styles just for small desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* styles just for tablets and desktops */
+@media (min-width: 768px) {
+}
+
+/* styles just for small desktops */
+@media (min-width: 1200px) {
+
+}
+
