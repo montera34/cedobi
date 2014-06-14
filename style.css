@@ -111,6 +111,9 @@ h1 {
 #margend .filters-btn a {
 	margin: 0 30px 2em 0;
 }
+.filter-single {
+	margin-bottom: 1em;
+}
 
 .vista-btn a {
 	height: 25px;
@@ -256,7 +259,7 @@ h1 {
 	text-decoration: none;
 }
 .rel-item {
-	padding: 0 0 1em 0;
+	padding-bottom: 1em;
 }
 .rel-item-tit {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -322,11 +325,19 @@ h1 {
 	.filters-btn a {
 		margin-bottom: 1em;
 	}
+	.filters-tit {
+		padding-bottom: 0;
+	}
+	#main, #related, #margeni, #margend {
+		margin-bottom: 3em;
+	}
 }
 
 /* styles just for tablets */
 @media (min-width: 768px) and (max-width: 991px) {
-
+	#main, #related, #margeni, #margend {
+		margin-bottom: 3em;
+	}
 }
 
 /* styles for mobiles and tablets */

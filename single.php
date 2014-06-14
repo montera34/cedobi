@@ -65,7 +65,7 @@ if ( $pt_current == 'brigadista' ) {
 $filters_out = "";
 foreach ( $fields as $filter_tit => $field ) {
 	$filters_out .= "
-		<div class='col-md-6'>
+		<div class='filter-single col-md-6 col-sm-6'>
 			<div class='filters-tit'>" .$filter_tit. "</div>
 	";
 	$terms_out = "";
@@ -96,7 +96,7 @@ $views_out = "";
 foreach ( $views as $view ) {
 	if ( $view == $view_current ) { $active_class = " class='active'"; }
 	else { $active_class = ""; }
-	$views_out .= "<div class='col-md-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .$base. "?view=" .$view. "'>" .$view. "</a></div>";
+	$views_out .= "<div class='col-lg-4 col-md-6 col-sm-5 col-xs-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .$base. "?view=" .$view. "'>" .$view. "</a></div>";
 
 }
 
@@ -107,18 +107,18 @@ include "loop.related.php";
 <div id="content" class="container">
 
 <div id="header" class="row">
-	<header class="col-md-16 col-md-offset-3">
+	<header class="col-md-16 col-md-offset-3 col-sm-24">
 	<h1><?php echo $tit ?></h1>
 	</header>
 </div><!-- .row -->
 
 <div id="filters" class="row">
-	<div class="col-md-16 col-md-offset-3">
+	<div class="col-lg-12 col-lg-offset-3 col-md-16 col-md-offset-3 col-sm-19">
 	<div class='row'>
 		<?php echo $filters_out ?>
 	</div>
 	</div><!-- .col-md-16 -->
-	<div class="col-md-4 col-md-offset-1">
+	<div class="col-lg-offset-5 col-md-4 col-md-offset-1 col-sm-5">
 		<div class="filters-tit">Archivo completo</div>
 		<div class="filters-btn vista-btn row">
 			<?php echo $views_out ?>
@@ -140,11 +140,11 @@ include "loop.related.php";
 
 	</section><!-- #main -->
 
-	<section id="related" class="col-md-4 col-md-offset-2 col-md-push-3">
+	<div id="related" class="col-md-4 col-md-offset-2 col-md-push-3">
 
 		<?php echo $related_out ?>
 		
-	</section><!-- .<?php #related ?> -->
+	</div><!-- .<?php #related ?> -->
 
 	<?php include "sidebar-single.php"; ?>
 
