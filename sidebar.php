@@ -1,6 +1,7 @@
 <?php // related loops
 
 global $wp_post_types; // custom post types info
+$current = time();
 $rels = array(
 	'noticia' => array(
 		'args' => array(
@@ -22,7 +23,23 @@ $rels = array(
 	'convocatoria' => array(
 		'args' => array(
 			'post_type' => 'convocatoria',
-			'posts_per_page' => 3
+			'posts_per_page' => -1,
+			'orderby' => 'meta_value_num',
+			'meta_key' => '_cedobi_date_ini',
+			'order' => 'ASC',
+			'meta_query' => array(
+//				'relation' => 'AND',
+//				array(
+//					'key' => '_cedobi_date_ini',
+//					'value' => $current,
+//					'compare' => '<'
+//				),
+				array(
+					'key' => '_cedobi_date_end',
+					'value' => $current,
+					'compare' => '>'
+				)
+			)
 		),
 		'img_size' => 'small',
 		'cols' => 3
@@ -35,17 +52,31 @@ foreach ( $rels as $key => $rel ) {
 	if ( count($related_posts) != 0 ) {
 		$related_out .= "
 		<section id='related-" .$key. "' class='related col-md-24 col-sm-8'>
-			<h2 class='related-tit'><a href='" .CEDOBI_BLOGURL. "?post_type=" .$key. "' title='Archivo de " .$related_tit. "'>" .$related_tit. "</a></h2>
+			<h2 class='related-tit'><a href='" .CEDOBI_BLOGURL. "/" .$key. "' title='Archivo de " .$related_tit. "'>" .$related_tit. "</a></h2>
 		";
 		foreach ( $related_posts as $item ) {
 			$rel_tit = $item->post_title;
 			$rel_perma = get_permalink($item->ID);
 			$rel_desc = $item->post_excerpt;
 			// if ( has_post_thumbnail($item->ID) ) { $rel_img = get_the_post_thumbnail($item->ID,$rel['img_size'],array('class' => 'img-responsive')); } else { $rel_img = ""; }
+			if ( $key == 'convocatoria' ) {
+				$rel_date_ini = get_post_meta( $item->ID, "_cedobi_date_ini", true );
+				$rel_date_end = get_post_meta( $item->ID, "_cedobi_date_end", true );
+				$rel_date_ini_human = date('d \/ m \/ Y',$rel_date_ini);
+				$rel_date_end_human = date('d \/ m \/ Y',$rel_date_end);
+				if ( $rel_date_ini_human == $rel_date_end_human ) {
+					$rel_date_out = $rel_date_ini_human;
+				} else {
+					$rel_date_out = "<div class='rel-item-date'>" .$rel_date_ini_human. " &mdash; " .$rel_date_end_human. "</div>";
+				}
+			} else { $rel_date_out = ""; }
 			$related_out .= "
 			<article class='rel-item row'>
 				<div class='rel-tit-text col-md-24 col-sm-23'>
-					<header><h3 class='rel-item-tit'><a href='" .$rel_perma. "' title='" .$rel_tit. "' rel='bookmark'>" .$rel_tit. "</a></h3></header>
+					<header>
+						<h3 class='rel-item-tit'><a href='" .$rel_perma. "' title='" .$rel_tit. "' rel='bookmark'>" .$rel_tit. "</a></h3>
+						" .$rel_date_out. "
+					</header>
 					<div class='rel-item-desc'>" .$rel_desc. "</div>
 				</div>
 			</article><!-- .rel-item -->
