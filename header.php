@@ -108,13 +108,16 @@ wp_head(); ?>
 							</button>
 						</div>
 						<div class="collapse navbar-collapse" id="cedobi-pre-nav-collapse">
-							<ul id="navbar-main" class="nav navbar-nav">
-								<li><a class="active" href="">Inicio</a></li>
-								<li><a href="">El CEDOBI</a></li>
-								<li><a href="">Archivo</a></li>
-								<li><a href="">Actualidad</a></li>
-								<li><a href="">Publicaciones</a></li>
-							</ul>
+							<?php
+							$menu_args = array(
+								'theme_location'  => 'pre-nav',
+								'container'       => false,
+								'menu_class'      => 'nav navbar-nav',
+								'menu_id'         => 'navbar-main',
+								'walker'          => ''
+							);
+							wp_nav_menu( $menu_args );
+							?>
 						</div>
 					</div>
 				</nav>

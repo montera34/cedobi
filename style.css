@@ -63,8 +63,9 @@ h1 {
 	font-size: 0.85em;
 }
 #pre-nav .navbar-nav>li>a:hover,
-#pre-nav .navbar-nav .active {
-	background-color: #fe0000;
+#pre-nav .navbar-nav .active,
+#pre-nav .navbar-nav .current-menu-item a {
+	background-color: #fe0000 !important;
 }
 #pre-nav .navbar-toggle {
 	float: left;
