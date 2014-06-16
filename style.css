@@ -70,7 +70,17 @@ h1 {
 }
 #pre-nav .navbar-nav>li>a:hover,
 #pre-nav .navbar-nav .active,
-#pre-nav .navbar-nav .current-menu-item a {
+#pre-nav .navbar-nav .current-menu-item a,
+.single-brigadista .menu-item-archivo a,
+.post-type-archive-brigadista .menu-item-archivo a,
+.single-fotografia .menu-item-archivo a,
+.post-type-archive-fotografia .menu-item-archivo a,
+.single-documento .menu-item-archivo a,
+.post-type-archive-documento .menu-item-archivo a,
+.single-noticia .menu-item-noticia a,
+.single-convocatoria .menu-item-convocatoria a,
+.single-publicacion .menu-item-publicacion a {
+
 	background-color: #fe0000 !important;
 }
 #pre-nav .navbar-toggle {
@@ -78,6 +88,7 @@ h1 {
 	margin-top: 10px;
 	margin-left: 5px;
 }
+
 #logo {
 	font-family: 'Junction';
 	font-size: 3em;
