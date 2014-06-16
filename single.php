@@ -159,15 +159,27 @@ foreach ( $fields as $filter_tit => $field ) {
 	";
 }
 // build views buttons
-$views = array("mosaico","lista");
-$views_out = "";
-foreach ( $views as $view ) {
-	if ( $view == $view_current ) { $active_class = " class='active'"; }
-	else { $active_class = ""; }
-	$views_out .= "<div class='col-lg-4 col-md-6 col-sm-5 col-xs-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .$base. "?view=" .$view. "'>" .$view. "</a></div>";
 
-}
+if ( $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current == 'documento' ) {
+// if archivo custom post types
+	$views = array("mosaico","lista");
+	$views_out = "
+	<div class='col-lg-offset-5 col-md-4 col-md-offset-1 col-sm-5'>
+		<div class='filters-tit'>Archivo completo</div>
+		<div class='filters-btn vista-btn row'>
+	";
+	foreach ( $views as $view ) {
+		if ( $view == $view_current ) { $active_class = " class='active'"; }
+		else { $active_class = ""; }
+		$views_out .= "<div class='col-lg-4 col-md-6 col-sm-5 col-xs-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .$base. "?view=" .$view. "'>" .$view. "</a></div>";
 
+	}
+	$views_out .= "
+		</div>
+	</div><!-- .col-md-8 -->
+	";
+
+} else { $views_out = ""; }
 ?>
 
 <div id="content" class="container">
@@ -184,12 +196,8 @@ foreach ( $views as $view ) {
 		<?php echo $filters_out ?>
 	</div>
 	</div><!-- .col-md-16 -->
-	<div class="col-lg-offset-5 col-md-4 col-md-offset-1 col-sm-5">
-		<div class="filters-tit">Archivo completo</div>
-		<div class="filters-btn vista-btn row">
-			<?php echo $views_out ?>
-		</div>
-	</div><!-- .col-md-8 -->
+
+	<?php echo $views_out ?>
 </div><!-- .row -->
 
 <div class="row">
@@ -220,7 +228,10 @@ foreach ( $views as $view ) {
 		
 	</div><!-- .<?php #related ?> -->
 
-	<?php include "sidebar-single.php"; ?>
+	<?php if ( $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current == 'documento' ) {
+		include "sidebar-single.php";
+
+	} else { include "sidebar.php"; } ?>
 
 </div><!-- .row -->
 

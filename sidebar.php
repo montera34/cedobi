@@ -45,6 +45,12 @@ $rels = array(
 		'cols' => 3
 	),
 );
+
+if ( is_single() ) {
+// if single, remove current post type of the related content array
+	unset($rels[$pt_current]);
+}
+
 $related_out = "";
 foreach ( $rels as $key => $rel ) {
 	$related_tit = $wp_post_types[$key]->labels->name;
@@ -69,6 +75,10 @@ foreach ( $rels as $key => $rel ) {
 				} else {
 					$rel_date_out = "<div class='rel-item-date'>" .$rel_date_ini_human. " &mdash; " .$rel_date_end_human. "</div>";
 				}
+			} elseif ($key == 'noticia' ) {
+				$rel_date = get_the_time('Y-m-d',$item->ID);
+				$rel_date_human = get_the_time('d \d\e F \d\e Y',$item->ID);
+				$rel_date_out = "<div class='cfield'><time datetime='" .$rel_date. "'>" .$rel_date_human. "</time></div>";
 			} else { $rel_date_out = ""; }
 			$related_out .= "
 			<article class='rel-item row'>
