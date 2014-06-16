@@ -35,11 +35,9 @@ if ( $related_terms ) {
 				";
 			} else {
 				$related_out .= "
-				<div class='rel-item row'>
-					<div class='rel-item-text col-md-24'>
-						<h3 class='rel-item-tit'><a href='" .$rel_item_perma. "'>" .$rel_item_tit. "</a></h3>
-						<div class='rel-item-desc'>" .$rel_item_desc. "</div>
-					</div>
+				<div class='rel-item col-md-24'>
+					<h3 class='rel-item-tit'><a href='" .$rel_item_perma. "'>" .$rel_item_tit. "</a></h3>
+					<div class='rel-item-desc'>" .$rel_item_desc. "</div>
 				</div>
 				";
 

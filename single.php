@@ -20,6 +20,8 @@ if ( $pt_current == 'brigadista' ) {
 
 	// taxonomies for related content
 	$taxes = array("pais");
+	// build related contents list
+	include "loop.related.php";
 
 } elseif ( $pt_current == 'fotografia' ) {
 	$fields = array(
@@ -40,6 +42,8 @@ if ( $pt_current == 'brigadista' ) {
 	);
 	// taxonomies for related content
 	$taxes = array("fondo","fecha");
+	// build related contents list
+	include "loop.related.php";
 
 } elseif ( $pt_current == 'documento' ) {
 	$fields = array(
@@ -61,7 +65,59 @@ if ( $pt_current == 'brigadista' ) {
 	);
 	// taxonomies for related content
 	$taxes = array("formato","fecha");
-}
+	// build related contents list
+	include "loop.related.php";
+
+} elseif ( $pt_current == 'noticia' ) {
+	$fields = array(
+		'Fecha de publicación' => array(
+			'date' => 'dt',
+		),
+	);
+	// taxonomies for related content
+	// no taxonomies, just latest noticias
+	// build related contents list
+	include "loop.last.php";
+
+} elseif ( $pt_current == 'convocatoria' ) {
+	$fields = array(
+		'Vigencia' => array(
+			'_cedobi_date_ini' => 'cf',
+			'_cedobi_date_end' => 'cf',
+		),
+		'Lugar' => array(
+			'_cedobi_lugar' => 'cf',
+		)
+	);
+	// taxonomies for related content
+	// no taxonomies, just all current convocatorias
+	// build related contents list
+	include "loop.current.php";
+	
+} elseif ( $pt_current == 'publicacion' ) {
+	$fields = array(
+		'Colección' => array(
+			'coleccion' => 'tax',
+		),
+		'Año de publicación' => array(
+			'fecha' => 'tax',
+		),
+		'Autor' => array(
+			'_cedobi_author1_firstname' => 'cf',
+			'_cedobi_author1_lastname' => 'cf',
+			'_cedobi_author2_firstname' => 'cf',
+			'_cedobi_author2_lastname' => 'cf',
+			'_cedobi_author3_firstname' => 'cf',
+			'_cedobi_author3_lastname' => 'cf'
+		)
+	);
+	// taxonomies for related content
+	$taxes = array("coleccion");
+	// build related contents list
+	include "loop.related.php";
+
+} // end post types fields
+
 $filters_out = "";
 foreach ( $fields as $filter_tit => $field ) {
 	$filters_out .= "
@@ -69,16 +125,28 @@ foreach ( $fields as $filter_tit => $field ) {
 			<div class='filters-tit'>" .$filter_tit. "</div>
 	";
 	$terms_out = "";
-	$autor_count = 0;
+	$cf_count = 0;
 	foreach ( $field as $name => $type ) {
-		if ( $filter_tit == 'Autor' ) {
-			$autor_count++;
-			$term[$autor_count] = get_post_meta( $post->ID, $name, true );
-			if ( count($term) == 2 ) {
-				$terms_out .= "<div class='cfield'>" .$term[1]. " " .$term[2]. "</div>";
-				$autor_count = 0;
-				$term = "";
+		if ( $type == 'dt' ) {
+			$date = get_the_time('Y-m-d');
+			$date_human = get_the_time('d \d\e F \d\e Y');
+			$terms_out .= "<div class='cfield'><time datetime='" .$date. "'>" .$date_human. "</time></div>";
+
+		} elseif ( $type == 'cf' ) {
+			if ( $filter_tit == 'Autor' ) {
+				$cf_count++;
+				$term[$cf_count] = get_post_meta( $post->ID, $name, true );
+				if ( count($term) == 2 ) {
+					$terms_out .= "<div class='cfield'>" .$term[1]. " " .$term[2]. "</div>";
+					$cf_count = 0;
+					$term = "";
+				}
+			} elseif ( $filter_tit == 'Vigencia' ) {
+				$term = date('d \/ m \/ Y',get_post_meta( $post->ID, $name, true ) );
+				$terms_out .= "<div class='cfield'>" .$term. "</div>";
+
 			}
+
 		} else {
 			$terms_out .= get_the_term_list( $post->ID, $name, '<div class="' .$name. '-terms">', '', '</div>' );
 		}
@@ -100,8 +168,6 @@ foreach ( $views as $view ) {
 
 }
 
-// build related contents list
-include "loop.related.php";
 ?>
 
 <div id="content" class="container">
@@ -132,6 +198,14 @@ include "loop.related.php";
 	<?php if ( have_posts() ) {
 		while ( have_posts() ) : the_post();
 
+			if ( has_post_thumbnail() && $pt_current != 'documento' ) { // image
+				$single_img_size = "large";
+				echo "
+				<figure class='single-img'>
+				" .get_the_post_thumbnail( $post->ID, $single_img_size, array('class' => 'img-responsive') ). "
+				</figure>	
+				";
+			}
 			the_content();
 
 		endwhile;
