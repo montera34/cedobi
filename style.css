@@ -26,6 +26,12 @@ Tags: HTML5, CSS3
 	margin: 0;
 	padding: 0;
 }
+.bair {
+	padding-bottom: 56px;
+}
+.tair {
+	padding-top: 56px;
+}
 
 /* typo headers */
 h1, h2, h3 {
@@ -86,11 +92,32 @@ h1 {
 	font-weight: 300;
 }
 
-/* CONTENT */
-.bair {
-	padding-bottom: 56px;
+/* FOOTER */
+#epi {
+	padding-bottom: 1em;
+}
+#epi-main {
+	border-top: 1px solid #000;
+	font-size: 0.85em;
+}
+#navbar-epi {
+	padding: 5px 0;
+}
+#epi-main a {
+	font-weight: bold;
+}
+#epi-main a:hover {
+	text-decoration: none;
+}
+#epi-credit,
+#epi-credit a {
+	color: #aaa;
+}
+#epi-credit a:hover {
+	color: #fe0000;
 }
 
+/* CONTENT */
 
 /* FILTERS FORM */
 .filters-tit {
