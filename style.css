@@ -87,11 +87,12 @@ h1 {
 }
 
 /* CONTENT */
-
-/* FILTERS FORM */
-#filters {
+.bair {
 	padding-bottom: 56px;
 }
+
+
+/* FILTERS FORM */
 .filters-tit {
 	text-transform: uppercase;
 	font-size: 0.85em;
