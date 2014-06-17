@@ -90,6 +90,11 @@ if ( $pt_current == 'archivo' && !array_key_exists('s', $_GET)
 	$controls_out = "";
 	$header_class = " bair";
 } // end if archivo
+
+// if tax archive, to complet page title
+if ( is_tax() ) {
+	$tit .= ": " .single_term_title( '',false );
+}
 ?>
 
 <div id="content" class="container">
