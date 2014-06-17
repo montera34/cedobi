@@ -15,10 +15,10 @@ if ( $pt_current == 'archivo' || $pt_current == 'brigadista' || $pt_current == '
 	// get view
 	if ( array_key_exists('view', $_GET) ) {
 		$view_current = sanitize_text_field( $_GET['view'] );
-	} elseif ( !array_key_exists('view', $_GET) && array_key_exists('s', $_GET) ) {
-		$view_current = "lista";
-	} else {
+	} elseif ( !array_key_exists('view', $_GET) && is_home() ) {
 		$view_current = "mosaico";
+	} else {
+		$view_current = "lista";
 	}
 
 	// build filters buttons
@@ -101,10 +101,13 @@ if ( $pt_current == 'archivo' || $pt_current == 'brigadista' || $pt_current == '
 			echo "<table id='" .$view_current. "' class='table table-hover table-responsive'>
 				<thead>
 				<tr>
-					<th>Imagen</th>
-					<th>Nombre</th>
-					<th>Tipo</th>
-					<th>Descripción</th>
+			";
+			if ( $pt_current == 'archivo' || $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current == 'documento' || is_search() ) {
+				echo "<th>Imagen</th><th>Nombre</th><th>Tipo</th><th>Descripción</th>";
+			} else {
+				echo "<th>Imagen</th><th>Nombre</th><th>Descripción</th>";
+			}
+			echo "
 				</tr>
 				</thead>
 				<tbody>

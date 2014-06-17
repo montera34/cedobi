@@ -89,6 +89,7 @@ function cedobi_register_menus() {
 		register_nav_menus(
 		array(
 			'pre-nav' => 'Menú de cabecera',
+			'epi-nav' => 'Menú de pie de página',
 		)
 		);
 	}
@@ -99,8 +100,10 @@ function cedobi_load_scripts() {
 	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css' );
 	wp_enqueue_style( 'bootstrap-theme-css', get_template_directory_uri() . '/bootstrap/css/bootstrap-theme.min.css' );
 	wp_enqueue_style( 'fontsquirrel-css', get_template_directory_uri() . '/fonts/junction.css' );
-	if ( !is_singular() && !is_404() && !array_key_exists('view', $_GET)
-		|| !is_singular() && !is_404() && array_key_exists('view', $_GET) && sanitize_text_field( $_GET['view'] ) == 'mosaico'
+//	if ( !is_singular() && !is_404() && !array_key_exists('view', $_GET)
+//		|| !is_singular() && !is_404() && array_key_exists('view', $_GET) && sanitize_text_field( $_GET['view'] ) == 'mosaico'
+	if ( array_key_exists('view', $_GET) && sanitize_text_field( $_GET['view'] ) == 'mosaico'
+		|| !array_key_exists('view', $_GET) && is_home()
 	) {
 	wp_enqueue_script(
 		'imagesloaded-js',
