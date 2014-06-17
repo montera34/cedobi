@@ -201,7 +201,7 @@ if ( $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current =
 </div><!-- .row -->
 
 <div class="row">
-	<section id="main" class="col-md-10 col-md-push-3">
+	<section id="main" class="col-md-10 col-md-offset-3">
 
 	<?php if ( have_posts() ) {
 		while ( have_posts() ) : the_post();
@@ -222,7 +222,7 @@ if ( $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current =
 
 	</section><!-- #main -->
 
-	<div id="related" class="col-md-4 col-md-offset-2 col-md-push-3">
+	<div id="related" class="col-md-4 col-md-offset-2">
 
 		<?php echo $related_out ?>
 		

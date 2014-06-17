@@ -98,10 +98,11 @@ foreach ( $rels as $key => $rel ) {
 }
 ?>
 
-
+<?php if ( !is_single() ) { ?>
 <div id="margeni" class="col-md-3 col-md-pull-16">
 	<?php get_search_form(); ?>
 </div><!-- #margeni -->
+<?php } ?>
 
 <div id="margend" class="col-md-4 col-md-offset-1">
 	<div class="row">
