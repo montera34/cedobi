@@ -21,6 +21,7 @@ if ( $s_query != '' ) { $search_active = " active"; }
 			<option value="fotografia">Fondos fotográficos</option>
 			<option value="documento">Recursos digitales</option>
 			<option value="noticia">Noticias</option>
+			<option value="convocatoria">Convocatorias</option>
 			<option value="publicacion">Publicaciones</option>
 		</select>
 	</div>

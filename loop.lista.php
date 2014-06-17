@@ -17,7 +17,7 @@ if ( has_post_thumbnail() ) { // image
 	$item_img_out = "<div class='hideout'>Sin imagen</div>";
 } // end image
 
-if ( $pt_current == 'archivo' || $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current == 'documento' || is_search() ) {
+if ( $pt_current == 'archivo' || $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current == 'documento' || array_key_exists('s', $_GET) ) {
 	$item_type_out = "<td class='list-item-type list-item-type-" .$item_type_class. "'><div>" .$wp_post_types[$item_pt]->labels->name. "</div></td>";
 } else { $item_type_out = ""; }
 

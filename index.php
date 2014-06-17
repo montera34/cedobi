@@ -9,7 +9,10 @@ else { $pt_current = get_post_type(); }
 // build filters buttons and page main title
 $base = CEDOBI_BLOGURL;
 
-if ( $pt_current == 'archivo' || $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current == 'documento' || is_search() ) {
+if ( $pt_current == 'archivo' && !array_key_exists('s', $_GET)
+	|| $pt_current == 'brigadista' && !array_key_exists('s', $_GET)
+	|| $pt_current == 'fotografia' && !array_key_exists('s', $_GET)
+	|| $pt_current == 'documento' && !array_key_exists('s', $_GET) ) {
 // if archivo
 
 	// get view
@@ -72,6 +75,14 @@ if ( $pt_current == 'archivo' || $pt_current == 'brigadista' || $pt_current == '
 	";
 	$header_class = "";
 
+} elseif ( array_key_exists('s', $_GET) )  {
+// if search, also if empty search
+	$s_query = get_search_query();
+	if ( $s_query == '' ) { $tit = "Resultados de la búsqueda"; }
+	else { $tit = "Resultados de la búsqueda '" .$s_query. "'";}
+	$view_current = "lista";
+
+
 } else {
 // if convoca, noticias, publica
 	$tit = $wp_post_types[$pt_current]->labels->name;
@@ -102,7 +113,7 @@ if ( $pt_current == 'archivo' || $pt_current == 'brigadista' || $pt_current == '
 				<thead>
 				<tr>
 			";
-			if ( $pt_current == 'archivo' || $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current == 'documento' || is_search() ) {
+			if ( $pt_current == 'archivo' || $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current == 'documento' || array_key_exists('s', $_GET) ) {
 				echo "<th>Imagen</th><th>Nombre</th><th>Tipo</th><th>Descripción</th>";
 			} else {
 				echo "<th>Imagen</th><th>Nombre</th><th>Descripción</th>";
@@ -126,6 +137,8 @@ if ( $pt_current == 'archivo' || $pt_current == 'brigadista' || $pt_current == '
 		if ( $view_current == 'mosaico' ) { echo "</div><!-- #" .$view_current. " -->"; }
 		if ( $view_current == 'lista' ) { echo "</tbody></table><!-- #" .$view_current. " -->"; }
 
+	} else {
+		echo "<div class='alert alert-danger'><p>No hemos encontrado ningún contenido que responda a tus criterios de búsqueda.</p><p>Inténtalo otra vez.</p></div>";
 	} // end if posts
 	?>
 

@@ -32,6 +32,17 @@ Tags: HTML5, CSS3
 .tair {
 	padding-top: 56px;
 }
+.alert {
+	text-shadow: none;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+.alert-danger {
+	background-image: none;
+	border: none;
+	background-color: #fff;
+	color: #000;
+}
 
 /* typo headers */
 h1, h2, h3 {
@@ -269,6 +280,15 @@ h1 {
 }
 .list-item-type-documento div {
 	background-position: 0 -125px;
+}
+.list-item-type-convocatoria div {
+	background-position: 0 -325px;
+}
+.list-item-type-noticia div {
+	background-position: 0 -375px;
+}
+.list-item-type-publicacion div {
+	background-position: 0 -425px;
 }
 
 /* RELATED SIDEBAR */
