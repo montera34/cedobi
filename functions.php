@@ -66,9 +66,9 @@ function cedobi_media_options() {
 	update_option('thumbnail_size_w', 96);
 	update_option('thumbnail_size_h', 96);
 	update_option('thumbnail_crop', 1);
-	update_option('medium_size_w', 288);
+	update_option('medium_size_w', 478);
 	update_option('medium_size_h', 0);
-	update_option('large_size_w', 576);
+	update_option('large_size_w', 800);
 	update_option('large_size_h', 0);
 
 } // end set up media options
@@ -100,8 +100,6 @@ function cedobi_load_scripts() {
 	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css' );
 	wp_enqueue_style( 'bootstrap-theme-css', get_template_directory_uri() . '/bootstrap/css/bootstrap-theme.min.css' );
 	wp_enqueue_style( 'fontsquirrel-css', get_template_directory_uri() . '/fonts/junction.css' );
-//	if ( !is_singular() && !is_404() && !array_key_exists('view', $_GET)
-//		|| !is_singular() && !is_404() && array_key_exists('view', $_GET) && sanitize_text_field( $_GET['view'] ) == 'mosaico'
 	if ( array_key_exists('view', $_GET) && sanitize_text_field( $_GET['view'] ) == 'mosaico'
 		|| !array_key_exists('view', $_GET) && is_home()
 	) {
@@ -354,15 +352,6 @@ function cedobi_build_taxonomies() {
 		'rewrite' => array( 'slug' => 'fecha', 'with_front' => false ),
 		'show_admin_column' => true
 	) );
-	// Fecha taxonomy
-	register_taxonomy( 'autor', array('fotografia','documento','publicacion'), array(
-		'hierarchical' => false,
-		'label' => __( 'Autor' ),
-		'name' => __( 'Autores' ),
-		'query_var' => 'autor',
-		'rewrite' => array( 'slug' => 'autor', 'with_front' => false ),
-		'show_admin_column' => true
-	) );
 	// Origen taxonomies
 	register_taxonomy( 'ciudad', array('brigadista'), array(
 		'hierarchical' => true,
@@ -431,60 +420,6 @@ function cedobi_build_taxonomies() {
 function cedobi_metaboxes( $meta_boxes ) {
 	$prefix = '_cedobi_'; // Prefix for all fields
 
-//	// CUSTOM FIELDS FOR BRIGADISTAS
-//	$meta_boxes[] = array(
-//		'id' => 'cedobi_dates',
-//		'title' => 'Fechas',
-//		'pages' => array('brigadista'), // post type
-//		'context' => 'side', //  'normal', 'advanced', or 'side'
-//		'priority' => 'default',  //  'high', 'core', 'default' or 'low'
-//		'show_names' => true, // Show field names on the left
-//		'fields' => array(
-//			array(
-//				'name' => 'Fecha de nacimiento',
-//				'desc' => 'Formato: dd/mm/aa',
-//				'id'   => $prefix . 'date_birth',
-//				'type' => 'text_date',
-//				'repeatable' => false,
-//			),
-//			array(
-//				'name' => 'Fecha de defunción',
-//				'desc' => 'Formato: dd/mm/aa',
-//				'id'   => $prefix . 'date_dead',
-//				'type' => 'text_date',
-//				'repeatable' => false,
-//			),
-//		),
-//	);
-//	// CUSTOM FIELDS FOR BRIGADISTAS
-//	$meta_boxes[] = array(
-//		'id' => 'cedobi_origen',
-//		'title' => 'Origen',
-//		'pages' => array('brigadista'), // post type
-//		'context' => 'side', //  'normal', 'advanced', or 'side'
-//		'priority' => 'default',  //  'high', 'core', 'default' or 'low'
-//		'show_names' => true, // Show field names on the left
-//		'fields' => array(
-//			array(
-//				'name' => 'Ciudad',
-//				'desc' => '',
-//				'id'   => $prefix . 'city',
-//				'type' => 'text',
-//			),
-//			array(
-//				'name' => 'Estado o región',
-//				'desc' => '',
-//				'id'   => $prefix . 'state',
-//				'type' => 'text',
-//			),
-//			array(
-//				'name' => 'País',
-//				'desc' => '',
-//				'id'   => $prefix . 'country',
-//				'type' => 'text',
-//			),
-//		),
-//	);
 	// CUSTOM FIELDS FOR FOTOGRAFÍAS, PUBLICACIONES, MATERIAL
 	$meta_boxes[] = array(
 		'id' => 'cedobi_authors',
@@ -569,10 +504,7 @@ function cedobi_init_metaboxes() {
 add_filter( 'pre_get_posts', 'cedobi_filter_loop' );
 function cedobi_filter_loop( $query ) {
 	if ( is_home() && $query->is_main_query() ) {
-		//if ( array_key_exists('pt', $_POST) ) {
-		//} else {
 		$pts = array('brigadista','fotografia','documento');
-		//}
 		$query->set( 'post_type', $pts );
 	}
 	return $query;
