@@ -52,9 +52,19 @@ h1 {
 	font-weight: 300;
 	margin-bottom: 10px;
 }
-.single h1 {
+.single h1,
+.page h1,
+.error404 h1 {
 	font-weight: 700;
 }
+.error404 h1 {
+	color: #fe0000;
+}
+.single #main h2,
+.page #main h2 {
+	font-weight: 300;
+}
+
 
 /* HEADER */
 #pre {
@@ -82,6 +92,7 @@ h1 {
 #pre-nav .navbar-nav>li>a:hover,
 #pre-nav .navbar-nav .active,
 #pre-nav .navbar-nav .current-menu-item a,
+.home .menu-item-archivo a,
 .single-brigadista .menu-item-archivo a,
 .post-type-archive-brigadista .menu-item-archivo a,
 .single-fotografia .menu-item-archivo a,
@@ -91,7 +102,6 @@ h1 {
 .single-noticia .menu-item-noticia a,
 .single-convocatoria .menu-item-convocatoria a,
 .single-publicacion .menu-item-publicacion a {
-
 	background-color: #fe0000 !important;
 }
 #pre-nav .navbar-toggle {
@@ -140,6 +150,12 @@ h1 {
 }
 
 /* CONTENT */
+.single #main a,
+.page #main a,
+.error404 #main a {
+	text-decoration: underline;
+}
+
 
 /* FILTERS FORM */
 .filters-tit {
@@ -227,6 +243,9 @@ h1 {
 	background-position: 0 0;
 }
 
+.page #filters .list-inline a {
+	font-weight: bold;
+}
 
 /* MOSAC */
 .mosac-item {

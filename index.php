@@ -148,7 +148,10 @@ if ( is_tax() ) {
 	?>
 
 	<div class="row"><div class="col-sm-24">
-	<?php include "pagination.php"; ?>
+	<?php if ( $pt_current == 'fotografia' ) {
+		echo "<div class='foto-mas'><a href='http://www.flickr.com/photos/iea__cedobi/'>Fondos fotográficos en flickr</a>.</div>";
+	}
+	include "pagination.php"; ?>
 	</div></div>
 
 	</section><!-- #main -->
