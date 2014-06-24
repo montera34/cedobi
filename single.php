@@ -96,9 +96,13 @@ if ( $pt_current == 'brigadista' ) {
 	
 } elseif ( $pt_current == 'publicacion' ) {
 	$fields = array(
-		'Colección' => array(
+		'Editorial y colección' => array(
+			'editorial' => 'tax',
 			'coleccion' => 'tax',
 		),
+//		'Colección' => array(
+//			'coleccion' => 'tax',
+//		),
 		'Año de publicación' => array(
 			'fecha' => 'tax',
 		),
@@ -109,6 +113,10 @@ if ( $pt_current == 'brigadista' ) {
 			'_cedobi_author2_lastname' => 'cf',
 			'_cedobi_author3_firstname' => 'cf',
 			'_cedobi_author3_lastname' => 'cf'
+		),
+		'ISBN / núm. pág.' => array(
+			'_cedobi_publica_ISBN' => 'cf',
+			'_cedobi_publica_pags' => 'cf',
 		)
 	);
 	// taxonomies for related content
@@ -126,13 +134,16 @@ foreach ( $fields as $filter_tit => $field ) {
 	";
 	$terms_out = "";
 	$cf_count = 0;
+	$term_count = 0;
 	foreach ( $field as $name => $type ) {
 		if ( $type == 'dt' ) {
+		// date
 			$date = get_the_time('Y-m-d');
 			$date_human = get_the_time('d \d\e F \d\e Y');
 			$terms_out .= "<div class='cfield'><time datetime='" .$date. "'>" .$date_human. "</time></div>";
 
 		} elseif ( $type == 'cf' ) {
+		// custom field
 			if ( $filter_tit == 'Autor' ) {
 				$cf_count++;
 				$term[$cf_count] = get_post_meta( $post->ID, $name, true );
@@ -145,9 +156,18 @@ foreach ( $fields as $filter_tit => $field ) {
 				$term = date('d \/ m \/ Y',get_post_meta( $post->ID, $name, true ) );
 				$terms_out .= "<div class='cfield'>" .$term. "</div>";
 
+			} elseif ( $name == '_cedobi_publica_pags' ) {
+				$term = get_post_meta( $post->ID, $name, true );
+				$terms_out .= "<div class='cfield'>" .$term. " páginas</div>";
+
+			} else {
+				$term = get_post_meta( $post->ID, $name, true );
+				$terms_out .= "<div class='cfield'>" .$term. "</div>";
+
 			}
 
 		} else {
+		// term
 			$terms_out .= get_the_term_list( $post->ID, $name, '<div class="' .$name. '-terms">', '', '</div>' );
 		}
 	}
@@ -190,8 +210,8 @@ if ( $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current =
 	</header>
 </div><!-- .row -->
 
-<div id="filters" class="row">
-	<div class="col-lg-12 col-lg-offset-3 col-md-16 col-md-offset-3 col-sm-19">
+<div id="filters" class="row bair">
+	<div class="col-lg-16 col-lg-offset-3 col-md-16 col-md-offset-3 col-sm-19">
 	<div class='row'>
 		<?php echo $filters_out ?>
 	</div>

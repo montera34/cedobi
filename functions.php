@@ -377,13 +377,21 @@ function cedobi_build_taxonomies() {
 		'rewrite' => array( 'slug' => 'pais', 'with_front' => false ),
 		'show_admin_column' => true
 	) );
-	// Colección taxonomy
+	// Editorial and Colección taxonomies
 	register_taxonomy( 'coleccion', array('publicacion'), array(
 		'hierarchical' => false,
 		'label' => __( 'Colección' ),
 		'name' => __( 'Colecciones' ),
 		'query_var' => 'coleccion',
 		'rewrite' => array( 'slug' => 'coleccion', 'with_front' => false ),
+		'show_admin_column' => true
+	) );
+	register_taxonomy( 'editorial', array('publicacion'), array(
+		'hierarchical' => false,
+		'label' => __( 'Editorial' ),
+		'name' => __( 'Editoriales' ),
+		'query_var' => 'editorial',
+		'rewrite' => array( 'slug' => 'editorial', 'with_front' => false ),
 		'show_admin_column' => true
 	) );
 	// Fondo taxonomy
@@ -487,6 +495,27 @@ function cedobi_metaboxes( $meta_boxes ) {
 				'id'   => $prefix . 'date_end',
 				'type' => 'text_date_timestamp',
 				'repeatable' => false,
+			),
+		),
+	);
+	// CUSTOM FIELDS FOR PUBLICACIONES
+	$meta_boxes[] = array(
+		'id' => 'cedobi_libro',
+		'title' => 'Datos del libro',
+		'pages' => array('publicacion'), // post type
+		'context' => 'side', //  'normal', 'advanced', or 'side'
+		'priority' => 'default',  //  'high', 'core', 'default' or 'low'
+		'show_names' => true, // Show field names on the left
+		'fields' => array(
+			array(
+				'name' => 'Número de páginas',
+				'id'   => $prefix . 'publica_pags',
+				'type' => 'text',
+			),
+			array(
+				'name' => 'ISBN',
+				'id'   => $prefix . 'publica_ISBN',
+				'type' => 'text',
 			),
 		),
 	);
