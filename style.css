@@ -251,26 +251,48 @@ h1 {
 .mosac-item {
 	padding-bottom: 10px;
 }
-.mosac-item .inside {
-	background-color: #fe0000;
-}
-.inside a {
-	position: relative;
-	display: block;
-}
-.mosac-item-text {
-	position: absolute;
-	bottom: 5px;
-	left: 5px;
-	margin-right: 30px;
+.mosac-item .inside a {
 	line-height: 1.1em;
+}
+.mosac-item .mosac-item-text {
+	font-size: 0.85em;
 	color: #fff;
+}
+.mosac-item-tit {
+	text-transform: uppercase;
 }
 .mosac-item-type {
 	position: absolute;
 	bottom: 5px;
 	right: 5px;
 }
+.mosac-hover .inside {
+	background-color: #fe0000;
+}
+.mosac-hover .inside a {
+	position: relative;
+	display: block;
+}
+.mosac-hover .mosac-item-text {
+	margin-right: 30px;
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+}
+.mosac-simple .inside {
+	position: relative;
+	background-color: #ccc;
+}
+.mosac-simple .inside a {
+	display: block;
+	padding: 5px 25px 5px 5px;
+}
+.mosac-simple .inside a:hover {
+	background-color: #fe0000;
+	opacity: 0.8;
+}
+
+
 
 /* LIST*/
 .list-item-tit {

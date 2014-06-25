@@ -12,7 +12,7 @@ function projectThumbInit() {
 	
 	if(!isMobile()) {		
 	
-		jQuery(".mosac-item .inside a").hover(
+		jQuery(".mosac-hover .inside a").hover(
 			function() {
 				jQuery(this).find('img:last').stop().fadeTo("fast", .2);
 				jQuery(this).find('img:last').attr('title','');	
@@ -21,7 +21,7 @@ function projectThumbInit() {
 				jQuery(this).find('img:last').stop().fadeTo("fast", 1);	
 		});
 			
-		jQuery(".mosac-item .inside").hover(	
+		jQuery(".mosac-hover .inside").hover(	
 			function() {				
 				jQuery(this).find('.mosac-item-text').stop().fadeTo("fast", 1);
 				jQuery(this).find('.mosac-item-type').stop().fadeTo("fast", 1);
@@ -35,8 +35,8 @@ function projectThumbInit() {
 	}
 	
 //	jQuery(".mosac-item").css("opacity", "1");
-	jQuery(".mosac-item-text").css("opacity", "0");
-	jQuery(".mosac-item-type").css("opacity", "0");
+	jQuery(".mosac-hover .mosac-item-text").css("opacity", "0");
+	jQuery(".mosac-hover .mosac-item-type").css("opacity", "0");
 }
 
 jQuery(document).ready(function(){
