@@ -43,6 +43,9 @@ function cedobi_theme_setup() {
 	// remove unused items from dashboard
 	add_action( 'admin_menu', 'cedobi_remove_dashboard_item' );
 
+	// create year custom field based in tax to sort post
+	add_action('wp_insert_post', 'cedobi_write_cf_year');
+
 } // end montera34 theme setup function
 
 // remove item from wordpress dashboard
@@ -529,7 +532,32 @@ function cedobi_init_metaboxes() {
 	}
 } // end Init metaboxes
 
+// create year custom field based in tax to sort post
+function cedobi_write_cf_year() {
 
+	global $post;
+	if ( $post ) {
+
+	// If this is just a revision, don't continue
+	if ( wp_is_post_revision( $post->ID ) )
+		return;
+
+	if ( $post->post_type == 'fotografia' && $post->post_status == 'publish' ||
+	 $post->post_type == 'documento' && $post->post_status == 'publish' ||
+	 $post->post_type == 'publicacion' && $post->post_status == 'publish' ) {
+
+		$post_terms = get_the_terms($post->ID,'fecha');
+		foreach ( $post_terms as $term ) {
+			update_post_meta($post->ID, '_cedobi_tax_fecha', $term->slug);
+		
+		}
+	}
+
+	} // end if $post
+
+} // create year custom field based in tax to sort post
+
+// set up wp_query args
 add_filter( 'pre_get_posts', 'cedobi_filter_loop' );
 function cedobi_filter_loop( $query ) {
 	if ( is_home() && $query->is_main_query() ) {
@@ -539,7 +567,13 @@ function cedobi_filter_loop( $query ) {
 			$query->set( 'orderby', 'rand' );
 		}
 	}
+	if ( is_post_type_archive('publicacion') && !is_admin() && $query->is_main_query() ) {
+		$query->set( 'orderby', 'meta_value_num' );
+		$query->set( 'meta_key', '_cedobi_tax_fecha' );
+		$query->set( 'order', 'DESC' );
+
+	}
 	return $query;
-}
+} // end set up wp_query args
 
 ?>
