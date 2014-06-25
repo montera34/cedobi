@@ -63,7 +63,7 @@ if ( is_single() || is_page() ) {
 <!-- generic meta -->
 <meta content="Centro de Estudios de las Brigadas Internacionales" name="author" />
 <meta content="<?php echo CEDOBI_BLOGDESC ?>" name="description" />
-<meta content="" />
+<meta content="brigadas internacionales, guerra civil española" name="keywords" />
 <!-- facebook meta -->
 <meta property="og:title" content="<?php echo $metatit ?>" />
 <meta property="og:type" content="<?php echo $metatype ?>" />
