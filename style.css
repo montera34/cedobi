@@ -155,7 +155,12 @@ h1 {
 .error404 #main a {
 	text-decoration: underline;
 }
-
+.single-img {
+	margin-bottom: 1em;
+}
+figcaption {
+	color: #aaa;
+}
 
 /* FILTERS FORM */
 .filters-tit {

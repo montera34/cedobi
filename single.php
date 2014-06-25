@@ -184,7 +184,7 @@ if ( $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current =
 // if archivo custom post types
 	$views = array("mosaico","lista");
 	$views_out = "
-	<div class='col-lg-offset-5 col-md-4 col-md-offset-1 col-sm-5'>
+	<div class='col-md-4 col-md-offset-1 col-sm-5'>
 		<div class='filters-tit'>Archivo completo</div>
 		<div class='filters-btn vista-btn row'>
 	";
@@ -228,9 +228,15 @@ if ( $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current =
 
 			if ( has_post_thumbnail() && $pt_current != 'documento' ) { // image
 				$single_img_size = "large";
+				$single_img_id = get_post_thumbnail_id( $post->ID );
+				//$single_img_data = wp_get_attachment_metadata( $single_img_id ); print_r($single_img_data);
+				//$single_img_caption = $single_img_data['image_meta']['caption'];
+				$single_img_caption = get_post($single_img_id)->post_content;
+				if ( $single_img_caption != '' ) { $single_img_caption_out = "<figcaption>" .$single_img_caption. "</figcaption>"; }
+				else { $single_img_caption_out = ""; }
 				echo "
 				<figure class='single-img'>
-				" .get_the_post_thumbnail( $post->ID, $single_img_size, array('class' => 'img-responsive') ). "
+				" .get_the_post_thumbnail( $post->ID, $single_img_size, array('class' => 'img-responsive') ) . $single_img_caption_out."
 				</figure>	
 				";
 			}
