@@ -1,6 +1,7 @@
 <?php // related loops
 
 global $wp_post_types; // custom post types info
+global $pt_current;
 $current = time();
 $rels = array(
 	'noticia' => array(
@@ -46,7 +47,7 @@ $rels = array(
 	),
 );
 
-if ( is_single() ) {
+if ( is_single() || is_post_type_archive($pt_current) ) {
 // if single, remove current post type of the related content array
 	unset($rels[$pt_current]);
 }
