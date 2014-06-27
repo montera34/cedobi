@@ -11,7 +11,7 @@ $pt_current = get_post_type();
 // build related lists
 if ( $pt_current == 'brigadista' ) {
 	$fields = array(
-		'Origen' => array(
+		__('Origin','cedobi') => array(
 			'ciudad' => 'tax',
 			'region' => 'tax',
 			'pais' => 'tax'
@@ -25,13 +25,13 @@ if ( $pt_current == 'brigadista' ) {
 
 } elseif ( $pt_current == 'fotografia' ) {
 	$fields = array(
-		'Fondo' => array(
+		__('Photo archive','cedobi') => array(
 			'fondo' => 'tax'
 		),
-		'Fecha' => array(
+		__('Year','cedobi') => array(
 			'fecha' => 'tax',
 		),
-		'Autor' => array(
+		__('Authors','cedobi') => array(
 			'_cedobi_author1_firstname' => 'cf',
 			'_cedobi_author1_lastname' => 'cf',
 			'_cedobi_author2_firstname' => 'cf',
@@ -47,14 +47,14 @@ if ( $pt_current == 'brigadista' ) {
 
 } elseif ( $pt_current == 'documento' ) {
 	$fields = array(
-		'Formato/Género' => array(
+		__('Format/Type','cedobi') => array(
 			'formato' => 'tax',
 			'genero' => 'tax'
 		),
-		'Fecha' => array(
+		__('Year','cedobi') => array(
 			'fecha' => 'tax',
 		),
-		'Autor' => array(
+		__('Authors','cedobi') => array(
 			'_cedobi_author1_firstname' => 'cf',
 			'_cedobi_author1_lastname' => 'cf',
 			'_cedobi_author2_firstname' => 'cf',
@@ -70,7 +70,7 @@ if ( $pt_current == 'brigadista' ) {
 
 } elseif ( $pt_current == 'noticia' ) {
 	$fields = array(
-		'Fecha de publicación' => array(
+		__('Date','cedobi') => array(
 			'date' => 'dt',
 		),
 	);
@@ -81,11 +81,11 @@ if ( $pt_current == 'brigadista' ) {
 
 } elseif ( $pt_current == 'convocatoria' ) {
 	$fields = array(
-		'Vigencia' => array(
+		__('Validity','cedobi') => array(
 			'_cedobi_date_ini' => 'cf',
 			'_cedobi_date_end' => 'cf',
 		),
-		'Lugar' => array(
+		__('Place','cedobi') => array(
 			'_cedobi_lugar' => 'cf',
 		)
 	);
@@ -96,17 +96,14 @@ if ( $pt_current == 'brigadista' ) {
 	
 } elseif ( $pt_current == 'publicacion' ) {
 	$fields = array(
-		'Editorial y colección' => array(
+		__('Editorial and collection','cedobi') => array(
 			'editorial' => 'tax',
 			'coleccion' => 'tax',
 		),
-//		'Colección' => array(
-//			'coleccion' => 'tax',
-//		),
-		'Año de publicación' => array(
+		__('Year of publication','cedobi') => array(
 			'fecha' => 'tax',
 		),
-		'Autor' => array(
+		__('Authors','cedobi') => array(
 			'_cedobi_author1_firstname' => 'cf',
 			'_cedobi_author1_lastname' => 'cf',
 			'_cedobi_author2_firstname' => 'cf',
@@ -114,7 +111,7 @@ if ( $pt_current == 'brigadista' ) {
 			'_cedobi_author3_firstname' => 'cf',
 			'_cedobi_author3_lastname' => 'cf'
 		),
-		'ISBN / núm. pág.' => array(
+		__('ISBN / pag. num.','cedobi') => array(
 			'_cedobi_publica_ISBN' => 'cf',
 			'_cedobi_publica_pags' => 'cf',
 		)
@@ -144,7 +141,7 @@ foreach ( $fields as $filter_tit => $field ) {
 
 		} elseif ( $type == 'cf' ) {
 		// custom field
-			if ( $filter_tit == 'Autor' ) {
+			if ( $filter_tit == __('Authors','cedobi') ) {
 				$cf_count++;
 				$term[$cf_count] = get_post_meta( $post->ID, $name, true );
 				if ( count($term) == 2 ) {
@@ -152,13 +149,13 @@ foreach ( $fields as $filter_tit => $field ) {
 					$cf_count = 0;
 					$term = "";
 				}
-			} elseif ( $filter_tit == 'Vigencia' ) {
+			} elseif ( $filter_tit == __('Validity','cedobi') ) {
 				$term = date('d \/ m \/ Y',get_post_meta( $post->ID, $name, true ) );
 				$terms_out .= "<div class='cfield'>" .$term. "</div>";
 
 			} elseif ( $name == '_cedobi_publica_pags' ) {
 				$term = get_post_meta( $post->ID, $name, true );
-				$terms_out .= "<div class='cfield'>" .$term. " páginas</div>";
+				$terms_out .= "<div class='cfield'>" .$term . __('pages','cedobi'). "</div>";
 
 			} else {
 				$term = get_post_meta( $post->ID, $name, true );
@@ -185,7 +182,7 @@ if ( $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current =
 	$views = array("mosaico","lista");
 	$views_out = "
 	<div class='col-md-4 col-md-offset-1 col-sm-5'>
-		<div class='filters-tit'>Archivo completo</div>
+		<div class='filters-tit'>" .__('Complete archive','cedobi'). "</div>
 		<div class='filters-btn vista-btn row'>
 	";
 	foreach ( $views as $view ) {

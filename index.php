@@ -30,12 +30,12 @@ if ( $pt_current == 'archivo' && !array_key_exists('s', $_GET)
 	foreach ( $pts as $pt ) {
 		if ( $pt == $pt_current ) {
 			$active_class = " class='active'";
-			if ( $pt_current == "archivo" ) { $tit = "Archivo digital de las Brigadas Internacionales"; }
+			if ( $pt_current == "archivo" ) { $tit = __('International Brigades Digital Archive','cedobi'); }
 			else { $tit = $wp_post_types[$pt]->labels->name; }
 
 		} else { $active_class = ""; }
 		if ( $pt == 'archivo' ) {
-			$filters_out .= "<div class='col-md-6 col-sm-6 col-xs-12 filter-" .$pt. "'><a" .$active_class. " href='" .$base. "?view=" .$view_current. "'>Archivo completo</a></div>";
+			$filters_out .= "<div class='col-md-6 col-sm-6 col-xs-12 filter-" .$pt. "'><a" .$active_class. " href='" .$base. "?view=" .$view_current. "'>" .__('Complete archive','cedobi'). "</a></div>";
 		} else {
 			$pt_tit = $wp_post_types[$pt]->labels->name;
 			$filters_out .= "<div class='col-md-6 col-sm-6 col-xs-12 filter-" .$pt. "'><a" .$active_class. " href='" .$base. "/" .$pt. "?view=" .$view_current. "'>" .$pt_tit. "</a></div>";
@@ -60,13 +60,13 @@ if ( $pt_current == 'archivo' && !array_key_exists('s', $_GET)
 	$controls_out = "
 	<div id='filters' class='row bair'>
 		<div class='col-lg-12 col-lg-offset-3 col-md-13 col-md-offset-3 col-sm-18'>
-			<div class='filters-tit'>Mostrar</div>
+			<div class='filters-tit'>" .__('Filter','cedobi'). "</div>
 			<div class='filters-btn row'>
 				" .$filters_out. "
 			</div>
 		</div><!-- .col-* .col-offset-* -->
 		<div class='col-lg-4 col-md-3 col-sm-6'>
-			<div class='filters-tit'>Vista</div>
+			<div class='filters-tit'>" .__('View','cedobi'). "</div>
 			<div class='filters-btn vista-btn row'>
 				" .$views_out. "
 			</div>
@@ -78,8 +78,8 @@ if ( $pt_current == 'archivo' && !array_key_exists('s', $_GET)
 } elseif ( array_key_exists('s', $_GET) )  {
 // if search, also if empty search
 	$s_query = get_search_query();
-	if ( $s_query == '' ) { $tit = "Resultados de la búsqueda"; }
-	else { $tit = "Resultados de la búsqueda '" .$s_query. "'";}
+	if ( $s_query == '' ) { $tit = __('Search results','cedobi'); }
+	else { $tit = sprintf( __( 'Search results: <em>%s</em>','cedobi' ), $s_query ); }
 	$view_current = "lista";
 
 
@@ -118,10 +118,14 @@ if ( is_tax() ) {
 				<thead>
 				<tr>
 			";
+			$th_image = __('Image','cedobi');
+			$th_name = __('Name','cedobi');
+			$th_type = __('Type','cedobi');
+			$th_desc = __('Description','cedobi');
 			if ( $pt_current == 'archivo' || $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current == 'documento' || array_key_exists('s', $_GET) ) {
-				echo "<th>Imagen</th><th>Nombre</th><th>Tipo</th><th>Descripción</th>";
+				echo "<th>" .$th_imagen. "</th><th>" .$th_name. "</th><th>" .$th_type. "</th><th>" .$th_desc. "</th>";
 			} else {
-				echo "<th>Imagen</th><th>Nombre</th><th>Descripción</th>";
+				echo "<th>" .$th_imagen. "</th><th>" .$th_name. "</th><th>" .$th_desc. "</th>";
 			}
 			echo "
 				</tr>
@@ -143,13 +147,13 @@ if ( is_tax() ) {
 		if ( $view_current == 'lista' ) { echo "</tbody></table><!-- #" .$view_current. " -->"; }
 
 	} else {
-		echo "<div class='alert alert-danger'><p>No hemos encontrado ningún contenido que responda a tus criterios de búsqueda.</p><p>Inténtalo otra vez.</p></div>";
+		echo "<div class='alert alert-danger'>" .__('<p>We did not find anything related with your search criteria.</p><p>You can try again!</p>','cedobi'). "</div>";
 	} // end if posts
 	?>
 
 	<div class="row"><div class="col-sm-24">
 	<?php if ( $pt_current == 'fotografia' ) {
-		echo "<div class='foto-mas'><a href='http://www.flickr.com/photos/iea__cedobi/'>Fondos fotográficos en flickr</a>.</div>";
+		echo "<div class='foto-mas'><a href='http://www.flickr.com/photos/iea__cedobi/'>" .__('Photo archives in flickr','cedobi'). "</a>.</div>";
 	}
 	include "pagination.php"; ?>
 	</div></div>

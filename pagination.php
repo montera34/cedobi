@@ -8,8 +8,8 @@ $pag_args = array(
 	'total' => $total,
 	'current' => $current,
 	'mid_size' => 3,
-	'prev_text' => __('«'),
-	'next_text' => __('»'),
+	'prev_text' => __('&laquo;'),
+	'next_text' => __('&raquo;'),
 	'type' => 'array',
 );
 

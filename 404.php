@@ -4,14 +4,14 @@
 
 <div id="header" class="row">
 	<header class="col-md-16 col-md-offset-3">
-	<h1>Error 404: contenido no encontrado</h1>
+	<h1><?php _e('Error 404: content not found','cedobi'); ?></h1>
 	</header>
 </div><!-- .row -->
 
 <div class="row">
 	<section id="main" class="col-md-16 col-md-push-3">
-		<p>La página que estás buscando no se ha encontrado, asegúrate de que la has escrito correctamente. Vuelve a la <a href="/">página de inicio</a> o busca lo que quieras sobre las Brigadas Internacionales o el CEDOBI en el buscador.</p>
-		<p>Si deseas cualquier otra información, buscas a algún brigadista o tienes información y documentación de algún brigadista, o sobre las Brigadas Internacionales en general, <a href='/contacto'>ponte en contacto con nosotros</a>.</p>		
+		<?php _e('<p>This content has not been found. You can check the URL or go to <a href="/">home page</a> to start from the begining. If you prefer, you can search anything about the International Brigades or about CEDOBI using our search engine.</p>
+		<p>If you look for a particular content that you cannot find, or you have any information about combatant volunteers or the International Brigades, <a href="/contacto">contact us</a> please.</p>','cedobi'); ?>
 	</section>
 	<div id="margeni" class="col-md-3 col-md-pull-16">
 		<?php get_search_form(); ?>
@@ -19,5 +19,4 @@
 </div><!-- .row -->
 
 </div><!-- #content .container -->
-
 <?php get_footer(); ?>

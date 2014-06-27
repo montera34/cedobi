@@ -46,6 +46,9 @@ function cedobi_theme_setup() {
 	// create year custom field based in tax to sort post
 	add_action('wp_insert_post', 'cedobi_write_cf_year');
 
+	// load language files
+	add_action('after_setup_theme', 'cedobi_load_languages');
+
 } // end montera34 theme setup function
 
 // remove item from wordpress dashboard
@@ -78,9 +81,9 @@ function cedobi_media_options() {
 
 function cedobi_custom_sizes( $sizes ) {
 	return array_merge( $sizes, array(
-		'icon' => __('Icon'),
-		'bigicon' => __('Big icon'),
-		'small' => __('Small'),
+		'icon' => __('Icon','cedobi'),
+		'bigicon' => __('Big icon','cedobi'),
+		'small' => __('Small','cedobi'),
 //		'extralarge' => __('Extra Large'),
 	) );
 }
@@ -91,8 +94,8 @@ function cedobi_register_menus() {
 	if ( function_exists( 'register_nav_menus' ) ) {
 		register_nav_menus(
 		array(
-			'pre-nav' => 'Menú de cabecera',
-			'epi-nav' => 'Menú de pie de página',
+			'pre-nav' => __('Header menu','cedobi'),
+			'epi-nav' => __('Footer menu','cedobi'),
 		)
 		);
 	}
@@ -159,18 +162,18 @@ function cedobi_create_post_type() {
 	// Brigadistas custom post type
 	register_post_type( 'brigadista', array(
 		'labels' => array(
-			'name' => __( 'Archivo de brigadistas' ),
-			'singular_name' => __( 'Brigadista' ),
-			'add_new_item' => __( 'Add a brigadista' ),
-			'edit' => __( 'Edit' ),
-			'edit_item' => __( 'Edit this brigadista' ),
-			'new_item' => __( 'New brigadista' ),
-			'view' => __( 'View brigadista' ),
-			'view_item' => __( 'View this brigadista' ),
-			'search_items' => __( 'Search brigadista' ),
-			'not_found' => __( 'No brigadista found' ),
-			'not_found_in_trash' => __( 'No brigadistas in trash' ),
-			'parent' => __( 'Parent' )
+			'name' => __( 'Brigadiers archive','cedobi' ),
+			'singular_name' => __( 'Brigadier','cedobi' ),
+			'add_new_item' => __( 'Add a brigadier','cedobi' ),
+			'edit' => __( 'Edit','cedobi' ),
+			'edit_item' => __( 'Edit this brigadier','cedobi' ),
+			'new_item' => __( 'New brigadier','cedobi' ),
+			'view' => __( 'View brigadier','cedobi' ),
+			'view_item' => __( 'View this brigadier','cedobi' ),
+			'search_items' => __( 'Search brigadier','cedobi' ),
+			'not_found' => __( 'No brigadiers found','cedobi' ),
+			'not_found_in_trash' => __( 'No brigadiers in trash','cedobi' ),
+			'parent' => __( 'Parent','cedobi' )
 		),
 		'description' => '',
 		'has_archive' => true,
@@ -190,18 +193,18 @@ function cedobi_create_post_type() {
 	// Fotografia custom post type
 	register_post_type( 'fotografia', array(
 		'labels' => array(
-			'name' => __( 'Fondos fotográficos' ),
-			'singular_name' => __( 'Fotografía' ),
-			'add_new_item' => __( 'Add a fotografía' ),
-			'edit' => __( 'Edit' ),
-			'edit_item' => __( 'Edit this fotografía' ),
-			'new_item' => __( 'New fotografía' ),
-			'view' => __( 'View fotografía' ),
-			'view_item' => __( 'View this fotografía' ),
-			'search_items' => __( 'Search fotografía' ),
-			'not_found' => __( 'No fotografía found' ),
-			'not_found_in_trash' => __( 'No fotografías in trash' ),
-			'parent' => __( 'Parent' )
+			'name' => __( 'Photos Archives','cedobi' ),
+			'singular_name' => __( 'Photo','cedobi' ),
+			'add_new_item' => __( 'Add a photo','cedobi' ),
+			'edit' => __( 'Edit','cedobi' ),
+			'edit_item' => __( 'Edit this photo','cedobi' ),
+			'new_item' => __( 'New photo','cedobi' ),
+			'view' => __( 'View photo','cedobi' ),
+			'view_item' => __( 'View this photo','cedobi' ),
+			'search_items' => __( 'Search photos','cedobi' ),
+			'not_found' => __( 'No photos found','cedobi' ),
+			'not_found_in_trash' => __( 'No photos in trash','cedobi' ),
+			'parent' => __( 'Parent','cedobi' )
 		),
 		'description' => '',
 		'has_archive' => true,
@@ -221,18 +224,18 @@ function cedobi_create_post_type() {
 	// Recursos digitales custom post type
 	register_post_type( 'documento', array(
 		'labels' => array(
-			'name' => __( 'Recursos digitales' ),
-			'singular_name' => __( 'Recurso digital' ),
-			'add_new_item' => __( 'Add a documento' ),
-			'edit' => __( 'Edit' ),
-			'edit_item' => __( 'Edit this documento' ),
-			'new_item' => __( 'New documento' ),
-			'view' => __( 'View documento' ),
-			'view_item' => __( 'View this documento' ),
-			'search_items' => __( 'Search documento' ),
-			'not_found' => __( 'No documento found' ),
-			'not_found_in_trash' => __( 'No documentos in trash' ),
-			'parent' => __( 'Parent' )
+			'name' => __( 'Digital resources','cedobi' ),
+			'singular_name' => __( 'Digital resource','cedobi' ),
+			'add_new_item' => __( 'Add a digital resource','cedobi' ),
+			'edit' => __( 'Edit','cedobi' ),
+			'edit_item' => __( 'Edit this digital resource','cedobi' ),
+			'new_item' => __( 'New digital resource','cedobi' ),
+			'view' => __( 'View digital resource','cedobi' ),
+			'view_item' => __( 'View this digital resource','cedobi' ),
+			'search_items' => __( 'Search digital resource','cedobi' ),
+			'not_found' => __( 'No digital resources found','cedobi' ),
+			'not_found_in_trash' => __( 'No digital resources in trash','cedobi' ),
+			'parent' => __( 'Parent','cedobi' )
 		),
 		'description' => '',
 		'has_archive' => true,
@@ -252,18 +255,18 @@ function cedobi_create_post_type() {
 	// Noticias custom post type
 	register_post_type( 'noticia', array(
 		'labels' => array(
-			'name' => __( 'Noticias' ),
-			'singular_name' => __( 'Noticia' ),
-			'add_new_item' => __( 'Add a noticia' ),
-			'edit' => __( 'Edit' ),
-			'edit_item' => __( 'Edit this noticia' ),
-			'new_item' => __( 'New noticia' ),
-			'view' => __( 'View noticia' ),
-			'view_item' => __( 'View this noticia' ),
-			'search_items' => __( 'Search noticias' ),
-			'not_found' => __( 'No noticia found' ),
-			'not_found_in_trash' => __( 'No noticias in trash' ),
-			'parent' => __( 'Parent' )
+			'name' => __( 'News','cedobi' ),
+			'singular_name' => __( 'New','cedobi' ),
+			'add_new_item' => __( 'Add a new','cedobi' ),
+			'edit' => __( 'Edit','cedobi' ),
+			'edit_item' => __( 'Edit this new','cedobi' ),
+			'new_item' => __( 'New new','cedobi' ),
+			'view' => __( 'View new','cedobi' ),
+			'view_item' => __( 'View this new','cedobi' ),
+			'search_items' => __( 'Search news','cedobi' ),
+			'not_found' => __( 'No news found','cedobi' ),
+			'not_found_in_trash' => __( 'No news in trash','cedobi' ),
+			'parent' => __( 'Parent','cedobi' )
 		),
 		'description' => '',
 		'has_archive' => true,
@@ -283,18 +286,18 @@ function cedobi_create_post_type() {
 	// Convocatorias custom post type
 	register_post_type( 'convocatoria', array(
 		'labels' => array(
-			'name' => __( 'Convocatorias' ),
-			'singular_name' => __( 'Convocatoria' ),
-			'add_new_item' => __( 'Add a convocatoria' ),
-			'edit' => __( 'Edit' ),
-			'edit_item' => __( 'Edit this convocatoria' ),
-			'new_item' => __( 'New convocatoria' ),
-			'view' => __( 'View convocatoria' ),
-			'view_item' => __( 'View this convocatoria' ),
-			'search_items' => __( 'Search convocatorias' ),
-			'not_found' => __( 'No convocatoria found' ),
-			'not_found_in_trash' => __( 'No convocatorias in trash' ),
-			'parent' => __( 'Parent' )
+			'name' => __( 'Calls','cedobi' ),
+			'singular_name' => __( 'Call','cedobi' ),
+			'add_new_item' => __( 'Add a call','cedobi' ),
+			'edit' => __( 'Edit','cedobi' ),
+			'edit_item' => __( 'Edit this call','cedobi' ),
+			'new_item' => __( 'New call','cedobi' ),
+			'view' => __( 'View call','cedobi' ),
+			'view_item' => __( 'View this call','cedobi' ),
+			'search_items' => __( 'Search calls','cedobi' ),
+			'not_found' => __( 'No calls found','cedobi' ),
+			'not_found_in_trash' => __( 'No calls in trash','cedobi' ),
+			'parent' => __( 'Parent','cedobi' )
 		),
 		'description' => '',
 		'has_archive' => true,
@@ -314,18 +317,18 @@ function cedobi_create_post_type() {
 	// Publicaciones custom post type
 	register_post_type( 'publicacion', array(
 		'labels' => array(
-			'name' => __( 'Publicaciones' ),
-			'singular_name' => __( 'Publicación' ),
-			'add_new_item' => __( 'Add a publicación' ),
-			'edit' => __( 'Edit' ),
-			'edit_item' => __( 'Edit this publicación' ),
-			'new_item' => __( 'New publicación' ),
-			'view' => __( 'View publicación' ),
-			'view_item' => __( 'View this publicación' ),
-			'search_items' => __( 'Search publicación' ),
-			'not_found' => __( 'No publicación found' ),
-			'not_found_in_trash' => __( 'No publicaciones in trash' ),
-			'parent' => __( 'Parent' )
+			'name' => __( 'Publications','cedobi' ),
+			'singular_name' => __( 'Publication','cedobi' ),
+			'add_new_item' => __( 'Add a publication','cedobi' ),
+			'edit' => __( 'Edit','cedobi' ),
+			'edit_item' => __( 'Edit this publication','cedobi' ),
+			'new_item' => __( 'New publication','cedobi' ),
+			'view' => __( 'View publication','cedobi' ),
+			'view_item' => __( 'View this publication','cedobi' ),
+			'search_items' => __( 'Search publications','cedobi' ),
+			'not_found' => __( 'No publications found','cedobi' ),
+			'not_found_in_trash' => __( 'No publications in trash','cedobi' ),
+			'parent' => __( 'Parent','cedobi' )
 		),
 		'description' => '',
 		'has_archive' => true,
@@ -349,8 +352,8 @@ function cedobi_build_taxonomies() {
 	// Fecha taxonomy
 	register_taxonomy( 'fecha', array('fotografia','documento','publicacion'), array(
 		'hierarchical' => false,
-		'label' => __( 'Año' ),
-		'name' => __( 'Años' ),
+		'label' => __( 'Year','cedobi' ),
+		'name' => __( 'Years','cedobi' ),
 		'query_var' => 'fecha',
 		'rewrite' => array( 'slug' => 'fecha', 'with_front' => false ),
 		'show_admin_column' => true
@@ -358,24 +361,24 @@ function cedobi_build_taxonomies() {
 	// Origen taxonomies
 	register_taxonomy( 'ciudad', array('brigadista'), array(
 		'hierarchical' => true,
-		'label' => __( 'Ciudad' ),
-		'name' => __( 'Ciudades' ),
+		'label' => __( 'City','cedobi' ),
+		'name' => __( 'Cities','cedobi' ),
 		'query_var' => 'ciudad',
 		'rewrite' => array( 'slug' => 'ciudad', 'with_front' => false ),
 		'show_admin_column' => true
 	) );
 	register_taxonomy( 'region', array('brigadista'), array(
 		'hierarchical' => true,
-		'label' => __( 'Región/Estado' ),
-		'name' => __( 'Regiones' ),
+		'label' => __( 'State','cedobi' ),
+		'name' => __( 'States','cedobi' ),
 		'query_var' => 'region',
 		'rewrite' => array( 'slug' => 'region', 'with_front' => false ),
 		'show_admin_column' => true
 	) );
 	register_taxonomy( 'pais', array('brigadista'), array(
 		'hierarchical' => true,
-		'label' => __( 'País' ),
-		'name' => __( 'Países' ),
+		'label' => __( 'Contry','cedobi' ),
+		'name' => __( 'Countries','cedobi' ),
 		'query_var' => 'pais',
 		'rewrite' => array( 'slug' => 'pais', 'with_front' => false ),
 		'show_admin_column' => true
@@ -383,16 +386,16 @@ function cedobi_build_taxonomies() {
 	// Editorial and Colección taxonomies
 	register_taxonomy( 'coleccion', array('publicacion'), array(
 		'hierarchical' => false,
-		'label' => __( 'Colección' ),
-		'name' => __( 'Colecciones' ),
+		'label' => __( 'Collection','cedobi' ),
+		'name' => __( 'Collections','cedobi' ),
 		'query_var' => 'coleccion',
 		'rewrite' => array( 'slug' => 'coleccion', 'with_front' => false ),
 		'show_admin_column' => true
 	) );
 	register_taxonomy( 'editorial', array('publicacion'), array(
 		'hierarchical' => false,
-		'label' => __( 'Editorial' ),
-		'name' => __( 'Editoriales' ),
+		'label' => __( 'Publisher','cedobi' ),
+		'name' => __( 'Publishers','cedobi' ),
 		'query_var' => 'editorial',
 		'rewrite' => array( 'slug' => 'editorial', 'with_front' => false ),
 		'show_admin_column' => true
@@ -400,8 +403,8 @@ function cedobi_build_taxonomies() {
 	// Fondo taxonomy
 	register_taxonomy( 'fondo', array('fotografia'), array(
 		'hierarchical' => false,
-		'label' => __( 'Fondo' ),
-		'name' => __( 'Fondos' ),
+		'label' => __( 'Archive','cedobi' ),
+		'name' => __( 'Archives','cedobi' ),
 		'query_var' => 'fondo',
 		'rewrite' => array( 'slug' => 'fondo', 'with_front' => false ),
 		'show_admin_column' => true
@@ -409,8 +412,8 @@ function cedobi_build_taxonomies() {
 	// Tipo taxonomy
 	register_taxonomy( 'formato', array('documento'), array(
 		'hierarchical' => true,
-		'label' => __( 'Formato' ),
-		'name' => __( 'Formatos' ),
+		'label' => __( 'Format','cedobi' ),
+		'name' => __( 'Formats','cedobi' ),
 		'query_var' => 'formato',
 		'rewrite' => array( 'slug' => 'formato', 'with_front' => false ),
 		'show_admin_column' => true
@@ -418,8 +421,8 @@ function cedobi_build_taxonomies() {
 	// Genero taxonomy
 	register_taxonomy( 'genero', array('documento'), array(
 		'hierarchical' => true,
-		'label' => __( 'Género' ),
-		'name' => __( 'Géneros' ),
+		'label' => __( 'Type','cedobi' ),
+		'name' => __( 'Types','cedobi' ),
 		'query_var' => 'genero',
 		'rewrite' => array( 'slug' => 'genero', 'with_front' => false ),
 		'show_admin_column' => true
@@ -434,44 +437,44 @@ function cedobi_metaboxes( $meta_boxes ) {
 	// CUSTOM FIELDS FOR FOTOGRAFÍAS, PUBLICACIONES, MATERIAL
 	$meta_boxes[] = array(
 		'id' => 'cedobi_authors',
-		'title' => 'Autores',
+		'title' => __('Authors','cedobi'),
 		'pages' => array('fotografia','documento','publicacion'), // post type
 		'context' => 'normal', //  'normal', 'advanced', or 'side'
 		'priority' => 'high',  //  'high', 'core', 'default' or 'low'
 		'show_names' => true, // Show field names on the left
 		'fields' => array(
 			array(
-				'name' => 'Autor 1: nombre',
+				'name' => __('Author 1: firstname','cedobi'),
 				'desc' => '',
 				'id' => $prefix . 'author1_firstname',
 				'type' => 'text',
 			),
 			array(
-				'name' => 'Autor 1: apellidos',
+				'name' => __('Author 1: lastname','cedobi'),
 				'desc' => '',
 				'id' => $prefix . 'author1_lastname',
 				'type' => 'text',
 			),
 			array(
-				'name' => 'Autor 2: nombre',
+				'name' => __('Author 2: firsname','cedobi'),
 				'desc' => '',
 				'id' => $prefix . 'author2_firstname',
 				'type' => 'text',
 			),
 			array(
-				'name' => 'Autor 2: apellidos',
+				'name' => __('Author 2: lastname','cedobi'),
 				'desc' => '',
 				'id' => $prefix . 'author2_lastname',
 				'type' => 'text',
 			),
 			array(
-				'name' => 'Autor 3: nombre',
+				'name' => __('Author 3: firstname','cedobi'),
 				'desc' => '',
 				'id' => $prefix . 'author3_firstname',
 				'type' => 'text',
 			),
 			array(
-				'name' => 'Autor 3: apellidos',
+				'name' => __('Author 3: lastname','cedobi'),
 				'desc' => '',
 				'id' => $prefix . 'author3_lastname',
 				'type' => 'text',
@@ -481,20 +484,20 @@ function cedobi_metaboxes( $meta_boxes ) {
 	// CUSTOM FIELDS FOR CONVOCATORIAS
 	$meta_boxes[] = array(
 		'id' => 'cedobi_current',
-		'title' => 'Fechas',
+		'title' => __('Dates','cedobi'),
 		'pages' => array('convocatoria'), // post type
 		'context' => 'side', //  'normal', 'advanced', or 'side'
 		'priority' => 'default',  //  'high', 'core', 'default' or 'low'
 		'show_names' => true, // Show field names on the left
 		'fields' => array(
 			array(
-				'name' => 'Fecha de inicio',
+				'name' => __('Begining date','cedobi'),
 				'id'   => $prefix . 'date_ini',
 				'type' => 'text_date_timestamp',
 				'repeatable' => false,
 			),
 			array(
-				'name' => 'Fecha de fin',
+				'name' => __('Ending date','cedobi'),
 				'id'   => $prefix . 'date_end',
 				'type' => 'text_date_timestamp',
 				'repeatable' => false,
@@ -504,19 +507,19 @@ function cedobi_metaboxes( $meta_boxes ) {
 	// CUSTOM FIELDS FOR PUBLICACIONES
 	$meta_boxes[] = array(
 		'id' => 'cedobi_libro',
-		'title' => 'Datos del libro',
+		'title' => __('Book data','cedobi'),
 		'pages' => array('publicacion'), // post type
 		'context' => 'side', //  'normal', 'advanced', or 'side'
 		'priority' => 'default',  //  'high', 'core', 'default' or 'low'
 		'show_names' => true, // Show field names on the left
 		'fields' => array(
 			array(
-				'name' => 'Número de páginas',
+				'name' => __('Number of pages','cedobi'),
 				'id'   => $prefix . 'publica_pags',
 				'type' => 'text',
 			),
 			array(
-				'name' => 'ISBN',
+				'name' => __('ISBN','cedobi'),
 				'id'   => $prefix . 'publica_ISBN',
 				'type' => 'text',
 			),
@@ -575,5 +578,10 @@ function cedobi_filter_loop( $query ) {
 	}
 	return $query;
 } // end set up wp_query args
+
+// load language files
+function cedobi_load_languages(){
+	load_theme_textdomain('cedobi', get_template_directory() . '/languages');
+}
 
 ?>

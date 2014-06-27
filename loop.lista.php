@@ -14,7 +14,7 @@ $item_img_size = "bigicon";
 if ( has_post_thumbnail() ) { // image
 	$item_img_out = get_the_post_thumbnail( $post->ID,$item_img_size );
 } else {
-	$item_img_out = "<div class='hideout'>Sin imagen</div>";
+	$item_img_out = "<div class='hideout'>" .__('No image','cedobi'). "</div>";
 } // end image
 
 if ( $pt_current == 'archivo' || $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current == 'documento' || array_key_exists('s', $_GET) ) {

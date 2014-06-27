@@ -23,7 +23,7 @@
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s' ), max( $paged, $page ) );
+		echo ' | ' . sprintf( __( 'Page %s','cedobi' ), max( $paged, $page ) );
 
 	?>
 </title>
@@ -61,9 +61,9 @@ if ( is_single() || is_page() ) {
 ?>
 
 <!-- generic meta -->
-<meta content="Centro de Estudios de las Brigadas Internacionales" name="author" />
+<meta content="<?php echo CEDOBI_BLOGNAME ?>" name="author" />
 <meta content="<?php echo CEDOBI_BLOGDESC ?>" name="description" />
-<meta content="brigadas internacionales, guerra civil española" name="keywords" />
+<meta content="<?php _e('international brigades, spanish civil war, international brigadiers','cedobi'); ?>" name="keywords" />
 <!-- facebook meta -->
 <meta property="og:title" content="<?php echo $metatit ?>" />
 <meta property="og:type" content="<?php echo $metatype ?>" />
@@ -101,7 +101,7 @@ wp_head(); ?>
 					<div class="container-fluid">
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#cedobi-pre-nav-collapse">
-								<span class="sr-only">Desplagar/Replegar menú</span>
+								<span class="sr-only"><?php _e('Toggle menu','cedobi'); ?></span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
@@ -123,5 +123,8 @@ wp_head(); ?>
 				</nav>
 				</div></div>
 		</div><!-- #pre-main -->
+		<div id="pre-margend" class="col-md-3 col-md-offset-1 col-sm-3 col-xs-3">
+			<?php do_action('icl_language_selector'); ?>
+		</div><!-- #pre-margeni -->
 	</div><!-- .row -->
 </div><!-- #pre .container -->

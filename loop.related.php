@@ -13,7 +13,7 @@ if ( $related_terms ) {
 	);
 	$related_posts = get_posts($args);
 	if ( count($related_posts) > 0 ) {
-		$related_tit = "Más " .$pt_name. " de " .$related_term->name;
+		$related_tit = sprintf( __( 'More %s of %s','cedobi' ), $pt_name, $related_term->name );
 		$related_out .= "
 			<section class='row'>
 			<header class='col-sm-24'><h2 class='related-tit'>" .$related_tit. "</h2></header>";

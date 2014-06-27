@@ -10,7 +10,7 @@ if ( has_post_thumbnail() ) { // image
 	$item_out = "
 		<div class='inside'>
 			<a href='" .$item_perma. "'>
-				<img class='mosac-item-type' src='" .CEDOBI_BLOGTHEME. "/images/cedobi-pt-" .$item_pt. ".png' alt='Icono " .$item_pt. "' /> 
+				<img class='mosac-item-type' src='" .CEDOBI_BLOGTHEME. "/images/cedobi-pt-" .$item_pt. ".png' alt='" .__('Icon','cedobi') . $item_pt. "' /> 
 				" .get_the_post_thumbnail( $post->ID, $item_img_size, array('class' => 'img-responsive') ). "
 				<span class='mosac-item-text'><strong class='mosac-item-tit'>" .$item_name. "</strong></span>	
 			</a>
@@ -23,7 +23,7 @@ if ( has_post_thumbnail() ) { // image
 		<div class='inside'>
 			<a href='" .$item_perma. "'>
 				<span class='mosac-item-text'><strong class='mosac-item-tit'>" .$item_name. "</strong>. " .$item_desc. "</span>	
-				<img class='mosac-item-type' src='" .CEDOBI_BLOGTHEME. "/images/cedobi-pt-" .$item_pt. ".png' alt='Icono " .$item_pt. "' /> 
+				<img class='mosac-item-type' src='" .CEDOBI_BLOGTHEME. "/images/cedobi-pt-" .$item_pt. ".png' alt='" .__('Icon','cedobi') . $item_pt. "' /> 
 			</a>
 		</div>
 	";

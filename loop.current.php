@@ -21,7 +21,7 @@ $args = array(
 );
 $related_posts = get_posts($args);
 if ( count($related_posts) > 0 ) {
-	$related_tit = "Otras " .$pt_name. " vigentes";
+	$related_tit = sprintf( __( 'Other current %s','cedobi' ), $pt_name );
 	$related_out .= "
 		<section class='row'>
 		<header class='col-sm-24'><h2 class='related-tit'>" .$related_tit. "</h2></header>";
