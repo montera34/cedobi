@@ -1,0 +1,670 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cedobi 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-27 18:27+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: skotperez <voraginebramante@gmail.com>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: header.php:26
+#, php-format
+msgid "Page %s"
+msgstr "Página %s"
+
+#: header.php:66
+msgid "international brigades, spanish civil war, international brigadiers"
+msgstr "Brigadas internacionales, Guerra Civil, brigadistas internacionales"
+
+#: header.php:104
+msgid "Toggle menu"
+msgstr "Desplagar/Replegar menú"
+
+#: searchform.php:15
+msgid "Search"
+msgstr "Buscar"
+
+#: searchform.php:21
+msgid "Advanced"
+msgstr "Avanzada"
+
+#: searchform.php:27
+#: single.php:185
+#: index.php:38
+msgid "Complete archive"
+msgstr "Archivo completo"
+
+#: single.php:14
+msgid "Origin"
+msgstr "Origen"
+
+#: single.php:28
+msgid "Photo archive"
+msgstr "Fondos fotográficos"
+
+#: single.php:31
+#: single.php:54
+#: functions.php:355
+msgid "Year"
+msgstr "Año"
+
+#: single.php:34
+#: single.php:57
+#: single.php:106
+#: single.php:144
+#: functions.php:440
+msgid "Authors"
+msgstr "AutoresAutores"
+
+#: single.php:50
+msgid "Format/Type"
+msgstr "Formato/Género"
+
+#: single.php:73
+msgid "Date"
+msgstr "Fecha"
+
+#: single.php:84
+#: single.php:152
+msgid "Validity"
+msgstr "Vigencia"
+
+#: single.php:88
+msgid "Place"
+msgstr "Lugar"
+
+#: single.php:99
+msgid "Editorial and collection"
+msgstr "Editorial y colección"
+
+#: single.php:103
+msgid "Year of publication"
+msgstr "Año de publicación"
+
+#: single.php:114
+msgid "ISBN / pag. num."
+msgstr "ISBN / núm. pág."
+
+#: single.php:158
+msgid "pages"
+msgstr "páginas"
+
+#: loop.current.php:24
+#, php-format
+msgid "Other current %s"
+msgstr "Otras %s vigentes"
+
+#: footer.php:18
+msgid "Designed and developed by <a href=\"http://montera34.com\">m34</a> using <a href=\"/creditos\">free software</a>."
+msgstr "Diseñado y desarrollado por <a href=\"http://montera34.com\">m34</a> usando <a href=\"/creditos\">software libre</a>."
+
+#: footer.php:22
+msgid "Promoted by:"
+msgstr "Promovido por:"
+
+#: index.php:33
+msgid "International Brigades Digital Archive"
+msgstr "Archivo digital de las Brigadas Internacionales"
+
+#: index.php:63
+msgid "Filter"
+msgstr "Mostrar"
+
+#: index.php:69
+msgid "View"
+msgstr "Ver"
+
+#: index.php:81
+msgid "Search results"
+msgstr "Resultados de búsqueda"
+
+#: index.php:82
+#, php-format
+msgid "Search results: <em>%s</em>"
+msgstr "Resultados de la búsqueda em>%s</em>"
+
+#: index.php:121
+msgid "Image"
+msgstr "Imagen"
+
+#: index.php:122
+msgid "Name"
+msgstr "Nombre"
+
+#: index.php:123
+#: functions.php:424
+msgid "Type"
+msgstr "Tipo"
+
+#: index.php:124
+msgid "Description"
+msgstr "Descripción"
+
+#: index.php:150
+msgid "<p>We did not find anything related with your search criteria.</p><p>You can try again!</p>"
+msgstr "<p>No hemos encontrado ningún contenido que responda a tus criterios de búsqueda.</p><p>Inténtalo otra vez.</p>"
+
+#: index.php:156
+msgid "Photo archives in flickr"
+msgstr "Fondos fotográficos en flickr"
+
+#: loop.lista.php:17
+msgid "No image"
+msgstr "sin imagen"
+
+#: loop.last.php:12
+#, php-format
+msgid "Last %s"
+msgstr "Últimas %s"
+
+#: sidebar-single.php:18
+msgid "Archive sections"
+msgstr "Secciones del Archivo"
+
+#: sidebar.php:62
+#, php-format
+msgid "%s archive"
+msgstr "Archivo de %s"
+
+#: functions.php:84
+#: loop.mosaico.php:13
+#: loop.mosaico.php:26
+msgid "Icon"
+msgstr "Icono"
+
+#: functions.php:85
+msgid "Big icon"
+msgstr "Icono grande"
+
+#: functions.php:86
+msgid "Small"
+msgstr "Pequeña"
+
+#: functions.php:97
+msgid "Header menu"
+msgstr "Menú de cabecera"
+
+#: functions.php:98
+msgid "Footer menu"
+msgstr "Menú de pie de página"
+
+#: functions.php:165
+msgid "Brigadiers archive"
+msgstr "Archivo de brigadistas"
+
+#: functions.php:166
+msgid "Brigadier"
+msgstr "Brigadista"
+
+#: functions.php:167
+msgid "Add a brigadier"
+msgstr "Añadir brigadista"
+
+#: functions.php:168
+#: functions.php:199
+#: functions.php:230
+#: functions.php:261
+#: functions.php:292
+#: functions.php:323
+msgid "Edit"
+msgstr "Editar"
+
+#: functions.php:169
+msgid "Edit this brigadier"
+msgstr "Editar este brigadista"
+
+#: functions.php:170
+msgid "New brigadier"
+msgstr "Nuevo brigadista"
+
+#: functions.php:171
+msgid "View brigadier"
+msgstr "Ver brigadista"
+
+#: functions.php:172
+msgid "View this brigadier"
+msgstr "Ver este brigadista"
+
+#: functions.php:173
+msgid "Search brigadier"
+msgstr "Buscar brigadistas"
+
+#: functions.php:174
+msgid "No brigadiers found"
+msgstr "Ningún brigadista encontrado"
+
+#: functions.php:175
+msgid "No brigadiers in trash"
+msgstr "Ningún brigadista en la papelera"
+
+#: functions.php:176
+#: functions.php:207
+#: functions.php:238
+#: functions.php:269
+#: functions.php:300
+#: functions.php:331
+msgid "Parent"
+msgstr "Superior"
+
+#: functions.php:196
+msgid "Photos Archives"
+msgstr "Fondos fotográficos"
+
+#: functions.php:197
+msgid "Photo"
+msgstr "Fotografía"
+
+#: functions.php:198
+msgid "Add a photo"
+msgstr "Añadir fotografía"
+
+#: functions.php:200
+msgid "Edit this photo"
+msgstr "Editar esta fotografía"
+
+#: functions.php:201
+msgid "New photo"
+msgstr "Nueva fotografía"
+
+#: functions.php:202
+msgid "View photo"
+msgstr "Ver fotografía"
+
+#: functions.php:203
+msgid "View this photo"
+msgstr "Ver esta fotografía"
+
+#: functions.php:204
+msgid "Search photos"
+msgstr "Buscar fotografías"
+
+#: functions.php:205
+msgid "No photos found"
+msgstr "Ninguna fotografía encontrada"
+
+#: functions.php:206
+msgid "No photos in trash"
+msgstr "Ninguna fotografía en la papelera"
+
+#: functions.php:227
+msgid "Digital resources"
+msgstr "Recursos digitales"
+
+#: functions.php:228
+msgid "Digital resource"
+msgstr "Documento"
+
+#: functions.php:229
+msgid "Add a digital resource"
+msgstr "Añadir un documento"
+
+#: functions.php:231
+msgid "Edit this digital resource"
+msgstr "Editar este documento"
+
+#: functions.php:232
+msgid "New digital resource"
+msgstr "Nuevo documento"
+
+#: functions.php:233
+msgid "View digital resource"
+msgstr "Ver documento"
+
+#: functions.php:234
+msgid "View this digital resource"
+msgstr "Ver este documento"
+
+#: functions.php:235
+#, fuzzy
+msgid "Search digital resource"
+msgstr "Nuevo documento"
+
+#: functions.php:236
+msgid "No digital resources found"
+msgstr "Ningún documento encontrado"
+
+#: functions.php:237
+msgid "No digital resources in trash"
+msgstr "Ningún documento en la papelera"
+
+#: functions.php:258
+msgid "News"
+msgstr "Noticias"
+
+#: functions.php:259
+msgid "New"
+msgstr "Noticia"
+
+#: functions.php:260
+msgid "Add a new"
+msgstr "Añadir una noticia"
+
+#: functions.php:262
+msgid "Edit this new"
+msgstr "Editar esta noticia"
+
+#: functions.php:263
+msgid "New new"
+msgstr "Nueva noticia"
+
+#: functions.php:264
+msgid "View new"
+msgstr "Ver notcia"
+
+#: functions.php:265
+msgid "View this new"
+msgstr "Ver esta noticia"
+
+#: functions.php:266
+msgid "Search news"
+msgstr "Buscar noticias"
+
+#: functions.php:267
+msgid "No news found"
+msgstr "Ninguna noticia encontrada"
+
+#: functions.php:268
+msgid "No news in trash"
+msgstr "Ninguna noticia en la papelera"
+
+#: functions.php:289
+msgid "Calls"
+msgstr "Convocatorias"
+
+#: functions.php:290
+msgid "Call"
+msgstr "Convocatoria"
+
+#: functions.php:291
+msgid "Add a call"
+msgstr "Añadir una convocatoria"
+
+#: functions.php:293
+msgid "Edit this call"
+msgstr "Editar esta convocatoria"
+
+#: functions.php:294
+msgid "New call"
+msgstr "Nueva convocatoria"
+
+#: functions.php:295
+msgid "View call"
+msgstr "Ver convocatoria"
+
+#: functions.php:296
+msgid "View this call"
+msgstr "Ver esta convocatoria"
+
+#: functions.php:297
+msgid "Search calls"
+msgstr "Buscar convocatorias"
+
+#: functions.php:298
+msgid "No calls found"
+msgstr "Ninguna convocatoria encontrada"
+
+#: functions.php:299
+msgid "No calls in trash"
+msgstr "Ninguna convocatoria en la papelera"
+
+#: functions.php:320
+msgid "Publications"
+msgstr "Publicaciones"
+
+#: functions.php:321
+msgid "Publication"
+msgstr "Publicación"
+
+#: functions.php:322
+msgid "Add a publication"
+msgstr "Añadir una publicación"
+
+#: functions.php:324
+msgid "Edit this publication"
+msgstr "Editar esta publicación"
+
+#: functions.php:325
+msgid "New publication"
+msgstr "Nueva publicación"
+
+#: functions.php:326
+msgid "View publication"
+msgstr "Ver publicación"
+
+#: functions.php:327
+msgid "View this publication"
+msgstr "Ver esta publicación"
+
+#: functions.php:328
+msgid "Search publications"
+msgstr "Buscar publicaciones"
+
+#: functions.php:329
+msgid "No publications found"
+msgstr "Ninguna publicación encontrada"
+
+#: functions.php:330
+msgid "No publications in trash"
+msgstr "Ninguna publicación en la papelera"
+
+#: functions.php:356
+msgid "Years"
+msgstr "Años"
+
+#: functions.php:364
+msgid "City"
+msgstr "Ciudad"
+
+#: functions.php:365
+msgid "Cities"
+msgstr "Ciudades"
+
+#: functions.php:372
+msgid "State"
+msgstr "Región"
+
+#: functions.php:373
+msgid "States"
+msgstr "Regiones"
+
+#: functions.php:380
+msgid "Contry"
+msgstr "País"
+
+#: functions.php:381
+msgid "Countries"
+msgstr "Países"
+
+#: functions.php:389
+msgid "Collection"
+msgstr "Colección"
+
+#: functions.php:390
+msgid "Collections"
+msgstr "Colecciones"
+
+#: functions.php:397
+msgid "Publisher"
+msgstr "Editorial"
+
+#: functions.php:398
+msgid "Publishers"
+msgstr "Editoriales"
+
+#: functions.php:406
+msgid "Archive"
+msgstr "Fondo fotográfico"
+
+#: functions.php:407
+msgid "Archives"
+msgstr "Fondos fotográficos"
+
+#: functions.php:415
+msgid "Format"
+msgstr "Formato"
+
+#: functions.php:416
+msgid "Formats"
+msgstr "Formatos"
+
+#: functions.php:425
+msgid "Types"
+msgstr "Género"
+
+#: functions.php:447
+msgid "Author 1: firstname"
+msgstr "Autor 1: nombre"
+
+#: functions.php:453
+msgid "Author 1: lastname"
+msgstr "Autor 1: apellido"
+
+#: functions.php:459
+msgid "Author 2: firsname"
+msgstr "Autor 2: nombre"
+
+#: functions.php:465
+#, fuzzy
+msgid "Author 2: lastname"
+msgstr "Autor 1: apellido"
+
+#: functions.php:471
+#, fuzzy
+msgid "Author 3: firstname"
+msgstr "Autor 1: nombre"
+
+#: functions.php:477
+#, fuzzy
+msgid "Author 3: lastname"
+msgstr "Autor 1: apellido"
+
+#: functions.php:487
+msgid "Dates"
+msgstr "Fechas"
+
+#: functions.php:494
+msgid "Begining date"
+msgstr "Fecha de inicio"
+
+#: functions.php:500
+msgid "Ending date"
+msgstr "Fecha de fin"
+
+#: functions.php:510
+msgid "Book data"
+msgstr "Datos del libro"
+
+#: functions.php:517
+msgid "Number of pages"
+msgstr "Número de páginas"
+
+#: functions.php:522
+msgid "ISBN"
+msgstr "ISBN"
+
+#: 404.php:7
+msgid "Error 404: content not found"
+msgstr "Error 404: contenido no encontrado"
+
+#: 404.php:13
+msgid ""
+"<p>This content has not been found. You can check the URL or go to <a href=\"/\">home page</a> to start from the begining. If you prefer, you can search anything about the International Brigades or about CEDOBI using our search engine.</p>\n"
+"\t\t<p>If you look for a particular content that you cannot find, or you have any information about combatant volunteers or the International Brigades, <a href=\"/contacto\">contact us</a> please.</p>"
+msgstr "<p>La página que estás buscando no se ha encontrado, asegúrate de que la has escrito correctamente. Vuelve a la <a href=\"/\">página de inicio</a> o busca lo que quieras sobre las Brigadas Internacionales o el CEDOBI en el buscador.</p><p>Si deseas cualquier otra información, buscas a algún brigadista o tienes información y documentación de algún brigadista, o sobre las Brigadas Internacionales en general, <a href=\"/contacto\">ponte en contacto con nosotros</a>.</p>"
+
+#: pagination.php:11
+msgid "&laquo;"
+msgstr "&laquo;"
+
+#: pagination.php:12
+msgid "&raquo;"
+msgstr "&raquo;"
+
+#: loop.related.php:16
+#, php-format
+msgid "More %s of %s"
+msgstr "Más %s de %s"
+
+#: lib/metabox/init.php:250
+msgid "Clear"
+msgstr "Claro"
+
+#: lib/metabox/init.php:251
+msgid "Default"
+msgstr "Por omisión"
+
+#: lib/metabox/init.php:252
+msgid "Select Color"
+msgstr "Seleccionar color"
+
+#: lib/metabox/init.php:253
+msgid "Current Color"
+msgstr "Color actual"
+
+#: lib/metabox/init.php:1127
+msgid "Save"
+msgstr "Guardar"
+
+#: lib/metabox/helpers/cmb_Meta_Box_field.php:449
+msgid "Add Group"
+msgstr "Añadir grupo"
+
+#: lib/metabox/helpers/cmb_Meta_Box_field.php:450
+msgid "Remove Group"
+msgstr "Eliminar grupo"
+
+#: lib/metabox/helpers/cmb_Meta_Box_ajax.php:47
+msgid "Please Try Again"
+msgstr "Por favor, inténtalo de nuevo"
+
+#: lib/metabox/helpers/cmb_Meta_Box_ajax.php:131
+msgid "Remove Embed"
+msgstr "Eliminar elemento incrustado"
+
+#: lib/metabox/helpers/cmb_Meta_Box_ajax.php:134
+#, php-format
+msgid "No oEmbed Results Found for %s. View more info at"
+msgstr "Ningún elemento oEmbed encontrado para %s. Más información en"
+
+#: lib/metabox/helpers/cmb_Meta_Box_types.php:246
+msgid "Add Row"
+msgstr "Añadir fila"
+
+#: lib/metabox/helpers/cmb_Meta_Box_types.php:302
+#: lib/metabox/helpers/cmb_Meta_Box_types.php:702
+#: lib/metabox/helpers/cmb_Meta_Box_types.php:762
+msgid "Remove"
+msgstr "Eliminar"
+
+#: lib/metabox/helpers/cmb_Meta_Box_types.php:597
+#: lib/metabox/helpers/cmb_Meta_Box_types.php:631
+msgid "No terms"
+msgstr "Ningín término"
+
+#: lib/metabox/helpers/cmb_Meta_Box_types.php:670
+#: lib/metabox/helpers/cmb_Meta_Box_types.php:724
+msgid "Add or Upload File"
+msgstr "Añade o sube un archivo"
+
+#: lib/metabox/helpers/cmb_Meta_Box_types.php:691
+#: lib/metabox/helpers/cmb_Meta_Box_types.php:754
+msgid "Remove Image"
+msgstr "Elimina la imagen"
+
+#: lib/metabox/helpers/cmb_Meta_Box_types.php:702
+#: lib/metabox/helpers/cmb_Meta_Box_types.php:762
+msgid "File:"
+msgstr "Archivo:"
+
+#: lib/metabox/helpers/cmb_Meta_Box_types.php:702
+#: lib/metabox/helpers/cmb_Meta_Box_types.php:762
+msgid "Download"
+msgstr "Descargar"
+
