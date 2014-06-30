@@ -29,7 +29,7 @@ if ( $s_query != '' ) { $search_active = " active"; }
 		</select>
 	</div>
 	<div class="form-group">
-		<input class="btn" type="submit" class="form-control" id="submit" value="Buscar" />
+		<input class="btn" type="submit" class="form-control" id="submit" value="<?php _e('Search','cedobi') ?>" />
 	</div>
 	</div>
 </form><!-- #archivo-search -->

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cedobi 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-27 18:27+0100\n"
+"POT-Creation-Date: 2014-06-30 14:21+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: skotperez <voraginebramante@gmail.com>\n"
+"Last-Translator: skotperez <skotperez@voragine.net>\n"
 "Language-Team: \n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -23,11 +23,12 @@ msgstr "Página %s"
 msgid "international brigades, spanish civil war, international brigadiers"
 msgstr "Brigadas internacionales, Guerra Civil, brigadistas internacionales"
 
-#: header.php:104
+#: header.php:106
 msgid "Toggle menu"
 msgstr "Desplagar/Replegar menú"
 
 #: searchform.php:15
+#: searchform.php:32
 msgid "Search"
 msgstr "Buscar"
 
@@ -531,19 +532,16 @@ msgid "Author 2: firsname"
 msgstr "Autor 2: nombre"
 
 #: functions.php:465
-#, fuzzy
 msgid "Author 2: lastname"
-msgstr "Autor 1: apellido"
+msgstr "Autor 2: apellido"
 
 #: functions.php:471
-#, fuzzy
 msgid "Author 3: firstname"
-msgstr "Autor 1: nombre"
+msgstr "Autor 3: nombre"
 
 #: functions.php:477
-#, fuzzy
 msgid "Author 3: lastname"
-msgstr "Autor 1: apellido"
+msgstr "Autor 3: apellido"
 
 #: functions.php:487
 msgid "Dates"
