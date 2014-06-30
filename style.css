@@ -123,6 +123,18 @@ h1 {
 	line-height: 1em;
 	font-weight: 300;
 }
+#pre-margend {
+	text-align: right;
+}
+#lang_sel {
+	text-align: left;
+	margin-top: 6px;
+	z-index: 10;
+}
+#lang_sel li,
+#lang_sel ul ul {
+	width: 100px;
+}
 
 /* FOOTER */
 #epi {
@@ -422,6 +434,7 @@ figcaption {
 	margin-right: 6px;
 }
 
+
 /* MEDIA QUERIES */
 /* styles just for mobiles */
 @media (max-width: 767px) {
@@ -437,6 +450,11 @@ figcaption {
 	#main, #related, #margeni, #margend {
 		margin-bottom: 3em;
 	}
+	#lang_sel li,
+	#lang_sel ul ul {
+		width: 100px;
+	}
+
 }
 
 /* styles just for tablets */
