@@ -23,9 +23,17 @@ if( $wp_rewrite->using_permalinks() ) { // if pretty permalinks
 		$pag_args['base'] = user_trailingslashit( trailingslashit( remove_query_arg(array('s','post_type'),$url_raw)). "page/%#%/", 'paged'). "?s=" .get_query_var('s'). "&post_type=" .$pt_current;
 	}
 
-	if ( array_key_exists('view', $_GET) ) { // if view query arg is set
+	elseif ( array_key_exists('view', $_GET) ) { // if view query arg is set
 		$view_current = sanitize_text_field( $_GET['view'] );
-		$pag_args['base'] = user_trailingslashit( trailingslashit( remove_query_arg('view',get_pagenum_link(1))). "page/%#%/", 'paged'). "?view=" .$view_current;
+		$pag_args['base'] = user_trailingslashit( trailingslashit( remove_query_arg('view',get_pagenum_link(1)) ) . "page/%#%/", 'paged') . "?view=" .$view_current;
+	}
+
+	else {
+		$url_raw = "http://" .$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+		$url_raw = preg_replace('/\/page\/[0-9]*/','',$url_raw);
+		//$pag_args['base'] = user_trailingslashit( trailingslashit( remove_query_arg(get_pagenum_link(1))). "page/%#%/", 'paged');
+		$pag_args['base'] = user_trailingslashit( trailingslashit( $url_raw ). "page/%#%/", 'paged' );
+
 	}
 } // end if pretty permalink
 
