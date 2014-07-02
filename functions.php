@@ -576,12 +576,19 @@ function cedobi_filter_loop( $query ) {
 		$query->set( 'order', 'DESC' );
 
 	}
+	if ( is_search() && $query->is_main_query() && !array_key_exists('post_type', $_GET) ||
+	is_search() && $query->is_main_query() && array_key_exists('post_type', $_GET) && sanitize_text_field( $_GET['post_type'] ) == '' ) {
+		$pts = array('brigadista','fotografia','documento','noticia','convocatoria','publicacion');
+		$query->set( 'post_type', $pts );
+
+	}
+
 	return $query;
 } // end set up wp_query args
 
 // load language files
 function cedobi_load_languages(){
-	load_theme_textdomain('cedobi', get_template_directory() . '/languages');
+	load_theme_textdomain('cedobi', get_template_directory() );
 }
 
 ?>
