@@ -129,7 +129,7 @@ msgstr "Resultats de recherche"
 #: index.php:82
 #, php-format
 msgid "Search results: <em>%s</em>"
-msgstr "Resultats de la recherche: em>%s</em>"
+msgstr "Resultats de la recherche: <em>%s</em>"
 
 #: index.php:121
 msgid "Image"
