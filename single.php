@@ -4,7 +4,7 @@ global $wp_post_types;
 
 // build title
 $tit = get_the_title();
-$base = CEDOBI_BLOGURL;
+$base = home_url();
 $pt_current = get_post_type();
 
 // build tax and custom fields filters buttons

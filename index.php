@@ -7,7 +7,8 @@ if ( is_home() ) { $pt_current = "archivo"; }
 else { $pt_current = get_post_type(); }
 
 // build filters buttons and page main title
-$base = CEDOBI_BLOGURL;
+//$base = CEDOBI_BLOGURL;
+$base = trailingslashit( home_url() );
 
 if ( $pt_current == 'archivo' && !array_key_exists('s', $_GET)
 	|| $pt_current == 'brigadista' && !array_key_exists('s', $_GET)
@@ -38,7 +39,7 @@ if ( $pt_current == 'archivo' && !array_key_exists('s', $_GET)
 			$filters_out .= "<div class='col-md-6 col-sm-6 col-xs-12 filter-" .$pt. "'><a" .$active_class. " href='" .$base. "?view=" .$view_current. "'>" .__('Complete archive','cedobi'). "</a></div>";
 		} else {
 			$pt_tit = $wp_post_types[$pt]->labels->name;
-			$filters_out .= "<div class='col-md-6 col-sm-6 col-xs-12 filter-" .$pt. "'><a" .$active_class. " href='" .$base. "/" .$pt. "?view=" .$view_current. "'>" .$pt_tit. "</a></div>";
+			$filters_out .= "<div class='col-md-6 col-sm-6 col-xs-12 filter-" .$pt. "'><a" .$active_class. " href='" .$base . $pt. "?view=" .$view_current. "'>" .$pt_tit. "</a></div>";
 		}
 
 	}
