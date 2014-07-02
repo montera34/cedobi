@@ -29,6 +29,7 @@
 </title>
 
 <?php
+$base = trailingslashit( home_url() );
 // metatags generation
 if ( is_single() || is_page() ) {
 	$metadesc = $post->post_excerpt;
@@ -56,7 +57,7 @@ if ( is_single() || is_page() ) {
 	$metatit = CEDOBI_BLOGNAME;
 	$metatype = "website";
 	$metaimg = CEDOBI_BLOGTHEME. "/images/cedobi-logo.png";
-	$metaperma = CEDOBI_BLOGURL;
+	$metaperma = $base;
 }
 ?>
 
@@ -89,7 +90,7 @@ wp_head(); ?>
 <div id="pre" class="container">
 	<div class="row">
 		<div id="pre-margeni" class="col-md-3 col-sm-3 col-xs-3">
-			<a href="<?php echo CEDOBI_BLOGURL ?>" title="<?php echo CEDOBI_BLOGDESC ?>"><img src="<?php echo CEDOBI_BLOGTHEME. "/images/cedobi-imago.png"; ?>" alt="<?php echo CEDOBI_BLOGNAME ?>" /></a>
+			<a href="<?php echo $base ?>" title="<?php echo CEDOBI_BLOGDESC ?>"><img src="<?php echo CEDOBI_BLOGTHEME. "/images/cedobi-imago.png"; ?>" alt="<?php echo CEDOBI_BLOGNAME ?>" /></a>
 		</div><!-- #pre-margeni -->
 		<div id="pre-main" class="col-md-18 col-sm-18 col-xs-16">
 			<div class="row">

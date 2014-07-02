@@ -1,5 +1,5 @@
 <?php // related loops
-$base = trailingslashit( home_url() );
+global $base;
 
 global $wp_post_types; // custom post types info
 global $pt_current;

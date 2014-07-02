@@ -7,8 +7,7 @@ if ( is_home() ) { $pt_current = "archivo"; }
 else { $pt_current = get_post_type(); }
 
 // build filters buttons and page main title
-//$base = CEDOBI_BLOGURL;
-$base = trailingslashit( home_url() );
+global $base;
 
 if ( $pt_current == 'archivo' && !array_key_exists('s', $_GET)
 	|| $pt_current == 'brigadista' && !array_key_exists('s', $_GET)

@@ -1,5 +1,6 @@
 <?php
 global $wp_post_types;
+global $base;
 $select_out = "";
 $search_pts = array("brigadista","fotografia","documento","noticia","convocatoria","publicacion");
 foreach ( $search_pts as $pt ) {

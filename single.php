@@ -1,10 +1,10 @@
 <?php get_header();
 // custom post types info
 global $wp_post_types;
+global $base;
 
 // build title
 $tit = get_the_title();
-$base = home_url();
 $pt_current = get_post_type();
 
 // build tax and custom fields filters buttons
