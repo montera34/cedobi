@@ -470,6 +470,9 @@ figcaption {
 /* MEDIA QUERIES */
 /* styles just for mobiles */
 @media (max-width: 767px) {
+	#pre-margeni {
+		margin-bottom: 10px;
+	}
 	.related {
 		margin-top: 3em;
 	}
@@ -484,7 +487,7 @@ figcaption {
 	}
 	#lang_sel li,
 	#lang_sel ul ul {
-		width: 100px;
+		width: 90px;
 	}
 
 }
