@@ -142,13 +142,19 @@ foreach ( $fields as $filter_tit => $field ) {
 		} elseif ( $type == 'cf' ) {
 		// custom field
 			if ( $filter_tit == __('Authors','cedobi') ) {
+				$check_field = 0;
 				$cf_count++;
 				$term[$cf_count] = get_post_meta( $post->ID, $name, true );
+				
 				if ( count($term) == 2 ) {
-					$terms_out .= "<div class='cfield'>" .$term[1]. " " .$term[2]. "</div>";
+					if ( $term[1] != '' || $term[2] != '' ) {
+						$terms_out .= "<div class='cfield'>" .$term[1]. " " .$term[2]. "</div>";
+						$check_field = 1;
+					}
 					$cf_count = 0;
 					$term = "";
 				}
+				if ( $check_field == 0 ) { $terms_out .= "<div class='cfield'>Sin autor definido.</div>"; }
 			} elseif ( $filter_tit == __('Validity','cedobi') ) {
 				$term = date('d \/ m \/ Y',get_post_meta( $post->ID, $name, true ) );
 				$terms_out .= "<div class='cfield'>" .$term. "</div>";
