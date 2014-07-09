@@ -62,7 +62,7 @@ msgstr "Año"
 #: single.php:144
 #: functions.php:440
 msgid "Authors"
-msgstr "AutoresAutores"
+msgstr "Autores"
 
 #: single.php:50
 msgid "Format/Type"
