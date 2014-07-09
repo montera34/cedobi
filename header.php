@@ -130,12 +130,14 @@ wp_head(); ?>
 
 		</div><!-- #pre-main -->
 		<div id="pre-margend" class="col-md-3 col-sm-3 col-xs-5">
+			<ul id="cedobi-social" class="list-inline">
+				<li id="cedobi-fb"><a title="Facebook" href="https://facebook.com/cedobi">Facebook</a></li>
+				<li id="cedobi-fk"><a title="Flickr" href="http://flickr.com/photos/iea__cedobi">Flickr</a></li>
+				<li id="cedobi-rss"><a title="Feed RSS" href="<?php echo $base. "feed"; ?>">RSS</a></li>
+			</ul>
 			<?php do_action('icl_language_selector');
 			//$languages = icl_get_languages('skip_missing=0&orderby=name&order=asc&link_empty_to=str');
-			//foreach ( $languages as $lang ) {
-				
-			//}
-?>
+			?>
 		</div><!-- #pre-margeni -->
 
 	</div><!-- .row -->

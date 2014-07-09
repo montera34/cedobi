@@ -135,6 +135,38 @@ h1 {
 #lang_sel ul ul {
 	width: 100px;
 }
+#cedobi-social li {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+#cedobi-social li a {
+	text-indent: -9999px;
+	text-align: left;
+	width: 24px;
+	height: 24px;
+	display: block;
+	background-image: url('images/cedobi-icons.png');
+	background-repeat: no-repeat;
+}
+#cedobi-social #cedobi-fb a {
+	background-position: 0 -475px;
+}
+#cedobi-social #cedobi-fb a:hover {
+	background-position: 0 -450px;
+}
+#cedobi-social #cedobi-fk a {
+	background-position: 0 -575px;
+}
+#cedobi-social #cedobi-fk a:hover {
+	background-position: 0 -550px;
+}
+#cedobi-social #cedobi-rss a {
+	background-position: 0 -525px;
+}
+#cedobi-social #cedobi-rss a:hover {
+	background-position: 0 -500px;
+}
+
 
 /* FOOTER */
 #epi {
