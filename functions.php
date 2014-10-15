@@ -11,7 +11,7 @@ function cedobi_theme_setup() {
 	    define('CEDOBI_BLOGDESC', get_bloginfo('description','display'));
 
 	if (!defined('CEDOBI_BLOGURL'))
-	    define('CEDOBI_BLOGURL', get_bloginfo('url'));
+	    define('CEDOBI_BLOGURL', trailingslashit(get_bloginfo('url')));
 
 	if (!defined('CEDOBI_BLOGTHEME'))
 	    define('CEDOBI_BLOGTHEME', get_bloginfo('template_directory'));
@@ -46,8 +46,14 @@ function cedobi_theme_setup() {
 	// create year custom field based in tax to sort post
 	add_action('wp_insert_post', 'cedobi_write_cf_year');
 
+	// set up wp_query args
+	add_filter( 'pre_get_posts', 'cedobi_filter_loop' );
+
 	// load language files
 	add_action('after_setup_theme', 'cedobi_load_languages');
+
+	// build feed with custom post types
+	add_filter('request', 'cedobi_build_feed');
 
 } // end montera34 theme setup function
 
@@ -561,7 +567,6 @@ function cedobi_write_cf_year() {
 } // create year custom field based in tax to sort post
 
 // set up wp_query args
-add_filter( 'pre_get_posts', 'cedobi_filter_loop' );
 function cedobi_filter_loop( $query ) {
 	if ( is_home() && $query->is_main_query() ) {
 		$pts = array('brigadista','fotografia','documento');
@@ -589,6 +594,13 @@ function cedobi_filter_loop( $query ) {
 // load language files
 function cedobi_load_languages(){
 	load_theme_textdomain('cedobi', get_template_directory() );
+}
+
+// build feed with custom post types
+function cedobi_build_feed($qv) {
+	if ( isset($qv['feed']) )
+		$qv['post_type'] = get_post_types();
+	return $qv;
 }
 
 ?>
