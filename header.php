@@ -28,9 +28,7 @@
 	?>
 </title>
 
-<?php
-$base = trailingslashit( home_url() );
-// metatags generation
+<?php // metatags generation
 if ( is_single() || is_page() ) {
 	$metadesc = $post->post_excerpt;
 	if ( $metadesc == '' ) { $metadesc = $post->post_content; }
@@ -57,7 +55,7 @@ if ( is_single() || is_page() ) {
 	$metatit = CEDOBI_BLOGNAME;
 	$metatype = "website";
 	$metaimg = CEDOBI_BLOGTHEME. "/images/cedobi-logo.png";
-	$metaperma = $base;
+	$metaperma = CEDOBI_BLOGURL;
 }
 ?>
 
@@ -90,7 +88,7 @@ wp_head(); ?>
 <div id="pre" class="container">
 	<div class="row">
 		<div id="pre-margeni" class="col-md-3 col-sm-3">
-			<a href="<?php echo $base ?>" title="<?php echo CEDOBI_BLOGDESC ?>"><img src="<?php echo CEDOBI_BLOGTHEME. "/images/cedobi-imago.png"; ?>" alt="<?php echo CEDOBI_BLOGNAME ?>" /></a>
+			<a href="<?php echo CEDOBI_BLOGURL ?>" title="<?php echo CEDOBI_BLOGDESC ?>"><img src="<?php echo CEDOBI_BLOGTHEME. "/images/cedobi-imago.png"; ?>" alt="<?php echo CEDOBI_BLOGNAME ?>" /></a>
 		</div><!-- #pre-margeni -->
 		<div id="pre-main" class="col-md-18 col-sm-18 col-xs-16">
 			<div class="row">
@@ -129,11 +127,11 @@ wp_head(); ?>
 			</div>
 
 		</div><!-- #pre-main -->
-		<div id="pre-margend" class="col-md-3 col-sm-3 col-xs-5">
+		<div id="pre-margend" class="col-md-3 col-sm-3 col-xs-8">
 			<ul id="cedobi-social" class="list-inline">
 				<li id="cedobi-fb"><a title="Facebook" href="https://facebook.com/cedobi">Facebook</a></li>
 				<li id="cedobi-fk"><a title="Flickr" href="http://flickr.com/photos/iea__cedobi">Flickr</a></li>
-				<li id="cedobi-rss"><a title="Feed RSS" href="<?php echo $base. "feed"; ?>">RSS</a></li>
+				<li id="cedobi-rss"><a title="Feed RSS" href="<?php echo CEDOBI_BLOGURL. "feed"; ?>">RSS</a></li>
 			</ul>
 			<?php do_action('icl_language_selector');
 			//$languages = icl_get_languages('skip_missing=0&orderby=name&order=asc&link_empty_to=str');

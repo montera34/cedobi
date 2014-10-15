@@ -1,6 +1,4 @@
 <?php // related loops
-global $base;
-
 global $wp_post_types; // custom post types info
 global $pt_current;
 $current = time();
@@ -60,7 +58,7 @@ foreach ( $rels as $key => $rel ) {
 	if ( count($related_posts) != 0 ) {
 		$related_out .= "
 		<section id='related-" .$key. "' class='related col-md-24 col-sm-8'>
-			<h2 class='related-tit'><a href='" .$base . $key. "' title='" .sprintf( __( '%s archive','cedobi' ), $related_tit ). "'>" .$related_tit. "</a></h2>
+			<h2 class='related-tit'><a href='" .CEDOBI_BLOGURL . $key. "' title='" .sprintf( __( '%s archive','cedobi' ), $related_tit ). "'>" .$related_tit. "</a></h2>
 		";
 		foreach ( $related_posts as $item ) {
 			$rel_tit = $item->post_title;

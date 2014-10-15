@@ -7,8 +7,6 @@ if ( is_home() ) { $pt_current = "archivo"; }
 else { $pt_current = get_post_type(); }
 
 // build filters buttons and page main title
-global $base;
-
 if ( $pt_current == 'archivo' && !array_key_exists('s', $_GET)
 	|| $pt_current == 'brigadista' && !array_key_exists('s', $_GET)
 	|| $pt_current == 'fotografia' && !array_key_exists('s', $_GET)
@@ -35,10 +33,10 @@ if ( $pt_current == 'archivo' && !array_key_exists('s', $_GET)
 
 		} else { $active_class = ""; }
 		if ( $pt == 'archivo' ) {
-			$filters_out .= "<div class='col-md-6 col-sm-6 col-xs-12 filter-" .$pt. "'><a" .$active_class. " href='" .$base. "?view=" .$view_current. "'>" .__('Complete archive','cedobi'). "</a></div>";
+			$filters_out .= "<div class='col-md-6 col-sm-6 col-xs-12 filter-" .$pt. "'><a" .$active_class. " href='" .CEDOBI_BLOGURL. "?view=" .$view_current. "'>" .__('Complete archive','cedobi'). "</a></div>";
 		} else {
 			$pt_tit = $wp_post_types[$pt]->labels->name;
-			$filters_out .= "<div class='col-md-6 col-sm-6 col-xs-12 filter-" .$pt. "'><a" .$active_class. " href='" .$base . $pt. "?view=" .$view_current. "'>" .$pt_tit. "</a></div>";
+			$filters_out .= "<div class='col-md-6 col-sm-6 col-xs-12 filter-" .$pt. "'><a" .$active_class. " href='" .CEDOBI_BLOGURL . $pt. "?view=" .$view_current. "'>" .$pt_tit. "</a></div>";
 		}
 
 	}
@@ -50,9 +48,9 @@ if ( $pt_current == 'archivo' && !array_key_exists('s', $_GET)
 		if ( $view == $view_current ) { $active_class = " class='active'"; }
 		else { $active_class = ""; }
 		if ( $pt_current == 'archivo' || array_key_exists('s', $_GET) ) {
-			$views_out .= "<div class='col-lg-4 col-md-6 col-sm-5 col-xs-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .$base. "?view=" .$view. "'>" .$view. "</a></div>";
+			$views_out .= "<div class='col-lg-4 col-md-6 col-sm-5 col-xs-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .CEDOBI_BLOGURL. "?view=" .$view. "'>" .$view. "</a></div>";
 		} else {
-			$views_out .= "<div class='col-lg-4 col-md-6 col-sm-5 col-xs-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .$base. "/" .$pt_current. "?view=" .$view. "'>" .$view. "</a></div>";
+			$views_out .= "<div class='col-lg-4 col-md-6 col-sm-5 col-xs-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .CEDOBI_BLOGURL. "/" .$pt_current. "?view=" .$view. "'>" .$view. "</a></div>";
 		}
 	}
 

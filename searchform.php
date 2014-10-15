@@ -1,6 +1,5 @@
 <?php
 global $wp_post_types;
-global $base;
 $select_out = "";
 $search_pts = array("brigadista","fotografia","documento","noticia","convocatoria","publicacion");
 foreach ( $search_pts as $pt ) {
@@ -11,7 +10,7 @@ foreach ( $search_pts as $pt ) {
 $s_query = get_search_query();
 if ( $s_query != '' ) { $search_active = " active"; }
 ?>
-<form id="archivo-search" action="<?php echo $base ?>" method="get" role="form">
+<form id="archivo-search" action="<?php echo CEDOBI_BLOGURL ?>" method="get" role="form">
 	<div id="search-basic" class="form-group has-feedback<?php echo $search_active ?>">
 		<label class="sr-only" for="s"><?php _e('Search','cedobi'); ?></label>
 		<input type="text" class="form-control" id="s" name="s" placeholder="<?php echo $s_query ?>" />

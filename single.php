@@ -1,7 +1,6 @@
 <?php get_header();
 // custom post types info
 global $wp_post_types;
-global $base;
 
 // build title
 $tit = get_the_title();
@@ -194,7 +193,7 @@ if ( $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current =
 	foreach ( $views as $view ) {
 		if ( $view == $view_current ) { $active_class = " class='active'"; }
 		else { $active_class = ""; }
-		$views_out .= "<div class='col-lg-4 col-md-6 col-sm-5 col-xs-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .$base. "?view=" .$view. "'>" .$view. "</a></div>";
+		$views_out .= "<div class='col-lg-4 col-md-6 col-sm-5 col-xs-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .CEDOBI_BLOGURL. "?view=" .$view. "'>" .$view. "</a></div>";
 
 	}
 	$views_out .= "

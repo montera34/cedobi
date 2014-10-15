@@ -1,6 +1,5 @@
 <?php
 global $wp_post_types; // custom post types info
-global $base;
 // build archivo sections buttons
 $pts = array("brigadista","fotografia","documento");
 $filters_out = "";
@@ -9,7 +8,7 @@ foreach ( $pts as $pt ) {
 	else { $active_class = ""; }
 
 	$pt_tit = $wp_post_types[$pt]->labels->name;
-	$filters_out .= "<div class='col-md-24 col-sm-6 col-xs-12 filter-" .$pt. "'><a" .$active_class. " href='" .$base . $pt. "'>" .$pt_tit. "</a></div>";
+	$filters_out .= "<div class='col-md-24 col-sm-6 col-xs-12 filter-" .$pt. "'><a" .$active_class. " href='" .CEDOBI_BLOGURL . $pt. "'>" .$pt_tit. "</a></div>";
 }
 
 ?>
