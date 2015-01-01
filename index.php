@@ -50,7 +50,7 @@ if ( $pt_current == 'archivo' && !array_key_exists('s', $_GET)
 		if ( $pt_current == 'archivo' || array_key_exists('s', $_GET) ) {
 			$views_out .= "<div class='col-lg-4 col-md-6 col-sm-5 col-xs-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .CEDOBI_BLOGURL. "?view=" .$view. "'>" .$view. "</a></div>";
 		} else {
-			$views_out .= "<div class='col-lg-4 col-md-6 col-sm-5 col-xs-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .CEDOBI_BLOGURL. "/" .$pt_current. "?view=" .$view. "'>" .$view. "</a></div>";
+			$views_out .= "<div class='col-lg-4 col-md-6 col-sm-5 col-xs-4 vista-" .$view. "'><a" .$active_class. " title='" .$view. "' href='" .CEDOBI_BLOGURL.$pt_current. "?view=" .$view. "'>" .$view. "</a></div>";
 		}
 	}
 
