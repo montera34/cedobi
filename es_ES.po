@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cedobi 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-30 14:21+0100\n"
+"POT-Creation-Date: 2015-01-01 17:44+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: skotperez <skotperez@voragine.net>\n"
 "Language-Team: \n"
@@ -19,11 +19,11 @@ msgstr ""
 msgid "Page %s"
 msgstr "Página %s"
 
-#: header.php:66
+#: header.php:65
 msgid "international brigades, spanish civil war, international brigadiers"
 msgstr "Brigadas internacionales, Guerra Civil, brigadistas internacionales"
 
-#: header.php:106
+#: header.php:105
 msgid "Toggle menu"
 msgstr "Desplagar/Replegar menú"
 
@@ -37,63 +37,67 @@ msgid "Advanced"
 msgstr "Avanzada"
 
 #: searchform.php:27
-#: single.php:185
-#: index.php:38
+#: single.php:190
+#: index.php:36
 msgid "Complete archive"
 msgstr "Archivo completo"
 
-#: single.php:14
+#: single.php:13
 msgid "Origin"
 msgstr "Origen"
 
-#: single.php:28
+#: single.php:27
 msgid "Photo archive"
 msgstr "Fondos fotográficos"
 
-#: single.php:31
-#: single.php:54
-#: functions.php:355
+#: single.php:30
+#: single.php:53
+#: index.php:126
+#: functions.php:362
 msgid "Year"
 msgstr "Año"
 
-#: single.php:34
-#: single.php:57
-#: single.php:106
-#: single.php:144
-#: functions.php:440
+#: single.php:33
+#: single.php:56
+#: single.php:105
+#: single.php:143
+#: index.php:128
+#: functions.php:447
 msgid "Authors"
 msgstr "Autores"
 
-#: single.php:50
+#: single.php:49
 msgid "Format/Type"
 msgstr "Formato/Género"
 
-#: single.php:73
+#: single.php:72
+#: index.php:133
 msgid "Date"
 msgstr "Fecha"
 
-#: single.php:84
-#: single.php:152
+#: single.php:83
+#: single.php:157
+#: index.php:139
 msgid "Validity"
 msgstr "Vigencia"
 
-#: single.php:88
+#: single.php:87
 msgid "Place"
 msgstr "Lugar"
 
-#: single.php:99
+#: single.php:98
 msgid "Editorial and collection"
 msgstr "Editorial y colección"
 
-#: single.php:103
+#: single.php:102
 msgid "Year of publication"
 msgstr "Año de publicación"
 
-#: single.php:114
+#: single.php:113
 msgid "ISBN / pag. num."
 msgstr "ISBN / núm. pág."
 
-#: single.php:158
+#: single.php:163
 msgid "pages"
 msgstr "páginas"
 
@@ -102,57 +106,69 @@ msgstr "páginas"
 msgid "Other current %s"
 msgstr "Otras %s vigentes"
 
-#: footer.php:18
-msgid "Designed and developed by <a href=\"http://montera34.com\">m34</a> using <a href=\"/creditos\">free software</a>."
-msgstr "Diseñado y desarrollado por <a href=\"http://montera34.com\">m34</a> usando <a href=\"/creditos\">software libre</a>."
-
-#: footer.php:22
+#: footer.php:19
 msgid "Promoted by:"
 msgstr "Promovido por:"
 
-#: index.php:33
+#: footer.php:28
+msgid "Designed and developed by <a href=\"http://montera34.com\">m34</a> using <a href=\"/creditos\">free software</a>."
+msgstr "Diseñado y desarrollado por <a href=\"http://montera34.com\">m34</a> usando <a href=\"/creditos\">software libre</a>."
+
+#: index.php:31
 msgid "International Brigades Digital Archive"
 msgstr "Archivo digital de las Brigadas Internacionales"
 
-#: index.php:63
+#: index.php:61
 msgid "Filter"
 msgstr "Mostrar"
 
-#: index.php:69
+#: index.php:67
 msgid "View"
 msgstr "Ver"
 
-#: index.php:81
+#: index.php:79
 msgid "Search results"
 msgstr "Resultados de búsqueda"
 
-#: index.php:82
+#: index.php:80
 #, php-format
 msgid "Search results: <em>%s</em>"
 msgstr "Resultados de la búsqueda <em>%s</em>"
 
-#: index.php:121
-msgid "Image"
-msgstr "Imagen"
-
-#: index.php:122
+#: index.php:120
 msgid "Name"
 msgstr "Nombre"
 
-#: index.php:123
-#: functions.php:424
+#: index.php:121
+#: functions.php:431
 msgid "Type"
 msgstr "Tipo"
 
-#: index.php:124
+#: index.php:122
 msgid "Description"
 msgstr "Descripción"
 
-#: index.php:150
+#: index.php:127
+#: index.php:134
+msgid "Title"
+msgstr "Título"
+
+#: index.php:129
+#: index.php:135
+#: index.php:141
+msgid "Extract"
+msgstr "Extracto"
+
+#: index.php:140
+#: functions.php:297
+msgid "Call"
+msgstr "Convocatoria"
+
+#: index.php:165
 msgid "<p>We did not find anything related with your search criteria.</p><p>You can try again!</p>"
 msgstr "<p>No hemos encontrado ningún contenido que responda a tus criterios de búsqueda.</p><p>Inténtalo otra vez.</p>"
 
-#: index.php:156
+#: index.php:171
 msgid "Photo archives in flickr"
 msgstr "Fondos fotográficos en flickr"
 
@@ -169,401 +185,397 @@ msgstr "Últimas %s"
 msgid "Archive sections"
 msgstr "Secciones del Archivo"
 
-#: sidebar.php:62
+#: sidebar.php:61
 #, php-format
 msgid "%s archive"
 msgstr "Archivo de %s"
 
-#: functions.php:84
+#: functions.php:91
 #: loop.mosaico.php:13
 #: loop.mosaico.php:26
 msgid "Icon"
 msgstr "Icono"
 
-#: functions.php:85
+#: functions.php:92
 msgid "Big icon"
 msgstr "Icono grande"
 
-#: functions.php:86
+#: functions.php:93
 msgid "Small"
 msgstr "Pequeña"
 
-#: functions.php:97
+#: functions.php:104
 msgid "Header menu"
 msgstr "Menú de cabecera"
 
-#: functions.php:98
+#: functions.php:105
 msgid "Footer menu"
 msgstr "Menú de pie de página"
 
-#: functions.php:165
+#: functions.php:172
 msgid "Brigadiers archive"
 msgstr "Archivo de brigadistas"
 
-#: functions.php:166
+#: functions.php:173
 msgid "Brigadier"
 msgstr "Brigadista"
 
-#: functions.php:167
+#: functions.php:174
 msgid "Add a brigadier"
 msgstr "Añadir brigadista"
 
-#: functions.php:168
-#: functions.php:199
-#: functions.php:230
-#: functions.php:261
-#: functions.php:292
-#: functions.php:323
+#: functions.php:175
+#: functions.php:206
+#: functions.php:237
+#: functions.php:268
+#: functions.php:299
+#: functions.php:330
 msgid "Edit"
 msgstr "Editar"
 
-#: functions.php:169
+#: functions.php:176
 msgid "Edit this brigadier"
 msgstr "Editar este brigadista"
 
-#: functions.php:170
+#: functions.php:177
 msgid "New brigadier"
 msgstr "Nuevo brigadista"
 
-#: functions.php:171
+#: functions.php:178
 msgid "View brigadier"
 msgstr "Ver brigadista"
 
-#: functions.php:172
+#: functions.php:179
 msgid "View this brigadier"
 msgstr "Ver este brigadista"
 
-#: functions.php:173
+#: functions.php:180
 msgid "Search brigadier"
 msgstr "Buscar brigadistas"
 
-#: functions.php:174
+#: functions.php:181
 msgid "No brigadiers found"
 msgstr "Ningún brigadista encontrado"
 
-#: functions.php:175
+#: functions.php:182
 msgid "No brigadiers in trash"
 msgstr "Ningún brigadista en la papelera"
 
-#: functions.php:176
-#: functions.php:207
-#: functions.php:238
-#: functions.php:269
-#: functions.php:300
-#: functions.php:331
+#: functions.php:183
+#: functions.php:214
+#: functions.php:245
+#: functions.php:276
+#: functions.php:307
+#: functions.php:338
 msgid "Parent"
 msgstr "Superior"
 
-#: functions.php:196
+#: functions.php:203
 msgid "Photos Archives"
 msgstr "Fondos fotográficos"
 
-#: functions.php:197
+#: functions.php:204
 msgid "Photo"
 msgstr "Fotografía"
 
-#: functions.php:198
+#: functions.php:205
 msgid "Add a photo"
 msgstr "Añadir fotografía"
 
-#: functions.php:200
+#: functions.php:207
 msgid "Edit this photo"
 msgstr "Editar esta fotografía"
 
-#: functions.php:201
+#: functions.php:208
 msgid "New photo"
 msgstr "Nueva fotografía"
 
-#: functions.php:202
+#: functions.php:209
 msgid "View photo"
 msgstr "Ver fotografía"
 
-#: functions.php:203
+#: functions.php:210
 msgid "View this photo"
 msgstr "Ver esta fotografía"
 
-#: functions.php:204
+#: functions.php:211
 msgid "Search photos"
 msgstr "Buscar fotografías"
 
-#: functions.php:205
+#: functions.php:212
 msgid "No photos found"
 msgstr "Ninguna fotografía encontrada"
 
-#: functions.php:206
+#: functions.php:213
 msgid "No photos in trash"
 msgstr "Ninguna fotografía en la papelera"
 
-#: functions.php:227
+#: functions.php:234
 msgid "Digital resources"
 msgstr "Recursos digitales"
 
-#: functions.php:228
+#: functions.php:235
 msgid "Digital resource"
 msgstr "Documento"
 
-#: functions.php:229
+#: functions.php:236
 msgid "Add a digital resource"
 msgstr "Añadir un documento"
 
-#: functions.php:231
+#: functions.php:238
 msgid "Edit this digital resource"
 msgstr "Editar este documento"
 
-#: functions.php:232
+#: functions.php:239
 msgid "New digital resource"
 msgstr "Nuevo documento"
 
-#: functions.php:233
+#: functions.php:240
 msgid "View digital resource"
 msgstr "Ver documento"
 
-#: functions.php:234
+#: functions.php:241
 msgid "View this digital resource"
 msgstr "Ver este documento"
 
-#: functions.php:235
+#: functions.php:242
 #, fuzzy
 msgid "Search digital resource"
 msgstr "Nuevo documento"
 
-#: functions.php:236
+#: functions.php:243
 msgid "No digital resources found"
 msgstr "Ningún documento encontrado"
 
-#: functions.php:237
+#: functions.php:244
 msgid "No digital resources in trash"
 msgstr "Ningún documento en la papelera"
 
-#: functions.php:258
+#: functions.php:265
 msgid "News"
 msgstr "Noticias"
 
-#: functions.php:259
+#: functions.php:266
 msgid "New"
 msgstr "Noticia"
 
-#: functions.php:260
+#: functions.php:267
 msgid "Add a new"
 msgstr "Añadir una noticia"
 
-#: functions.php:262
+#: functions.php:269
 msgid "Edit this new"
 msgstr "Editar esta noticia"
 
-#: functions.php:263
+#: functions.php:270
 msgid "New new"
 msgstr "Nueva noticia"
 
-#: functions.php:264
+#: functions.php:271
 msgid "View new"
 msgstr "Ver notcia"
 
-#: functions.php:265
+#: functions.php:272
 msgid "View this new"
 msgstr "Ver esta noticia"
 
-#: functions.php:266
+#: functions.php:273
 msgid "Search news"
 msgstr "Buscar noticias"
 
-#: functions.php:267
+#: functions.php:274
 msgid "No news found"
 msgstr "Ninguna noticia encontrada"
 
-#: functions.php:268
+#: functions.php:275
 msgid "No news in trash"
 msgstr "Ninguna noticia en la papelera"
 
-#: functions.php:289
+#: functions.php:296
 msgid "Calls"
 msgstr "Convocatorias"
 
-#: functions.php:290
-msgid "Call"
-msgstr "Convocatoria"
-
-#: functions.php:291
+#: functions.php:298
 msgid "Add a call"
 msgstr "Añadir una convocatoria"
 
-#: functions.php:293
+#: functions.php:300
 msgid "Edit this call"
 msgstr "Editar esta convocatoria"
 
-#: functions.php:294
+#: functions.php:301
 msgid "New call"
 msgstr "Nueva convocatoria"
 
-#: functions.php:295
+#: functions.php:302
 msgid "View call"
 msgstr "Ver convocatoria"
 
-#: functions.php:296
+#: functions.php:303
 msgid "View this call"
 msgstr "Ver esta convocatoria"
 
-#: functions.php:297
+#: functions.php:304
 msgid "Search calls"
 msgstr "Buscar convocatorias"
 
-#: functions.php:298
+#: functions.php:305
 msgid "No calls found"
 msgstr "Ninguna convocatoria encontrada"
 
-#: functions.php:299
+#: functions.php:306
 msgid "No calls in trash"
 msgstr "Ninguna convocatoria en la papelera"
 
-#: functions.php:320
+#: functions.php:327
 msgid "Publications"
 msgstr "Publicaciones"
 
-#: functions.php:321
+#: functions.php:328
 msgid "Publication"
 msgstr "Publicación"
 
-#: functions.php:322
+#: functions.php:329
 msgid "Add a publication"
 msgstr "Añadir una publicación"
 
-#: functions.php:324
+#: functions.php:331
 msgid "Edit this publication"
 msgstr "Editar esta publicación"
 
-#: functions.php:325
+#: functions.php:332
 msgid "New publication"
 msgstr "Nueva publicación"
 
-#: functions.php:326
+#: functions.php:333
 msgid "View publication"
 msgstr "Ver publicación"
 
-#: functions.php:327
+#: functions.php:334
 msgid "View this publication"
 msgstr "Ver esta publicación"
 
-#: functions.php:328
+#: functions.php:335
 msgid "Search publications"
 msgstr "Buscar publicaciones"
 
-#: functions.php:329
+#: functions.php:336
 msgid "No publications found"
 msgstr "Ninguna publicación encontrada"
 
-#: functions.php:330
+#: functions.php:337
 msgid "No publications in trash"
 msgstr "Ninguna publicación en la papelera"
 
-#: functions.php:356
+#: functions.php:363
 msgid "Years"
 msgstr "Años"
 
-#: functions.php:364
+#: functions.php:371
 msgid "City"
 msgstr "Ciudad"
 
-#: functions.php:365
+#: functions.php:372
 msgid "Cities"
 msgstr "Ciudades"
 
-#: functions.php:372
+#: functions.php:379
 msgid "State"
 msgstr "Región"
 
-#: functions.php:373
+#: functions.php:380
 msgid "States"
 msgstr "Regiones"
 
-#: functions.php:380
+#: functions.php:387
 msgid "Contry"
 msgstr "País"
 
-#: functions.php:381
+#: functions.php:388
 msgid "Countries"
 msgstr "Países"
 
-#: functions.php:389
+#: functions.php:396
 msgid "Collection"
 msgstr "Colección"
 
-#: functions.php:390
+#: functions.php:397
 msgid "Collections"
 msgstr "Colecciones"
 
-#: functions.php:397
+#: functions.php:404
 msgid "Publisher"
 msgstr "Editorial"
 
-#: functions.php:398
+#: functions.php:405
 msgid "Publishers"
 msgstr "Editoriales"
 
-#: functions.php:406
+#: functions.php:413
 msgid "Archive"
 msgstr "Fondo fotográfico"
 
-#: functions.php:407
+#: functions.php:414
 msgid "Archives"
 msgstr "Fondos fotográficos"
 
-#: functions.php:415
+#: functions.php:422
 msgid "Format"
 msgstr "Formato"
 
-#: functions.php:416
+#: functions.php:423
 msgid "Formats"
 msgstr "Formatos"
 
-#: functions.php:425
+#: functions.php:432
 msgid "Types"
 msgstr "Género"
 
-#: functions.php:447
+#: functions.php:454
 msgid "Author 1: firstname"
 msgstr "Autor 1: nombre"
 
-#: functions.php:453
+#: functions.php:460
 msgid "Author 1: lastname"
 msgstr "Autor 1: apellido"
 
-#: functions.php:459
+#: functions.php:466
 msgid "Author 2: firsname"
 msgstr "Autor 2: nombre"
 
-#: functions.php:465
+#: functions.php:472
 msgid "Author 2: lastname"
 msgstr "Autor 2: apellido"
 
-#: functions.php:471
+#: functions.php:478
 msgid "Author 3: firstname"
 msgstr "Autor 3: nombre"
 
-#: functions.php:477
+#: functions.php:484
 msgid "Author 3: lastname"
 msgstr "Autor 3: apellido"
 
-#: functions.php:487
+#: functions.php:494
 msgid "Dates"
 msgstr "Fechas"
 
-#: functions.php:494
+#: functions.php:501
 msgid "Begining date"
 msgstr "Fecha de inicio"
 
-#: functions.php:500
+#: functions.php:507
 msgid "Ending date"
 msgstr "Fecha de fin"
 
-#: functions.php:510
+#: functions.php:517
 msgid "Book data"
 msgstr "Datos del libro"
 
-#: functions.php:517
+#: functions.php:524
 msgid "Number of pages"
 msgstr "Número de páginas"
 
-#: functions.php:522
+#: functions.php:529
 msgid "ISBN"
 msgstr "ISBN"
 
@@ -665,4 +677,7 @@ msgstr "Archivo:"
 #: lib/metabox/helpers/cmb_Meta_Box_types.php:762
 msgid "Download"
 msgstr "Descargar"
+
+#~ msgid "Image"
+#~ msgstr "Imagen"
 
