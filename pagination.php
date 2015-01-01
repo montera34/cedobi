@@ -37,27 +37,22 @@ if( $wp_rewrite->using_permalinks() ) { // if pretty permalinks
 	}
 } // end if pretty permalink
 
-// query posts count
-//if ( is_home() ) { $counter = query_posts("showposts=-1"); $count_text = "art&iacute;culos"; }
-//elseif ( is_search() ) { $counter = query_posts("s=$s&showposts=-1"); $count_text = "resultados"; }
-//elseif ( $post_type == 'link' ) { $counter = query_posts("post_type=link&showposts=-1"); $count_text = "enlaces"; }
-//elseif ( is_category() ) { $query_cat = $wp_query->query_vars['cat']; $counter = query_posts("cat=$query_cat&showposts=-1"); $count_text = "art&iacute;culos"; }
-//	$count_posts = $wp_query->post_count;
-//	wp_reset_query();
-
-// output
-$pag_list = "";
-foreach ( paginate_links($pag_args) as $pag ) {
-	if ( preg_match('/current/',$pag) == 1 ) { $pags_list .= "<li class='active'>" .$pag. "</li>"; }
-	elseif ( preg_match('/dots/',$pag) == 1 ) { $pags_list .= "<li class='disabled'>" .$pag. "</li>"; }
-	else { $pags_list .= "<li>" .$pag. "</li>"; }
-}
-
-$pag_out =
+$pags = paginate_links($pag_args);
+if ( $pags != '' ) { // if pags has pages
+	$pag_list = "";
+	foreach ( paginate_links($pag_args) as $pag ) {
+		if ( preg_match('/current/',$pag) == 1 ) { $pags_list .= "<li class='active'>" .$pag. "</li>"; }
+		elseif ( preg_match('/dots/',$pag) == 1 ) { $pags_list .= "<li class='disabled'>" .$pag. "</li>"; }
+		else { $pags_list .= "<li>" .$pag. "</li>"; }
+	}
+	// output
+	$pag_out =
 	"<ul class='pagination'>"
 		.$pags_list.
-	"</ul>";
-//echo "<div class='nav-counter'>$count_posts $count_text</div>";
+	"</ul>
+	";
 
-echo $pag_out;
+	echo $pag_out;
+
+} // end if pags has pages
 ?>
