@@ -44,7 +44,8 @@ function cedobi_theme_setup() {
 	add_action( 'admin_menu', 'cedobi_remove_dashboard_item' );
 
 	// create year custom field based in tax to sort post
-	add_action('wp_insert_post', 'cedobi_write_cf_year');
+	//add_action('wp_insert_post', 'cedobi_write_cf_year', 9999 );
+	add_action('updated_post_meta', 'cedobi_write_cf_year', 9999 );
 
 	// set up wp_query args
 	add_filter( 'pre_get_posts', 'cedobi_filter_loop' );
