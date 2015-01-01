@@ -116,14 +116,31 @@ if ( is_tax() ) {
 				<thead>
 				<tr>
 			";
-			$th_image = __('Image','cedobi');
-			$th_name = __('Name','cedobi');
-			$th_type = __('Type','cedobi');
-			$th_desc = __('Description','cedobi');
 			if ( $pt_current == 'archivo' || $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current == 'documento' || array_key_exists('s', $_GET) ) {
-				echo "<th>" .$th_imagen. "</th><th>" .$th_name. "</th><th>" .$th_type. "</th><th>" .$th_desc. "</th>";
-			} else {
-				echo "<th>" .$th_imagen. "</th><th>" .$th_name. "</th><th>" .$th_desc. "</th>";
+				$th_name = __('Name','cedobi');
+				$th_type = __('Type','cedobi');
+				$th_desc = __('Description','cedobi');
+				echo "<th></th><th>" .$th_name. "</th><th>" .$th_type. "</th><th>" .$th_desc. "</th>";
+
+			} elseif ( $pt_current == 'publicacion' ) {
+				$th_year = __('Year','cedobi');
+				$th_name = __('Title','cedobi');
+				$th_author = __('Authors','cedobi');
+				$th_desc = __('Extract','cedobi');
+				echo "<th></th><th>" .$th_year. "</th><th>" .$th_name. "</th><th>" .$th_author. "</th><th>" .$th_desc. "</th>";
+
+			} elseif ( $pt_current == 'noticia' ) {
+				$th_year = __('Date','cedobi');
+				$th_name = __('Title','cedobi');
+				$th_desc = __('Extract','cedobi');
+				echo "<th></th><th>" .$th_year. "</th><th>" .$th_name. "</th><th>" .$th_desc. "</th>";
+
+			} elseif ( $pt_current == 'convocatoria' ) {
+				$th_year = __('Validity','cedobi');
+				$th_name = __('Call','cedobi');
+				$th_desc = __('Extract','cedobi');
+				echo "<th></th><th>" .$th_year. "</th><th>" .$th_name. "</th><th>" .$th_desc. "</th>";
+
 			}
 			echo "
 				</tr>
