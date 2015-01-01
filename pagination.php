@@ -39,7 +39,7 @@ if( $wp_rewrite->using_permalinks() ) { // if pretty permalinks
 
 $pags = paginate_links($pag_args);
 if ( $pags != '' ) { // if pags has pages
-	$pag_list = "";
+	$pags_list = "";
 	foreach ( paginate_links($pag_args) as $pag ) {
 		if ( preg_match('/current/',$pag) == 1 ) { $pags_list .= "<li class='active'>" .$pag. "</li>"; }
 		elseif ( preg_match('/dots/',$pag) == 1 ) { $pags_list .= "<li class='disabled'>" .$pag. "</li>"; }

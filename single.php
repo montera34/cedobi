@@ -153,7 +153,7 @@ foreach ( $fields as $filter_tit => $field ) {
 					$cf_count = 0;
 					$term = "";
 				}
-				if ( $check_field == 0 ) { $terms_out .= "<div class='cfield'>Sin autor definido.</div>"; }
+				if ( $check_field == 0 ) { $terms_out .= ""; }
 			} elseif ( $filter_tit == __('Validity','cedobi') ) {
 				$term = date('d \/ m \/ Y',get_post_meta( $post->ID, $name, true ) );
 				$terms_out .= "<div class='cfield'>" .$term. "</div>";
