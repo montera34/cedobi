@@ -79,6 +79,7 @@ if ( $pt_current == 'archivo' && !array_key_exists('s', $_GET)
 	if ( $s_query == '' ) { $tit = __('Search results','cedobi'); }
 	else { $tit = sprintf( __( 'Search results: <em>%s</em>','cedobi' ), $s_query ); }
 	$view_current = "lista";
+	$controls_out = "";
 
 
 } else {

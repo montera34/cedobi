@@ -13,7 +13,7 @@ if ( $s_query != '' ) { $search_active = " active"; }
 <form id="archivo-search" action="<?php echo CEDOBI_BLOGURL ?>" method="get" role="form">
 	<div id="search-basic" class="form-group has-feedback<?php echo $search_active ?>">
 		<label class="sr-only" for="s"><?php _e('Search','cedobi'); ?></label>
-		<input type="text" class="form-control" id="s" name="s" placeholder="<?php echo $s_query ?>" />
+		<input type="text" class="form-control" id="s" name="s" value="<?php echo $s_query ?>" />
 		<span class="glyphicon glyphicon-search form-control-feedback"></span>
 	</div>
 
