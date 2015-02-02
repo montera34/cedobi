@@ -1,6 +1,6 @@
 <footer id="epi" class="container tair">
 	<div class="row">
-	<div id="epi-main" class="col-md-16 col-md-offset-3">
+	<div id="epi-main" class="col-md-24">
 		<div class="row">
 		<div class="col-sm-20">
 			<div><?php echo CEDOBI_BLOGNAME. ". ".CEDOBI_BLOGDESC ?></div>
