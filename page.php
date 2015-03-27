@@ -74,7 +74,7 @@ if ( $post->post_parent != '0' ||  count($children) > 0 ) {
 
 
 <div class="row">
-	<section id="main" class="col-md-10 col-md-push-3">
+	<section id="main" class="col-md-12 col-md-push-3">
 
 	<?php if ( have_posts() ) {
 		while ( have_posts() ) : the_post();
