@@ -27,10 +27,10 @@ Tags: HTML5, CSS3
 	padding: 0;
 }
 .bair {
-	padding-bottom: 56px;
+	padding-bottom: 50px;
 }
 .tair {
-	padding-top: 56px;
+	padding-top: 50px;
 }
 .alert {
 	text-shadow: none;
@@ -207,10 +207,17 @@ figcaption {
 }
 
 /* FILTERS FORM */
+#filters {
+	padding-bottom: 15px;
+}
 .filters-tit {
 	text-transform: uppercase;
 	font-size: 0.85em;
 	padding: 0 0 7px;
+}
+.filters-btn li {
+	vertical-align: middle;
+	margin-right: 10px;
 }
 .filters-btn a {
 	padding-left: 30px;
@@ -243,6 +250,15 @@ figcaption {
 .tax-btn a:hover {
 	text-decoration: none;
 }
+.filter-publicacion a {
+	background-position: 0 -425px;
+}
+.filter-noticia a {
+	background-position: 0 -375px;
+}
+.filter-convocatoria a {
+	background-position: 0 -325px;
+}
 .filter-brigadista a {
 	background-position: 0 -225px;
 }
@@ -266,6 +282,18 @@ figcaption {
 .filters-btn a.active {
 	color: #fe0000;
 	text-decoration: none;
+}
+.filter-publicacion a:hover,
+.filter-publicacion a.active {
+	background-position: 0 -400px;
+}
+.filter-noticia a:hover,
+.filter-noticia a.active {
+	background-position: 0 -350px;
+}
+.filter-convocatoria a:hover,
+.filter-convocatoria a.active {
+	background-position: 0 -300px;
 }
 .filter-brigadista a:hover,
 .filter-brigadista a.active {

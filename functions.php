@@ -570,7 +570,7 @@ function cedobi_write_cf_year() {
 // set up wp_query args
 function cedobi_filter_loop( $query ) {
 	if ( is_home() && $query->is_main_query() ) {
-		$pts = array('brigadista','fotografia','documento');
+		$pts = array('brigadista','fotografia','documento','noticia','publicacion','convocatoria');
 		$query->set( 'post_type', $pts );
 		if ( array_key_exists('view', $_GET) && sanitize_text_field( $_GET['view'] ) == 'mosaico' ) {
 			$query->set( 'orderby', 'rand' );

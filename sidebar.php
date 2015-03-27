@@ -1,6 +1,7 @@
 <?php // related loops
 global $wp_post_types; // custom post types info
 global $pt_current;
+global $ref;
 $current = time();
 $rels = array(
 	'noticia' => array(
@@ -98,14 +99,18 @@ foreach ( $rels as $key => $rel ) {
 }
 ?>
 
-<?php if ( !is_single() ) { ?>
-<div id="margeni" class="col-md-3 col-md-pull-16">
+<?php if ( !is_single() ) {
+	if ( $ref == 'mosaico' || array_key_exists('s', $_GET) ) { $cols = "21"; } else { $cols = "16"; }
+?>
+<div id="margeni" class="col-md-3 col-md-pull-<?php echo $cols ?>">
 	<?php get_search_form(); ?>
 </div><!-- #margeni -->
 <?php } ?>
 
+<?php if ( $ref != 'mosaico' && !array_key_exists('s', $_GET) ) { ?>
 <div id="margend" class="col-md-4 col-md-offset-1">
 	<div class="row">
 	<?php echo $related_out ?>
 	</div>
 </div><!-- #margeni -->
+<?php } ?>
