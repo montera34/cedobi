@@ -173,13 +173,6 @@ if ( is_tax() ) {
 
 </div><!-- .row -->
 
-<div class="row">
-	<section id="map" class="col-sm-24">
-		<h2>Mapa de las Brigadas Internacionales en Albacete</h2>
-		<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="100%" height="360" id="umapper_embed"><param name="FlashVars" value="kmlPath=http://umapper.s3.amazonaws.com/maps/kml/268723.kml" /><param name="allowScriptAccess" value="always" /><param name="allowFullScreen" value="true" /><param name="movie" value="http://umapper.s3.amazonaws.com/templates/swf/embed.swf" /><param name="quality" value="high" /><embed src="http://umapper.s3.amazonaws.com/templates/swf/embed.swf" FlashVars="kmlPath=http://umapper.s3.amazonaws.com/maps/kml/268723.kml" allowScriptAccess="always" allowFullScreen="true" quality="high" width="100%" height="360" name="umapper_embed" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /></object>
-	</section>
-</div><!-- .row -->
-
 </div><!-- #content .container -->
 
 <?php get_footer(); ?>
