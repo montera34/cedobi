@@ -31,13 +31,14 @@ if ( $pt_current == 'archivo' && !array_key_exists('s', $_GET)
 	if ( $ref != '' ) {
 		// build filters buttons
 		$filters_out = "";
+		$count = 1;
 		foreach ( $pts as $pt ) {
 			if ( $pt == $pt_current ) {
 				$active_class = " class='active'";
 				if ( $pt_current == "archivo" && $ref == 'mosaico' ) { $tit = __('Last published content','cedobi'); }
 				elseif ( $pt_current == "archivo" ) { $tit = __('International Brigades Digital Archive','cedobi'); }
-				elseif ( $pt_current != 'archivo' && $ref == 'mosaico' ) { $tit = sprintf( __( 'Last content published in %s','cedobi' ), str_replace(' ','<br>',$wp_post_types[$pt]->labels->name) ); }
-				else { $tit = str_replace(' ','<br>',$wp_post_types[$pt]->labels->name); }
+				elseif ( $pt_current != 'archivo' && $ref == 'mosaico' ) { $tit = sprintf( __( 'Last content published in %s','cedobi' ), str_replace(' ','<br>',$wp_post_types[$pt]->labels->name,$count) ); }
+				else { $tit = str_replace(' ','<br>',$wp_post_types[$pt]->labels->name,$count); }
 
 			} else { $active_class = ""; }
 
