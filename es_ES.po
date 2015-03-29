@@ -128,7 +128,7 @@ msgstr "Últimos contenidos incorporados a %s"
 
 #: index.php:45
 msgid "All<br>contents"
-msgstr "Mostrat<br>todo"
+msgstr "Mostrar<br>todo"
 
 #: index.php:77
 msgid "Search results"
