@@ -43,6 +43,10 @@ Tags: HTML5, CSS3
 	background-color: #fff;
 	color: #000;
 }
+a:focus {
+	outline: none;
+	text-decoration: none;
+}
 
 /* typo headers */
 h1, h2, h3 {
