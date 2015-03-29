@@ -31,21 +31,20 @@ if ( $pt_current == 'archivo' && !array_key_exists('s', $_GET)
 	if ( $ref != '' ) {
 		// build filters buttons
 		$filters_out = "";
-		$count = 1;
 		foreach ( $pts as $pt ) {
 			if ( $pt == $pt_current ) {
 				$active_class = " class='active'";
 				if ( $pt_current == "archivo" && $ref == 'mosaico' ) { $tit = __('Last published content','cedobi'); }
 				elseif ( $pt_current == "archivo" ) { $tit = __('International Brigades Digital Archive','cedobi'); }
-				elseif ( $pt_current != 'archivo' && $ref == 'mosaico' ) { $tit = sprintf( __( 'Last content published in %s','cedobi' ), str_replace(' ','<br>',$wp_post_types[$pt]->labels->name,$count) ); }
-				else { $tit = str_replace(' ','<br>',$wp_post_types[$pt]->labels->name,$count); }
+				elseif ( $pt_current != 'archivo' && $ref == 'mosaico' ) { $tit = sprintf( __( 'Last content published in %s','cedobi' ), preg_replace('/\s/','<br>',$wp_post_types[$pt]->labels->name,1) ); }
+				else { $tit = preg_replace('/\s/','<br>',$wp_post_types[$pt]->labels->name,1); }
 
 			} else { $active_class = ""; }
 
 			if ( $pt == 'archivo' ) {
 				$filters_out .= "<li class='filter-" .$pt. "'><a" .$active_class. " href='" .CEDOBI_BLOGURL. "?view=" .$ref. "'>" .__('All<br>contents','cedobi'). "</a></li>";
 			} else {
-				$pt_tit = str_replace(' ','<br>',$wp_post_types[$pt]->labels->name);
+				$pt_tit = preg_replace('/\s/','<br>',$wp_post_types[$pt]->labels->name,1);
 				$filters_out .= "<li class='filter-" .$pt. "'><a" .$active_class. " href='" .CEDOBI_BLOGURL . $pt. "?view=" .$ref. "'>" .$pt_tit. "</a></li>";
 			}
 

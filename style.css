@@ -210,14 +210,9 @@ figcaption {
 #filters {
 	padding-bottom: 15px;
 }
-.filters-tit {
-	text-transform: uppercase;
-	font-size: 0.85em;
-	padding: 0 0 7px;
-}
 .filters-btn li {
 	vertical-align: middle;
-	margin-right: 10px;
+	margin-right: 5px;
 }
 .filters-btn a {
 	padding-left: 30px;
@@ -228,7 +223,7 @@ figcaption {
 	color: #000;
 	font-weight: bold;
 	text-transform: uppercase;
-	font-size: 0.85em;
+	font-size: 0.7em;
 	display: block;
 }
 #margend .filters-btn a {
@@ -343,7 +338,7 @@ figcaption {
 	bottom: 5px;
 	right: 5px;
 }
-.mosac-hover .inside {
+.mosac-hover .inside:hover {
 	background-color: #fe0000;
 }
 .mosac-hover .inside a {
@@ -362,7 +357,7 @@ figcaption {
 }
 .mosac-simple .inside a {
 	display: block;
-	padding: 5px 25px 5px 5px;
+	padding: 5px 30px 5px 5px;
 }
 .mosac-simple .inside a:hover {
 	background-color: #fe0000;
