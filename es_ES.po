@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cedobi 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-01 17:44+0100\n"
+"POT-Creation-Date: 2015-03-29 11:37+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: skotperez <skotperez@voragine.net>\n"
 "Language-Team: \n"
@@ -38,7 +38,6 @@ msgstr "Avanzada"
 
 #: searchform.php:27
 #: single.php:190
-#: index.php:36
 msgid "Complete archive"
 msgstr "Archivo completo"
 
@@ -52,7 +51,7 @@ msgstr "Fondos fotográficos"
 
 #: single.php:30
 #: single.php:53
-#: index.php:126
+#: index.php:120
 #: functions.php:362
 msgid "Year"
 msgstr "Año"
@@ -61,7 +60,7 @@ msgstr "Año"
 #: single.php:56
 #: single.php:105
 #: single.php:143
-#: index.php:128
+#: index.php:122
 #: functions.php:447
 msgid "Authors"
 msgstr "Autores"
@@ -71,13 +70,13 @@ msgid "Format/Type"
 msgstr "Formato/Género"
 
 #: single.php:72
-#: index.php:133
+#: index.php:127
 msgid "Date"
 msgstr "Fecha"
 
 #: single.php:83
 #: single.php:157
-#: index.php:139
+#: index.php:133
 msgid "Validity"
 msgstr "Vigencia"
 
@@ -114,61 +113,66 @@ msgstr "Promovido por:"
 msgid "Designed and developed by <a href=\"http://montera34.com\">m34</a> using <a href=\"/creditos\">free software</a>."
 msgstr "Diseñado y desarrollado por <a href=\"http://montera34.com\">m34</a> usando <a href=\"/creditos\">software libre</a>."
 
-#: index.php:31
+#: index.php:37
+msgid "Last published content"
+msgstr "Últimos contenidos incorporados"
+
+#: index.php:38
 msgid "International Brigades Digital Archive"
 msgstr "Archivo digital de las Brigadas Internacionales"
 
-#: index.php:61
-msgid "Filter"
-msgstr "Mostrar"
+#: index.php:39
+#, php-format
+msgid "Last content published in %s"
+msgstr "Últimos contenidos incorporados a %s"
 
-#: index.php:67
-msgid "View"
-msgstr "Ver"
+#: index.php:45
+msgid "All<br>contents"
+msgstr "Mostrat<br>todo"
 
-#: index.php:79
+#: index.php:77
 msgid "Search results"
 msgstr "Resultados de búsqueda"
 
-#: index.php:80
+#: index.php:78
 #, php-format
 msgid "Search results: <em>%s</em>"
 msgstr "Resultados de la búsqueda <em>%s</em>"
 
-#: index.php:120
+#: index.php:114
 msgid "Name"
 msgstr "Nombre"
 
-#: index.php:121
+#: index.php:115
 #: functions.php:431
 msgid "Type"
 msgstr "Tipo"
 
-#: index.php:122
+#: index.php:116
 msgid "Description"
 msgstr "Descripción"
 
-#: index.php:127
-#: index.php:134
+#: index.php:121
+#: index.php:128
 msgid "Title"
 msgstr "Título"
 
+#: index.php:123
 #: index.php:129
 #: index.php:135
-#: index.php:141
 msgid "Extract"
 msgstr "Extracto"
 
-#: index.php:140
+#: index.php:134
 #: functions.php:297
 msgid "Call"
 msgstr "Convocatoria"
 
-#: index.php:165
+#: index.php:159
 msgid "<p>We did not find anything related with your search criteria.</p><p>You can try again!</p>"
 msgstr "<p>No hemos encontrado ningún contenido que responda a tus criterios de búsqueda.</p><p>Inténtalo otra vez.</p>"
 
-#: index.php:171
+#: index.php:165
 msgid "Photo archives in flickr"
 msgstr "Fondos fotográficos en flickr"
 
@@ -185,14 +189,14 @@ msgstr "Últimas %s"
 msgid "Archive sections"
 msgstr "Secciones del Archivo"
 
-#: sidebar.php:61
+#: sidebar.php:62
 #, php-format
 msgid "%s archive"
 msgstr "Archivo de %s"
 
 #: functions.php:91
-#: loop.mosaico.php:13
-#: loop.mosaico.php:26
+#: loop.mosaico.php:15
+#: loop.mosaico.php:28
 msgid "Icon"
 msgstr "Icono"
 
@@ -678,6 +682,10 @@ msgstr "Archivo:"
 msgid "Download"
 msgstr "Descargar"
 
+#~ msgid "Filter"
+#~ msgstr "Mostrar"
+#~ msgid "View"
+#~ msgstr "Ver"
 #~ msgid "Image"
 #~ msgstr "Imagen"
 
