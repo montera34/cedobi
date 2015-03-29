@@ -1,14 +1,14 @@
 <?php
 global $ref;
-if ( $ref == 'mosaico' ) { $item_cols = "4"; } else { $item_cols = "6"; }
+$item_cols = "4";
 // post vars
 $item_pt =  get_post_type();
 $item_name = get_the_title();
 $item_perma = get_permalink();
 
 if ( has_post_thumbnail() ) { // image
-	$item_classes = "class='mosac-item mosac-hover col-sm-".$item_cols." col-xs-8'";
-	$item_img_size = "small";
+	$item_classes = "class='mosac-item mosac-hover col-lg-".$item_cols." col-md-6 col-xs-12'";
+	$item_img_size = "medium";
 	$item_out = "
 		<div class='inside'>
 			<a href='" .$item_perma. "'>
@@ -20,7 +20,7 @@ if ( has_post_thumbnail() ) { // image
 	";
 } else {
 	$item_desc = get_the_excerpt();
-	$item_classes = "class='mosac-item mosac-simple col-sm-".$item_cols." col-xs-8'";
+	$item_classes = "class='mosac-item mosac-simple col-lg-".$item_cols." col-md-6 col-xs-12'";
 	$item_out = "
 		<div class='inside'>
 			<a href='" .$item_perma. "'>
