@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cedobi 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-29 11:51+0100\n"
+"POT-Creation-Date: 2015-03-29 17:11+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: skotperez <skotperez@voragine.net>\n"
 "Language-Team: \n"
@@ -581,6 +581,14 @@ msgstr "Nombres de pages"
 #: functions.php:529
 msgid "ISBN"
 msgstr "ISBN"
+
+#: functions.php:538
+msgid "Not include in home"
+msgstr "Pas montrer dans l'accueil"
+
+#: functions.php:545
+msgid "Check to not show in home page"
+msgstr "Marquer pour pas montrer dans l'accueil"
 
 #: 404.php:7
 msgid "Error 404: content not found"

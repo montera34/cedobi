@@ -532,6 +532,23 @@ function cedobi_metaboxes( $meta_boxes ) {
 			),
 		),
 	);
+	// CUSTOM FIELDS FOR ANY POST TYPE
+	$meta_boxes[] = array(
+		'id' => 'cedobi_not_include_in_home',
+		'title' => __('Not include in home','cedobi'),
+		'pages' => array('brigadista','fotografia','documento','noticia','publicacion','convocatoria'), // post type
+		'context' => 'side', //  'normal', 'advanced', or 'side'
+		'priority' => 'high',  //  'high', 'core', 'default' or 'low'
+		'show_names' => false, // Show field names on the left
+		'fields' => array(
+			array(
+				'desc' => __('Check to not show in home page','cedobi'),
+				'id'   => $prefix . 'not_include_in_home',
+				'type' => 'checkbox',
+			),
+		),
+	);
+
 	return $meta_boxes;
 } // end Add metaboxes
 
@@ -572,6 +589,16 @@ function cedobi_filter_loop( $query ) {
 	if ( is_home() && $query->is_main_query() ) {
 		$pts = array('brigadista','fotografia','documento','noticia','publicacion','convocatoria');
 		$query->set( 'post_type', $pts );
+		$args = array(
+			'post_type' => array('brigadista','fotografia','documento','noticia','publicacion','convocatoria'),
+			'meta_key' => '_cedobi_not_include_in_home',
+			'meta_value' => 'on',
+			'nopaging' => true
+		);
+		$not_include_posts = get_posts($args);
+		$not_include = array();
+		foreach ( $not_include_posts as $p ) { $not_include[] = $p->ID; }
+		if ( count($not_include) >= 1 ) { $query->set( 'post__not_in', $not_include ); }
 		if ( array_key_exists('view', $_GET) && sanitize_text_field( $_GET['view'] ) == 'mosaico' ) {
 			$query->set( 'orderby', 'rand' );
 		}
