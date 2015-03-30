@@ -81,6 +81,13 @@ if ( $pt_current == 'archivo' && !array_key_exists('s', $_GET)
 	$header_class = " bair";
 	$cols = '21';
 
+} else {
+	$tit = __( 'No content yet','cedobi' );
+	$ref = "lista";
+	$controls_out = "";
+	$header_class = " bair";
+	$cols = '16';
+
 } // end if archivo
 
 // if tax archive, to complet page title

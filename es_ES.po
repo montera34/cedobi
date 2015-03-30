@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cedobi 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-30 17:55+0100\n"
+"POT-Creation-Date: 2015-03-30 18:26+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: skotperez <skotperez@voragine.net>\n"
 "Language-Team: \n"
@@ -51,7 +51,7 @@ msgstr "Fondos fotográficos"
 
 #: single.php:30
 #: single.php:53
-#: index.php:120
+#: index.php:127
 #: functions.php:362
 msgid "Year"
 msgstr "Año"
@@ -60,7 +60,7 @@ msgstr "Año"
 #: single.php:56
 #: single.php:105
 #: single.php:143
-#: index.php:122
+#: index.php:129
 #: functions.php:447
 msgid "Authors"
 msgstr "Autores"
@@ -70,13 +70,13 @@ msgid "Format/Type"
 msgstr "Formato/Género"
 
 #: single.php:72
-#: index.php:127
+#: index.php:134
 msgid "Date"
 msgstr "Fecha"
 
 #: single.php:83
 #: single.php:157
-#: index.php:133
+#: index.php:140
 msgid "Validity"
 msgstr "Vigencia"
 
@@ -143,40 +143,44 @@ msgstr "Resultados de búsqueda"
 msgid "Search results: <em>%s</em>"
 msgstr "Resultados de la búsqueda <em>%s</em>"
 
-#: index.php:114
+#: index.php:85
+msgid "No content yet"
+msgstr "Sin contenido por el momento"
+
+#: index.php:121
 msgid "Name"
 msgstr "Nombre"
 
-#: index.php:115
+#: index.php:122
 #: functions.php:431
 msgid "Type"
 msgstr "Tipo"
 
-#: index.php:116
+#: index.php:123
 msgid "Description"
 msgstr "Descripción"
 
-#: index.php:121
 #: index.php:128
+#: index.php:135
 msgid "Title"
 msgstr "Título"
 
-#: index.php:123
-#: index.php:129
-#: index.php:135
+#: index.php:130
+#: index.php:136
+#: index.php:142
 msgid "Extract"
 msgstr "Extracto"
 
-#: index.php:134
+#: index.php:141
 #: functions.php:297
 msgid "Call"
 msgstr "Convocatoria"
 
-#: index.php:159
+#: index.php:166
 msgid "<p>We did not find anything related with your search criteria.</p><p>You can try again!</p>"
 msgstr "<p>No hemos encontrado ningún contenido que responda a tus criterios de búsqueda.</p><p>Inténtalo otra vez.</p>"
 
-#: index.php:165
+#: index.php:172
 msgid "Photo archives in flickr"
 msgstr "Fondos fotográficos en flickr"
 
