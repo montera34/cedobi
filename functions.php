@@ -587,7 +587,11 @@ function cedobi_write_cf_year() {
 // set up wp_query args
 function cedobi_filter_loop( $query ) {
 	if ( is_home() && $query->is_main_query() ) {
-		$pts = array('brigadista','fotografia','documento','noticia','publicacion','convocatoria');
+		if ( array_key_exists('view', $_GET) && sanitize_text_field( $_GET['view'] ) == 'mosaico' ) {
+			$pts = array('brigadista','fotografia','documento','noticia','publicacion','convocatoria');
+		} elseif ( array_key_exists('view', $_GET) && sanitize_text_field( $_GET['view'] ) == 'lista' ) {
+			$pts = array('brigadista','fotografia','documento');
+		}
 		$query->set( 'post_type', $pts );
 		$args = array(
 			'post_type' => array('brigadista','fotografia','documento','noticia','publicacion','convocatoria'),
@@ -599,9 +603,7 @@ function cedobi_filter_loop( $query ) {
 		$not_include = array();
 		foreach ( $not_include_posts as $p ) { $not_include[] = $p->ID; }
 		if ( count($not_include) >= 1 ) { $query->set( 'post__not_in', $not_include ); }
-		if ( array_key_exists('view', $_GET) && sanitize_text_field( $_GET['view'] ) == 'mosaico' ) {
-			$query->set( 'orderby', 'rand' );
-		}
+
 	}
 	if ( is_post_type_archive('publicacion') && !is_admin() && $query->is_main_query() ) {
 		$query->set( 'orderby', 'meta_value_num' );
