@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cedobi 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-29 17:11+0100\n"
+"POT-Creation-Date: 2015-03-30 17:55+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: skotperez <skotperez@voragine.net>\n"
 "Language-Team: \n"
@@ -105,11 +105,15 @@ msgstr "pages"
 msgid "Other current %s"
 msgstr "Autres %s en vigeur"
 
-#: footer.php:19
+#: footer.php:4
+msgid "More interesting sites about the Brigades around the internet"
+msgstr "Plus de sites intéressants sur les Brigades"
+
+#: footer.php:34
 msgid "Promoted by:"
 msgstr "Promu par:"
 
-#: footer.php:28
+#: footer.php:40
 msgid "Designed and developed by <a href=\"http://montera34.com\">m34</a> using <a href=\"/creditos\">free software</a>."
 msgstr "Conçu y développé par <a href=\"http://montera34.com\">m34</a> usando <a href=\"/credits\">software libre</a>."
 
