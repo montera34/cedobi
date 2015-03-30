@@ -189,6 +189,9 @@ h1 {
 #epi-main a:hover {
 	text-decoration: none;
 }
+#links-list {
+	padding: 5px 0;
+}
 #epi-credit,
 #epi-credit a {
 	color: #aaa;
