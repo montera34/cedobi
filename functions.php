@@ -587,10 +587,10 @@ function cedobi_write_cf_year() {
 // set up wp_query args
 function cedobi_filter_loop( $query ) {
 	if ( is_home() && $query->is_main_query() ) {
-		if ( array_key_exists('view', $_GET) && sanitize_text_field( $_GET['view'] ) == 'mosaico' ) {
-			$pts = array('brigadista','fotografia','documento','noticia','publicacion','convocatoria');
-		} elseif ( array_key_exists('view', $_GET) && sanitize_text_field( $_GET['view'] ) == 'lista' ) {
+		if ( array_key_exists('view', $_GET) && sanitize_text_field( $_GET['view'] ) == 'lista' ) {
 			$pts = array('brigadista','fotografia','documento');
+		} else {
+			$pts = array('brigadista','fotografia','documento','noticia','publicacion','convocatoria');
 		}
 		$query->set( 'post_type', $pts );
 		$args = array(
