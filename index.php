@@ -37,7 +37,7 @@ if ( $pt_current == 'archivo' && !array_key_exists('s', $_GET)
 				if ( $pt_current == "archivo" && $ref == 'mosaico' ) { $tit = __('Last published content','cedobi'); }
 				elseif ( $pt_current == "archivo" ) { $tit = __('International Brigades Digital Archive','cedobi'); }
 				elseif ( $pt_current != 'archivo' && $ref == 'mosaico' ) { $tit = sprintf( __( 'Last content published in %s','cedobi' ), preg_replace('/\s/','<br>',$wp_post_types[$pt]->labels->name,1) ); }
-				else { $tit = preg_replace('/\s/','<br>',$wp_post_types[$pt]->labels->name,1); }
+				else { $tit = $wp_post_types[$pt]->labels->name; }
 
 			} else { $active_class = ""; }
 

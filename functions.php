@@ -604,6 +604,8 @@ function cedobi_filter_loop( $query ) {
 		foreach ( $not_include_posts as $p ) { $not_include[] = $p->ID; }
 		if ( count($not_include) >= 1 ) { $query->set( 'post__not_in', $not_include ); }
 
+		$query->set( 'posts_per_page', '12' );
+
 	}
 	if ( is_post_type_archive('publicacion') && !is_admin() && $query->is_main_query() ) {
 		$query->set( 'orderby', 'meta_value_num' );
