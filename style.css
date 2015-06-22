@@ -79,39 +79,65 @@ h1 {
 	box-shadow: none;
 	-webkit-box-shadow: none;
 	text-transform: uppercase;
-	margin-
 }
 #pre-nav .container-fluid {
 	padding: 0;
 }
 #pre-nav .navbar-nav>li {
-	margin: 0 5px 0 0;
+	margin: 2px 4px 2px 0;
 }
+.menu-item-has-children .sub-menu>li>a,
 #pre-nav .navbar-nav>li>a {
 	padding: 5px 5px 3px;
 	line-height: 1em;
 	background-color: #000;
 	font-size: 0.85em;
 }
+.menu-item-has-children .sub-menu>li>a:hover,
 #pre-nav .navbar-nav>li>a:hover,
 #pre-nav .navbar-nav .active,
-#pre-nav .navbar-nav .current-menu-item a,
-.home .menu-item-archivo a,
-.single-brigadista .menu-item-archivo a,
-.post-type-archive-brigadista .menu-item-archivo a,
-.single-fotografia .menu-item-archivo a,
-.post-type-archive-fotografia .menu-item-archivo a,
-.single-documento .menu-item-archivo a,
-.post-type-archive-documento .menu-item-archivo a,
-.single-noticia .menu-item-noticia a,
-.single-convocatoria .menu-item-convocatoria a,
-.single-publicacion .menu-item-publicacion a {
+#pre-nav .navbar-nav .current-menu-item>a,
+.home .menu-item-archivo>a,
+.single-brigadista .menu-item-archivo>a,
+.post-type-archive-brigadista .menu-item-archivo>a,
+.single-fotografia .menu-item-archivo>a,
+.post-type-archive-fotografia .menu-item-archivo>a,
+.single-documento .menu-item-archivo>a,
+.post-type-archive-documento .menu-item-archivo>a,
+.single-noticia .menu-item-noticia>a,
+.single-convocatoria .menu-item-convocatoria>a,
+.single-publicacion .menu-item-publicacion>a {
 	background-color: #fe0000 !important;
+}
+.menu-item-has-children .sub-menu>li>a:hover,
+#pre-nav .navbar-nav>li>a:hover,
+.menu-item-has-children:hover a {
+	opacity: 0.6;
 }
 #pre-nav .navbar-toggle {
 	float: left;
 	margin-top: 10px;
 	margin-left: 5px;
+}
+.menu-item-has-children span {
+	font-size: 0.8em;
+}
+ul.sub-menu {
+	z-index: 1000;
+	position: absolute;
+	top: 19px;
+	width: 170px;
+	list-style: none;
+	margin: 0 0 1px 0;
+	padding: 0;
+	background-color: #eee;
+	display: none;
+}
+.sub-menu li a {
+	margin-top: 1px;
+	display: block;
+	color: #fff;
+	text-decoration: none;
 }
 
 #logo {
@@ -132,7 +158,7 @@ h1 {
 }
 #lang_sel {
 	text-align: left;
-	margin-top: 6px;
+	margin-top: 8px;
 	z-index: 10;
 }
 #lang_sel li,

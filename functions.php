@@ -161,6 +161,13 @@ function cedobi_load_scripts() {
 		'0.1',
 		FALSE
 	);
+	wp_enqueue_script(
+		'dropdown-hover-js',
+		get_template_directory_uri() . '/js/dropdown.hover.js',
+		array( 'jquery' ),
+		'0.1',
+		FALSE
+	);
 
 } // end load js scripts to avoid conflicts
 
