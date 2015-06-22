@@ -4,7 +4,9 @@
 
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>
 <?php
 	/* From twentyeleven theme
@@ -90,7 +92,7 @@ wp_head(); ?>
 		<div id="pre-margeni" class="col-md-3 col-sm-3">
 			<a href="<?php echo CEDOBI_BLOGURL ?>" title="<?php echo CEDOBI_BLOGDESC ?>"><img src="<?php echo CEDOBI_BLOGTHEME. "/images/cedobi-imago.png"; ?>" alt="<?php echo CEDOBI_BLOGNAME ?>" /></a>
 		</div><!-- #pre-margeni -->
-		<div id="pre-main" class="col-md-18 col-sm-18 col-xs-16">
+		<div id="pre-main" class="col-md-18 col-sm-17 col-xs-16">
 			<div class="row">
 				<?php echo "<div id='logo' class='col-lg-4 col-md-5'>" .CEDOBI_BLOGNAME. "</div>
 					<div id='tagline' class='col-lg-20 col-md-19'>" .CEDOBI_BLOGDESC. "</div>"; ?>
@@ -127,7 +129,7 @@ wp_head(); ?>
 			</div>
 
 		</div><!-- #pre-main -->
-		<div id="pre-margend" class="col-md-3 col-sm-3 col-xs-8">
+		<div id="pre-margend" class="col-md-3 col-sm-4 col-xs-8">
 			<ul id="cedobi-social" class="list-inline">
 				<li id="cedobi-fb"><a title="Facebook" href="https://facebook.com/cedobi">Facebook</a></li>
 				<li id="cedobi-fk"><a title="Flickr" href="http://flickr.com/photos/iea__cedobi">Flickr</a></li>
