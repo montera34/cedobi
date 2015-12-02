@@ -109,11 +109,12 @@ h1 {
 .single-publicacion .menu-item-publicacion>a {
 	background-color: #fe0000 !important;
 }
-.menu-item-has-children .sub-menu>li>a:hover,
+/*.menu-item-has-children .sub-menu>li>a:hover,
 #pre-nav .navbar-nav>li>a:hover,
 .menu-item-has-children:hover a {
 	opacity: 0.6;
 }
+*/
 #pre-nav .navbar-toggle {
 	float: left;
 	margin-top: 10px;

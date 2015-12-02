@@ -408,12 +408,21 @@ function cedobi_build_taxonomies() {
 	) );
 	register_taxonomy( 'editorial', array('publicacion'), array(
 		'hierarchical' => false,
-		'label' => __( 'Publisher','cedobi' ),
-		'name' => __( 'Publishers','cedobi' ),
+		'label' => __( 'Editorial','cedobi' ),
+		'name' => __( 'Editorials','cedobi' ),
 		'query_var' => 'editorial',
 		'rewrite' => array( 'slug' => 'editorial', 'with_front' => false ),
 		'show_admin_column' => true
 	) );
+	register_taxonomy( 'editor', array('publicacion'), array(
+		'hierarchical' => true,
+		'label' => __( 'Publisher','cedobi' ),
+		'name' => __( 'Publishers','cedobi' ),
+		'query_var' => 'editor',
+		'rewrite' => array( 'slug' => 'editor', 'with_front' => false ),
+		'show_admin_column' => true
+	) );
+
 	// Fondo taxonomy
 	register_taxonomy( 'fondo', array('fotografia'), array(
 		'hierarchical' => false,
@@ -611,7 +620,7 @@ function cedobi_filter_loop( $query ) {
 		foreach ( $not_include_posts as $p ) { $not_include[] = $p->ID; }
 		if ( count($not_include) >= 1 ) { $query->set( 'post__not_in', $not_include ); }
 
-		$query->set( 'posts_per_page', '12' );
+//		$query->set( 'posts_per_page', '12' );
 
 	}
 	if ( is_post_type_archive('publicacion') && !is_admin() && $query->is_main_query() ) {
