@@ -35,30 +35,31 @@ if ( $pt_current == 'archivo' || $pt_current == 'brigadista' || $pt_current == '
 } elseif ( $pt_current == 'publicacion' ) { // if publicacion post type
 	$item_year_out = get_the_term_list( $post->ID, 'fecha', '<div class="fecha-terms">', '', '</div>' );
 	$author_fields = array(
-		'_cedobi_author1_firstname',
-		'_cedobi_author1_lastname',
-		'_cedobi_author2_firstname',
-		'_cedobi_author2_lastname',
-		'_cedobi_author3_firstname',
-		'_cedobi_author3_lastname'
+		array(
+			get_post_meta( $post->ID, '_cedobi_author1_firstname', true ),
+			get_post_meta( $post->ID, '_cedobi_author1_lastname', true )
+		),
+		array(
+			get_post_meta( $post->ID, '_cedobi_author2_firstname', true ),
+			get_post_meta( $post->ID, '_cedobi_author2_lastname', true )
+		),
+		array(
+			get_post_meta( $post->ID, '_cedobi_author3_firstname', true ),
+			get_post_meta( $post->ID, '_cedobi_author3_lastname', true )
+		)
 	);
-	$cf_count = 0;
-	$item_author_out = "<ul class='list-inline'>";
-	foreach ( $author_fields as $field ) {
-		$check_field = 0;
-		$cf_count++;
-		$term[$cf_count] = get_post_meta( $post->ID, $field, true );
-		if ( count($term) == 2 ) {
-			if ( $term[1] != '' || $term[2] != '' ) {
-				$item_author_out .= "<li>".$term[1]. " <strong>" .$term[2]. "</strong></li>";
-				$check_field = 1;
-			}
-			$cf_count = 0;
-			$term = "";
+	$authors_list = "";
+	foreach ( $author_fields as $f ) {
+		if ( $f[0] != '' || $f[1] != '' ) {
+			$authors_list .= "<li>";
+			if ( $f[0] != '' ) { $authors_list .= $f[0]; }
+			if ( $f[1] != '' ) { $authors_list .= " <strong>" .$f[1]. "</strong>"; }
+			$authors_list .= "</li>";
 		}
-		if ( $check_field == 0 ) { $item_author_out .= ""; }
 	}
-	$item_author_out .= "</ul>";
+	if ( $authors_list != '' ) { $item_author_out = "<ul class='list-inline'>".$authors_list."</ul>"; }
+	else { $item_author_out = ""; }
+
 	$item_file =  get_post_meta( $post->ID, '_cedobi_publica_file', true );
 	if ( $item_file != '' ) {
 		$item_file_url = $item_file;

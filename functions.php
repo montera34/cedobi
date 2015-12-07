@@ -51,7 +51,7 @@ function cedobi_theme_setup() {
 	add_filter( 'pre_get_posts', 'cedobi_filter_loop' );
 
 	// load language files
-	add_action('after_setup_theme', 'cedobi_load_languages');
+	load_theme_textdomain( 'cedobi', get_template_directory() . '/lang' );
 
 	// build feed with custom post types
 	add_filter('request', 'cedobi_build_feed');
