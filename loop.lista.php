@@ -43,14 +43,14 @@ if ( $pt_current == 'archivo' || $pt_current == 'brigadista' || $pt_current == '
 		'_cedobi_author3_lastname'
 	);
 	$cf_count = 0;
-	$item_author_out = "";
+	$item_author_out = "<ul class='list-inline'>";
 	foreach ( $author_fields as $field ) {
 		$check_field = 0;
 		$cf_count++;
 		$term[$cf_count] = get_post_meta( $post->ID, $field, true );
 		if ( count($term) == 2 ) {
 			if ( $term[1] != '' || $term[2] != '' ) {
-				$item_author_out .= $term[1]. " " .$term[2]. ", ";
+				$item_author_out .= "<li>".$term[1]. " <strong>" .$term[2]. "</strong></li>";
 				$check_field = 1;
 			}
 			$cf_count = 0;
@@ -58,12 +58,19 @@ if ( $pt_current == 'archivo' || $pt_current == 'brigadista' || $pt_current == '
 		}
 		if ( $check_field == 0 ) { $item_author_out .= ""; }
 	}
-	$item_author_out = substr($item_author_out,0,-2);
+	$item_author_out .= "</ul>";
+	$item_file =  get_post_meta( $post->ID, '_cedobi_publica_file', true );
+	if ( $item_file != '' ) {
+		$item_file_url = $item_file;
+		$item_file_mime = "PDF";
+		$item_file_out = "<div class='list-actions'><a class='btn-list' href='".$item_file_url."'><span class='glyphicon glyphicon-download-alt'></span> ".$item_file_mime."</a></div>";
+
+	} else { $item_file_out = "";}
 	$item_out = "
 	<tr " .$item_classes. ">
 		<td class='list-item-img'>" .$item_img_out. "</td>
 		<td class='list-item-year'>" .$item_year_out. "</td>
-		<td class='list-item-tit'>" .$item_tit_out. "</td>
+		<td class='list-item-tit'>" .$item_tit_out.$item_file_out. "</td>
 		<td class='list-item-author'>" .$item_author_out. "</td>
 		<td class='list-item-desc'>" .$item_desc_out. "</td>
 	</tr>

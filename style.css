@@ -418,7 +418,10 @@ figcaption {
 	width: 25px;
 	text-indent: -9999px;
 }
-
+.list-item-author,
+.list-item-desc {
+	font-size: 0.9em;
+}
 .list-item-type-brigadista div {
 	background-position: 0 -225px;
 }
@@ -437,6 +440,18 @@ figcaption {
 .list-item-type-publicacion div {
 	background-position: 0 -425px;
 }
+.list-actions {
+	margin-top: 5px;
+}
+.btn-list {
+	display: inline-block;
+	background-color: #ccc;
+	padding: 3px 5px;
+}
+.btn-list:hover {
+	background-color: #fff;
+}
+
 
 /* RELATED SIDEBAR */
 #related {

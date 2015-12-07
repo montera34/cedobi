@@ -546,6 +546,12 @@ function cedobi_metaboxes( $meta_boxes ) {
 				'id'   => $prefix . 'publica_ISBN',
 				'type' => 'text',
 			),
+			array(
+				'name' => __('Downloadable file','cedobi'),
+				'id'   => $prefix . 'publica_file',
+				'type' => 'file',
+				'allow' => array( 'url', 'attachment' )
+			),
 		),
 	);
 	// CUSTOM FIELDS FOR ANY POST TYPE
@@ -623,7 +629,8 @@ function cedobi_filter_loop( $query ) {
 //		$query->set( 'posts_per_page', '12' );
 
 	}
-	if ( is_post_type_archive('publicacion') && !is_admin() && $query->is_main_query() ) {
+	if ( is_post_type_archive('publicacion') && !is_admin() && $query->is_main_query() ||
+		is_tax('editor') && !is_admin() && $query->is_main_query() ) {
 		$query->set( 'orderby', 'meta_value_num' );
 		$query->set( 'meta_key', '_cedobi_tax_fecha' );
 		$query->set( 'order', 'DESC' );
