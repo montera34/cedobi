@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cedobi 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-07 16:54+0100\n"
+"POT-Creation-Date: 2016-01-26 18:30+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Alfonso Sánchez Uzábal <skotperez@voragine.net>\n"
 "Language-Team: Montera34 <info@montera34.com>\n"
@@ -249,7 +249,7 @@ msgstr "Ninguna noticia en la papelera"
 msgid "Calls"
 msgstr "Convocatorias"
 
-#: ../functions.php:304 ../index.php:141
+#: ../functions.php:304 ../index.php:147
 msgid "Call"
 msgstr "Convocatoria"
 
@@ -325,7 +325,7 @@ msgstr "Ninguna publicación encontrada"
 msgid "No publications in trash"
 msgstr "Ninguna publicación en la papelera"
 
-#: ../functions.php:369 ../index.php:127 ../single.php:30 ../single.php:53
+#: ../functions.php:369 ../index.php:133 ../single.php:30 ../single.php:53
 msgid "Year"
 msgstr "Año"
 
@@ -397,7 +397,7 @@ msgstr "Formato"
 msgid "Formats"
 msgstr "Formatos"
 
-#: ../functions.php:447 ../index.php:122
+#: ../functions.php:447 ../index.php:122 ../index.php:127
 msgid "Type"
 msgstr "Tipo"
 
@@ -405,68 +405,84 @@ msgstr "Tipo"
 msgid "Types"
 msgstr "Género"
 
-#: ../functions.php:463 ../index.php:129 ../single.php:33 ../single.php:56
+#: ../functions.php:463
+msgid "Extra information"
+msgstr "Información adicional"
+
+#: ../functions.php:470
+msgid "First name"
+msgstr "Nombre\t"
+
+#: ../functions.php:475
+msgid "Last name"
+msgstr "Apellidos"
+
+#: ../functions.php:480
+msgid "URL to interview audio file"
+msgstr "URL a la entrevista"
+
+#: ../functions.php:489 ../index.php:135 ../single.php:33 ../single.php:56
 #: ../single.php:105 ../single.php:143
 msgid "Authors"
 msgstr "Autores"
 
-#: ../functions.php:470
+#: ../functions.php:496
 msgid "Author 1: firstname"
 msgstr "Autor 1: nombre"
 
-#: ../functions.php:476
+#: ../functions.php:502
 msgid "Author 1: lastname"
 msgstr "Autor 1: apellido"
 
-#: ../functions.php:482
+#: ../functions.php:508
 msgid "Author 2: firsname"
 msgstr "Autor 2: nombre"
 
-#: ../functions.php:488
+#: ../functions.php:514
 msgid "Author 2: lastname"
 msgstr "Autor 2: apellido"
 
-#: ../functions.php:494
+#: ../functions.php:520
 msgid "Author 3: firstname"
 msgstr "Autor 3: nombre"
 
-#: ../functions.php:500
+#: ../functions.php:526
 msgid "Author 3: lastname"
 msgstr "Autor 3: apellido"
 
-#: ../functions.php:510
+#: ../functions.php:536
 msgid "Dates"
 msgstr "Fechas"
 
-#: ../functions.php:517
+#: ../functions.php:543
 msgid "Begining date"
 msgstr "Fecha de inicio"
 
-#: ../functions.php:523
+#: ../functions.php:549
 msgid "Ending date"
 msgstr "Fecha de fin"
 
-#: ../functions.php:533
+#: ../functions.php:559
 msgid "Book data"
 msgstr "Datos del libro"
 
-#: ../functions.php:540
+#: ../functions.php:566
 msgid "Number of pages"
 msgstr "Número de páginas"
 
-#: ../functions.php:545
+#: ../functions.php:571
 msgid "ISBN"
 msgstr "ISBN"
 
-#: ../functions.php:550
+#: ../functions.php:576
 msgid "Downloadable file"
 msgstr "Archivo descargable"
 
-#: ../functions.php:560
+#: ../functions.php:586
 msgid "Not include in home"
 msgstr "No incluir en la portada"
 
-#: ../functions.php:567
+#: ../functions.php:593
 msgid "Check to not show in home page"
 msgstr "Marcar para no incluir este contenido en la portada"
 
@@ -513,31 +529,35 @@ msgstr "Resultados de la búsqueda <em>%s</em>"
 msgid "No content yet"
 msgstr "Sin contenido por el momento"
 
-#: ../index.php:121
+#: ../index.php:121 ../index.php:126
 msgid "Name"
 msgstr "Nombre"
 
-#: ../index.php:123
+#: ../index.php:123 ../index.php:130
 msgid "Description"
 msgstr "Descripción"
 
-#: ../index.php:128 ../index.php:135
+#: ../index.php:128
+msgid "Interview"
+msgstr "Entrevista"
+
+#: ../index.php:134 ../index.php:141
 msgid "Title"
 msgstr "Título"
 
-#: ../index.php:130 ../index.php:136 ../index.php:142
+#: ../index.php:136 ../index.php:142 ../index.php:148
 msgid "Extract"
 msgstr "Extracto"
 
-#: ../index.php:134 ../single.php:72
+#: ../index.php:140 ../single.php:72
 msgid "Date"
 msgstr "Fecha"
 
-#: ../index.php:140 ../single.php:83 ../single.php:157
+#: ../index.php:146 ../single.php:83 ../single.php:157
 msgid "Validity"
 msgstr "Vigencia"
 
-#: ../index.php:166
+#: ../index.php:172
 msgid ""
 "<p>We did not find anything related with your search criteria.</p><p>You can "
 "try again!</p>"
@@ -545,7 +565,7 @@ msgstr ""
 "<p>No hemos encontrado ningún contenido que responda a tus criterios de "
 "búsqueda.</p><p>Inténtalo otra vez.</p>"
 
-#: ../index.php:172
+#: ../index.php:178
 msgid "Photo archives in flickr"
 msgstr "Fondos fotográficos en flickr"
 
@@ -638,6 +658,14 @@ msgstr "Últimas %s"
 #: ../loop.lista.php:17
 msgid "No image"
 msgstr "sin imagen"
+
+#: ../loop.lista.php:28
+msgid "There is no interview to"
+msgstr "No hay entrevista"
+
+#: ../loop.lista.php:30
+msgid "Interview to"
+msgstr "Entrevista a"
 
 #: ../loop.related.php:16
 #, php-format
