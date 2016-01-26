@@ -180,22 +180,22 @@ ul.sub-menu {
 	background-repeat: no-repeat;
 }
 #cedobi-social #cedobi-fb a {
-	background-position: 0 -475px;
+	background-position: 0 -476px;
 }
 #cedobi-social #cedobi-fb a:hover {
-	background-position: 0 -450px;
+	background-position: 0 -451px;
 }
 #cedobi-social #cedobi-fk a {
-	background-position: 0 -575px;
+	background-position: 0 -576px;
 }
 #cedobi-social #cedobi-fk a:hover {
-	background-position: 0 -550px;
+	background-position: 0 -551px;
 }
 #cedobi-social #cedobi-rss a {
-	background-position: 0 -525px;
+	background-position: 0 -526px;
 }
 #cedobi-social #cedobi-rss a:hover {
-	background-position: 0 -500px;
+	background-position: 0 -501px;
 }
 
 
@@ -411,11 +411,17 @@ figcaption {
 	color: #fe0000;
 	text-decoration: none;
 }
+.list-item-type-audio,
+.list-item-type a,
 .list-item-type div {
 	background-image: url('images/cedobi-icons.png');
 	background-repeat: no-repeat;
 	height: 25px;
 	width: 25px;
+	text-indent: -9999px;
+	display: inline-block;
+}
+.list-item-no-audio div {
 	text-indent: -9999px;
 }
 .list-item-author,
@@ -440,6 +446,16 @@ figcaption {
 .list-item-type-publicacion div {
 	background-position: 0 -425px;
 }
+.list-item-type-audio {
+	background-position: 0 -625px;
+}
+.list-item-type-check a {
+	background-position: 0 -675px;
+}
+.list-item-type-check a:hover {
+	background-position: 0 -650px;
+}
+
 .list-actions {
 	margin-top: 5px;
 }

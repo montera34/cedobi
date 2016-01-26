@@ -22,12 +22,21 @@ $item_desc_out = $item_desc;
 
 // if one of archive post types
 if ( $pt_current == 'archivo' || $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current == 'documento' || array_key_exists('s', $_GET) ) {
+	if ( $pt_current == 'brigadista' ) {
+		$item_audio = get_post_meta( $post->ID, '_cedobi_brigadista_audio', true );
+		if ( $item_audio == "" ) {
+			$item_audio_out = "<td class='list-item-no-audio'><div>".__('There is no interview to','cedobi')." ".$item_name."</div></td>";
+		} else {
+			$item_audio_tit = __('Interview to','cedobi'). " " .$item_name;
+			$item_audio_out = "<td class='list-item-type list-item-type-check'><a href='" .$item_audio. "' title='".$item_audio_tit."'>".$item_audio_tit."</a></td>";
+		}
+	} else { $item_audio_out = ""; }
 	$item_type_out = "<td class='list-item-type list-item-type-" .$item_type_class. "'><div>" .$wp_post_types[$item_pt]->labels->name. "</div></td>";
 	$item_out = "
 	<tr " .$item_classes. ">
 		<td class='list-item-img'>" .$item_img_out. "</td>
 		<td class='list-item-tit'>" .$item_tit_out. "</td>
-		" .$item_type_out. "
+		" .$item_type_out.$item_audio_out. "
 		<td class='list-item-desc'>" .$item_desc_out. "</td>
 	</tr>
 	";

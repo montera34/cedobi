@@ -117,12 +117,18 @@ if ( is_tax() ) {
 				<thead>
 				<tr>
 			";
-			if ( $pt_current == 'archivo' || $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current == 'documento' || array_key_exists('s', $_GET) ) {
+			if ( $pt_current == 'archivo' || $pt_current == 'fotografia' || $pt_current == 'documento' || array_key_exists('s', $_GET) ) {
 				$th_name = __('Name','cedobi');
 				$th_type = __('Type','cedobi');
 				$th_desc = __('Description','cedobi');
 				echo "<th></th><th>" .$th_name. "</th><th>" .$th_type. "</th><th>" .$th_desc. "</th>";
-
+			} elseif ( $pt_current == 'brigadista' ) {
+				$th_name = __('Name','cedobi');
+				$th_type = __('Type','cedobi');
+					$th_audio_tit = __('Interview','cedobi');
+				$th_audio = "<span class='list-item-type-audio' title='".$th_audio_tit."'>".$th_audio_tit."</span>";
+				$th_desc = __('Description','cedobi');
+				echo "<th></th><th>" .$th_name. "</th><th>" .$th_type. "</th><th>" .$th_audio. "</th><th>" .$th_desc. "</th>";
 			} elseif ( $pt_current == 'publicacion' ) {
 				$th_year = __('Year','cedobi');
 				$th_name = __('Title','cedobi');

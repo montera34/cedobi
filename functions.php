@@ -460,7 +460,7 @@ function cedobi_metaboxes( $meta_boxes ) {
 	// CUSTOM FIELDS FOR BRIGADISTAS
 	$meta_boxes[] = array(
 		'id' => 'cedobi_brigadista',
-		'title' => __('Nombre y apelliddos','cedobi'),
+		'title' => __('Extra information','cedobi'),
 		'pages' => array('brigadista'), // post type
 		'context' => 'normal', //  'normal', 'advanced', or 'side'
 		'priority' => 'high',  //  'high', 'core', 'default' or 'low'
@@ -476,6 +476,11 @@ function cedobi_metaboxes( $meta_boxes ) {
 				'id'   => $prefix . 'brigadista_lastname',
 				'type' => 'text',
 			),
+			array(
+				'name' => __('URL to interview audio file','cedobi'),
+				'id'   => $prefix . 'brigadista_audio',
+				'type' => 'text_url',
+			)
 		),
 	);
 	// CUSTOM FIELDS FOR FOTOGRAFÍAS, PUBLICACIONES, MATERIAL
