@@ -457,6 +457,27 @@ function cedobi_build_taxonomies() {
 function cedobi_metaboxes( $meta_boxes ) {
 	$prefix = '_cedobi_'; // Prefix for all fields
 
+	// CUSTOM FIELDS FOR BRIGADISTAS
+	$meta_boxes[] = array(
+		'id' => 'cedobi_brigadista',
+		'title' => __('Nombre y apelliddos','cedobi'),
+		'pages' => array('brigadista'), // post type
+		'context' => 'normal', //  'normal', 'advanced', or 'side'
+		'priority' => 'high',  //  'high', 'core', 'default' or 'low'
+		'show_names' => true, // Show field names on the left
+		'fields' => array(
+			array(
+				'name' => __('First name','cedobi'),
+				'id'   => $prefix . 'brigadista_firstname',
+				'type' => 'text',
+			),
+			array(
+				'name' => __('Last name','cedobi'),
+				'id'   => $prefix . 'brigadista_lastname',
+				'type' => 'text',
+			),
+		),
+	);
 	// CUSTOM FIELDS FOR FOTOGRAFÍAS, PUBLICACIONES, MATERIAL
 	$meta_boxes[] = array(
 		'id' => 'cedobi_authors',
@@ -629,18 +650,23 @@ function cedobi_filter_loop( $query ) {
 //		$query->set( 'posts_per_page', '12' );
 
 	}
-	if ( is_post_type_archive('publicacion') && !is_admin() && $query->is_main_query() ||
+	elseif ( is_post_type_archive('publicacion') && !is_admin() && $query->is_main_query() ||
 		is_tax('editor') && !is_admin() && $query->is_main_query() ) {
 		$query->set( 'orderby', 'meta_value_num' );
 		$query->set( 'meta_key', '_cedobi_tax_fecha' );
 		$query->set( 'order', 'DESC' );
 
 	}
-	if ( is_search() && $query->is_main_query() && !array_key_exists('post_type', $_GET) ||
+	elseif ( is_search() && $query->is_main_query() && !array_key_exists('post_type', $_GET) ||
 	is_search() && $query->is_main_query() && array_key_exists('post_type', $_GET) && sanitize_text_field( $_GET['post_type'] ) == '' ) {
 		$pts = array('brigadista','fotografia','documento','noticia','convocatoria','publicacion');
 		$query->set( 'post_type', $pts );
 
+	}
+	elseif ( is_post_type_archive( 'brigadista' ) && !is_admin() && $query->is_main_query() ) {
+		$query->set( 'orderby', 'meta_value' );
+		$query->set( 'meta_key', '_cedobi_brigadista_lastname' );
+		$query->set( 'order', 'ASC' );
 	}
 
 	return $query;
