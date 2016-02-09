@@ -42,10 +42,10 @@ if ( $pt_current == 'archivo' && !array_key_exists('s', $_GET)
 			} else { $active_class = ""; }
 
 			if ( $pt == 'archivo' ) {
-				$filters_out .= "<li class='filter-" .$pt. "'><a" .$active_class. " href='" .CEDOBI_BLOGURL. "?view=" .$ref. "'>" .__('All<br>contents','cedobi'). "</a></li>";
+				$filters_out .= "<li class='filter-" .$pt. "'><a" .$active_class. " href='" .CEDOBI_BLOGURL. "?view=lista'>" .__('All<br>contents','cedobi'). "</a></li>";
 			} else {
 				$pt_tit = preg_replace('/\s/','<br>',$wp_post_types[$pt]->labels->name,1);
-				$filters_out .= "<li class='filter-" .$pt. "'><a" .$active_class. " href='" .CEDOBI_BLOGURL . $pt. "?view=" .$ref. "'>" .$pt_tit. "</a></li>";
+				$filters_out .= "<li class='filter-" .$pt. "'><a" .$active_class. " href='" .CEDOBI_BLOGURL . $pt. "?view=lista'>" .$pt_tit. "</a></li>";
 			}
 
 		}
