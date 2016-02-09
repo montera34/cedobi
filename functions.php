@@ -662,6 +662,11 @@ function cedobi_filter_loop( $query ) {
 		$query->set( 'order', 'DESC' );
 
 	}
+	elseif ( is_post_type_archive('noticia') && !is_admin() && $query->is_main_query() ) {
+		$pts = array('noticia','convocatoria');
+		$query->set( 'post_type', $pts );
+
+	}
 	elseif ( is_search() && $query->is_main_query() && !array_key_exists('post_type', $_GET) ||
 	is_search() && $query->is_main_query() && array_key_exists('post_type', $_GET) && sanitize_text_field( $_GET['post_type'] ) == '' ) {
 		$pts = array('brigadista','fotografia','documento','noticia','convocatoria','publicacion');
