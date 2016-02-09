@@ -109,6 +109,10 @@ h1 {
 .single-publicacion .menu-item-publicacion>a {
 	background-color: #fe0000 !important;
 }
+.menu-item-has-children .sub-menu .glyphicon {
+	float: right;
+	margin-left: 5px;
+}
 /*.menu-item-has-children .sub-menu>li>a:hover,
 #pre-nav .navbar-nav>li>a:hover,
 .menu-item-has-children:hover a {
@@ -126,7 +130,6 @@ h1 {
 ul.sub-menu {
 	z-index: 1000;
 	position: absolute;
-	top: 19px;
 	width: 170px;
 	list-style: none;
 	margin: 0 0 1px 0;
@@ -139,6 +142,9 @@ ul.sub-menu {
 	display: block;
 	color: #fff;
 	text-decoration: none;
+}
+ul.sub-menu ul.sub-menu li a {
+	background-color: #666 !important;
 }
 
 #logo {
