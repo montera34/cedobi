@@ -19,6 +19,8 @@ if ( $pt_current == 'brigadista' ) {
 
 	// taxonomies for related content
 	$taxes = array("pais");
+	// Downloadable PDF file
+	$item_file_out = "";
 	// build related contents list
 	include "loop.related.php";
 
@@ -41,6 +43,8 @@ if ( $pt_current == 'brigadista' ) {
 	);
 	// taxonomies for related content
 	$taxes = array("fondo","fecha");
+	// Downloadable PDF file
+	$item_file_out = "";
 	// build related contents list
 	include "loop.related.php";
 
@@ -64,6 +68,8 @@ if ( $pt_current == 'brigadista' ) {
 	);
 	// taxonomies for related content
 	$taxes = array("formato","fecha");
+	// Downloadable PDF file
+	$item_file_out = "";
 	// build related contents list
 	include "loop.related.php";
 
@@ -75,6 +81,8 @@ if ( $pt_current == 'brigadista' ) {
 	);
 	// taxonomies for related content
 	// no taxonomies, just latest noticias
+	// Downloadable PDF file
+	$item_file_out = "";
 	// build related contents list
 	include "loop.last.php";
 
@@ -90,6 +98,8 @@ if ( $pt_current == 'brigadista' ) {
 	);
 	// taxonomies for related content
 	// no taxonomies, just all current convocatorias
+	// Downloadable PDF file
+	$item_file_out = "";
 	// build related contents list
 	include "loop.current.php";
 	
@@ -117,6 +127,14 @@ if ( $pt_current == 'brigadista' ) {
 	);
 	// taxonomies for related content
 	$taxes = array("coleccion");
+	// Downloadable PDF file
+	$item_file =  get_post_meta( $post->ID, '_cedobi_publica_file', true );
+	if ( $item_file != '' ) {
+		$item_file_url = $item_file;
+		$item_file_mime = "PDF";
+		$item_file_out = "<div class='list-actions'><a class='btn-list' href='".$item_file_url."'><span class='glyphicon glyphicon-download-alt'></span> ".$item_file_mime."</a></div>";
+
+	} else { $item_file_out = "";}
 	// build related contents list
 	include "loop.related.php";
 
@@ -242,6 +260,7 @@ if ( $pt_current == 'brigadista' || $pt_current == 'fotografia' || $pt_current =
 				</figure>	
 				";
 			}
+			echo $item_file_out;
 			the_content();
 
 		endwhile;

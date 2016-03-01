@@ -272,6 +272,10 @@ figcaption {
 .filter-single {
 	margin-bottom: 1em;
 }
+.filters-tit {
+	text-transform: uppercase;
+	font-size: 0.9em;
+}
 
 .vista-btn a {
 	height: 25px;
@@ -472,6 +476,12 @@ figcaption {
 }
 .btn-list:hover {
 	background-color: #fff;
+}
+.single .list-actions {
+	margin-bottom: 1em;
+}
+.single .btn-list {
+	text-decoration: none !important;
 }
 
 
