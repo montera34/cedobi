@@ -169,6 +169,26 @@ function cedobi_load_scripts() {
 		FALSE
 	);
 
+	// brigadistas en albacete map
+	if ( is_page('384')) {
+	wp_enqueue_script(
+		'gmaps-api-js',
+		//'http://maps.googleapis.com/maps/api/js',
+		'https://maps.google.com/maps/api/js?v=3.exp&libraries=places&signed_in=true',
+		array(),
+		null,
+		true
+	);
+	wp_enqueue_script(
+		'map-brigadas-controls-js',
+		get_template_directory_uri() . '/js/map.brigadas.js',
+		array(),
+		'0.1',
+		true
+	);
+
+	}
+
 } // end load js scripts to avoid conflicts
 
 // register post types
