@@ -56,6 +56,11 @@ function cedobi_theme_setup() {
 	// build feed with custom post types
 	add_filter('request', 'cedobi_build_feed');
 
+	// add capabilities to some WordPress roles when this theme is activated
+	add_action( 'after_switch_theme', 'cedobi_add_caps_to_roles', 10 ); 
+	// remove capabilities given by this theme
+	add_action( 'switch_theme', 'cedobi_remove_caps_to_roles', 10 );
+
 } // end montera34 theme setup function
 
 // remove item from wordpress dashboard
@@ -712,6 +717,27 @@ function cedobi_build_feed($qv) {
 	if ( isset($qv['feed']) )
 		$qv['post_type'] = get_post_types();
 	return $qv;
+}
+
+// add capabilities to some WordPress roles when this theme is activated
+function cedobi_add_caps_to_roles() {
+	// Makes sure $wp_roles is initialized
+	get_role( 'editor' );
+
+	global $wp_roles;
+	// Dont use get_role() wrapper, it doesn't work as a one off.
+	// (get_role does not properly return as reference)
+	$wp_roles->role_objects['editor']->add_cap( 'edit_theme_options' );
+}
+
+// remove capabilities given by humanidad_add_caps_to_roles
+function cedobi_remove_caps_to_roles() {
+ 	get_role( 'editor' );
+	global $wp_roles;
+	// Could use the get_role() wrapper here since this function is never
+	// called as a one off.  It is always called to alter the role as
+	// stored in the DB.
+	$wp_roles->role_objects['editor']->remove_cap( 'edit_theme_options' );
 }
 
 ?>
