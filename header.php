@@ -135,9 +135,14 @@ wp_head(); ?>
 				<li id="cedobi-fk"><a title="Flickr" href="http://flickr.com/photos/iea__cedobi">Flickr</a></li>
 				<li id="cedobi-rss"><a title="Feed RSS" href="<?php echo CEDOBI_BLOGURL. "feed"; ?>">RSS</a></li>
 			</ul>
-			<?php do_action('icl_language_selector');
-			//$languages = icl_get_languages('skip_missing=0&orderby=name&order=asc&link_empty_to=str');
-			?>
+			<?php if ( function_exists('pll_the_languages') ) { // language switcher from Polylang
+				$args = array(
+					'dropdown' => 1,
+					'hide_if_no_translation' => 1,
+					'hide_current' => 1
+				);
+				pll_the_languages( $args );
+			} ?>
 		</div><!-- #pre-margeni -->
 
 	</div><!-- .row -->
