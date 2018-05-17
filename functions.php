@@ -228,6 +228,7 @@ function cedobi_create_post_type() {
 		'can_export' => true,
 		'_builtin' => false,
 		'_edit_link' => 'post.php?post=%d',
+		'show_in_rest' => true
 	));
 	// Fotografia custom post type
 	register_post_type( 'fotografia', array(
@@ -259,6 +260,7 @@ function cedobi_create_post_type() {
 		'can_export' => true,
 		'_builtin' => false,
 		'_edit_link' => 'post.php?post=%d',
+		'show_in_rest' => true
 	));
 	// Recursos digitales custom post type
 	register_post_type( 'documento', array(
@@ -290,6 +292,7 @@ function cedobi_create_post_type() {
 		'can_export' => true,
 		'_builtin' => false,
 		'_edit_link' => 'post.php?post=%d',
+		'show_in_rest' => true
 	));
 	// Noticias custom post type
 	register_post_type( 'noticia', array(
@@ -321,6 +324,7 @@ function cedobi_create_post_type() {
 		'can_export' => true,
 		'_builtin' => false,
 		'_edit_link' => 'post.php?post=%d',
+		'show_in_rest' => true
 	));
 	// Convocatorias custom post type
 	register_post_type( 'convocatoria', array(
@@ -352,6 +356,7 @@ function cedobi_create_post_type() {
 		'can_export' => true,
 		'_builtin' => false,
 		'_edit_link' => 'post.php?post=%d',
+		'show_in_rest' => true
 	));
 	// Publicaciones custom post type
 	register_post_type( 'publicacion', array(
@@ -383,6 +388,7 @@ function cedobi_create_post_type() {
 		'can_export' => true,
 		'_builtin' => false,
 		'_edit_link' => 'post.php?post=%d',
+		'show_in_rest' => true
 	));
 } // end register post types
 
@@ -395,7 +401,8 @@ function cedobi_build_taxonomies() {
 		'name' => __( 'Years','cedobi' ),
 		'query_var' => 'fecha',
 		'rewrite' => array( 'slug' => 'fecha', 'with_front' => false ),
-		'show_admin_column' => true
+		'show_admin_column' => true,
+		'show_in_rest' => true
 	) );
 	// Origen taxonomies
 	register_taxonomy( 'ciudad', array('brigadista'), array(
@@ -404,7 +411,8 @@ function cedobi_build_taxonomies() {
 		'name' => __( 'Cities','cedobi' ),
 		'query_var' => 'ciudad',
 		'rewrite' => array( 'slug' => 'ciudad', 'with_front' => false ),
-		'show_admin_column' => true
+		'show_admin_column' => true,
+		'show_in_rest' => true
 	) );
 	register_taxonomy( 'region', array('brigadista'), array(
 		'hierarchical' => true,
@@ -412,7 +420,8 @@ function cedobi_build_taxonomies() {
 		'name' => __( 'States','cedobi' ),
 		'query_var' => 'region',
 		'rewrite' => array( 'slug' => 'region', 'with_front' => false ),
-		'show_admin_column' => true
+		'show_admin_column' => true,
+		'show_in_rest' => true
 	) );
 	register_taxonomy( 'pais', array('brigadista'), array(
 		'hierarchical' => true,
@@ -420,7 +429,8 @@ function cedobi_build_taxonomies() {
 		'name' => __( 'Countries','cedobi' ),
 		'query_var' => 'pais',
 		'rewrite' => array( 'slug' => 'pais', 'with_front' => false ),
-		'show_admin_column' => true
+		'show_admin_column' => true,
+		'show_in_rest' => true
 	) );
 	// Editorial and Colección taxonomies
 	register_taxonomy( 'coleccion', array('publicacion'), array(
@@ -429,7 +439,8 @@ function cedobi_build_taxonomies() {
 		'name' => __( 'Collections','cedobi' ),
 		'query_var' => 'coleccion',
 		'rewrite' => array( 'slug' => 'coleccion', 'with_front' => false ),
-		'show_admin_column' => true
+		'show_admin_column' => true,
+		'show_in_rest' => true
 	) );
 	register_taxonomy( 'editorial', array('publicacion'), array(
 		'hierarchical' => false,
@@ -437,7 +448,8 @@ function cedobi_build_taxonomies() {
 		'name' => __( 'Editorials','cedobi' ),
 		'query_var' => 'editorial',
 		'rewrite' => array( 'slug' => 'editorial', 'with_front' => false ),
-		'show_admin_column' => true
+		'show_admin_column' => true,
+		'show_in_rest' => true
 	) );
 	register_taxonomy( 'editor', array('publicacion'), array(
 		'hierarchical' => true,
@@ -445,7 +457,8 @@ function cedobi_build_taxonomies() {
 		'name' => __( 'Publishers','cedobi' ),
 		'query_var' => 'editor',
 		'rewrite' => array( 'slug' => 'editor', 'with_front' => false ),
-		'show_admin_column' => true
+		'show_admin_column' => true,
+		'show_in_rest' => true
 	) );
 
 	// Fondo taxonomy
@@ -455,7 +468,8 @@ function cedobi_build_taxonomies() {
 		'name' => __( 'Archives','cedobi' ),
 		'query_var' => 'fondo',
 		'rewrite' => array( 'slug' => 'fondo', 'with_front' => false ),
-		'show_admin_column' => true
+		'show_admin_column' => true,
+		'show_in_rest' => true
 	) );
 	// Tipo taxonomy
 	register_taxonomy( 'formato', array('documento'), array(
@@ -464,7 +478,8 @@ function cedobi_build_taxonomies() {
 		'name' => __( 'Formats','cedobi' ),
 		'query_var' => 'formato',
 		'rewrite' => array( 'slug' => 'formato', 'with_front' => false ),
-		'show_admin_column' => true
+		'show_admin_column' => true,
+		'show_in_rest' => true
 	) );
 	// Genero taxonomy
 	register_taxonomy( 'genero', array('documento'), array(
@@ -473,7 +488,8 @@ function cedobi_build_taxonomies() {
 		'name' => __( 'Types','cedobi' ),
 		'query_var' => 'genero',
 		'rewrite' => array( 'slug' => 'genero', 'with_front' => false ),
-		'show_admin_column' => true
+		'show_admin_column' => true,
+		'show_in_rest' => true
 	) );
 
 } // end register taxonomies

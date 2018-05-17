@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cedobi 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-26 18:30+0100\n"
+"POT-Creation-Date: 2017-11-10 11:49+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Alfonso Sánchez Uzábal <skotperez@voragine.net>\n"
 "Language-Team: Montera34 <info@montera34.com>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 2.0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
@@ -49,440 +49,440 @@ msgstr "Promovido por:"
 
 #: ../footer.php:40
 msgid ""
-"Designed and developed by <a href=\"http://montera34.com\">m34</a> using <a "
+"Designed and developed by <a href=\"https://montera34.com\">m34</a> using <a "
 "href=\"/creditos\">free software</a>."
 msgstr ""
-"Diseñado y desarrollado por <a href=\"http://montera34.com\">m34</a> usando "
+"Diseñado y desarrollado por <a href=\"https://montera34.com\">m34</a> usando "
 "<a href=\"/creditos\">software libre</a>."
 
-#: ../functions.php:91 ../loop.mosaico.php:15 ../loop.mosaico.php:28
+#: ../functions.php:96 ../loop.mosaico.php:15 ../loop.mosaico.php:28
 msgid "Icon"
 msgstr "Icono"
 
-#: ../functions.php:92
+#: ../functions.php:97
 msgid "Big icon"
 msgstr "Icono grande"
 
-#: ../functions.php:93
+#: ../functions.php:98
 msgid "Small"
 msgstr "Pequeña"
 
-#: ../functions.php:104
+#: ../functions.php:109
 msgid "Header menu"
 msgstr "Menú de cabecera"
 
-#: ../functions.php:105
+#: ../functions.php:110
 msgid "Footer menu"
 msgstr "Menú de pie de página"
 
-#: ../functions.php:179
+#: ../functions.php:204
 msgid "Brigadiers archive"
 msgstr "Archivo de brigadistas"
 
-#: ../functions.php:180
+#: ../functions.php:205
 msgid "Brigadier"
 msgstr "Brigadista"
 
-#: ../functions.php:181
+#: ../functions.php:206
 msgid "Add a brigadier"
 msgstr "Añadir brigadista"
 
-#: ../functions.php:182 ../functions.php:213 ../functions.php:244
-#: ../functions.php:275 ../functions.php:306 ../functions.php:337
+#: ../functions.php:207 ../functions.php:239 ../functions.php:271
+#: ../functions.php:303 ../functions.php:335 ../functions.php:367
 msgid "Edit"
 msgstr "Editar"
 
-#: ../functions.php:183
+#: ../functions.php:208
 msgid "Edit this brigadier"
 msgstr "Editar este brigadista"
 
-#: ../functions.php:184
+#: ../functions.php:209
 msgid "New brigadier"
 msgstr "Nuevo brigadista"
 
-#: ../functions.php:185
+#: ../functions.php:210
 msgid "View brigadier"
 msgstr "Ver brigadista"
 
-#: ../functions.php:186
+#: ../functions.php:211
 msgid "View this brigadier"
 msgstr "Ver este brigadista"
 
-#: ../functions.php:187
+#: ../functions.php:212
 msgid "Search brigadier"
 msgstr "Buscar brigadistas"
 
-#: ../functions.php:188
+#: ../functions.php:213
 msgid "No brigadiers found"
 msgstr "Ningún brigadista encontrado"
 
-#: ../functions.php:189
+#: ../functions.php:214
 msgid "No brigadiers in trash"
 msgstr "Ningún brigadista en la papelera"
 
-#: ../functions.php:190 ../functions.php:221 ../functions.php:252
-#: ../functions.php:283 ../functions.php:314 ../functions.php:345
+#: ../functions.php:215 ../functions.php:247 ../functions.php:279
+#: ../functions.php:311 ../functions.php:343 ../functions.php:375
 msgid "Parent"
 msgstr "Superior"
 
-#: ../functions.php:210
+#: ../functions.php:236
 msgid "Photos Archives"
 msgstr "Fondos fotográficos"
 
-#: ../functions.php:211
+#: ../functions.php:237
 msgid "Photo"
 msgstr "Fotografía"
 
-#: ../functions.php:212
+#: ../functions.php:238
 msgid "Add a photo"
 msgstr "Añadir fotografía"
 
-#: ../functions.php:214
+#: ../functions.php:240
 msgid "Edit this photo"
 msgstr "Editar esta fotografía"
 
-#: ../functions.php:215
+#: ../functions.php:241
 msgid "New photo"
 msgstr "Nueva fotografía"
 
-#: ../functions.php:216
+#: ../functions.php:242
 msgid "View photo"
 msgstr "Ver fotografía"
 
-#: ../functions.php:217
+#: ../functions.php:243
 msgid "View this photo"
 msgstr "Ver esta fotografía"
 
-#: ../functions.php:218
+#: ../functions.php:244
 msgid "Search photos"
 msgstr "Buscar fotografías"
 
-#: ../functions.php:219
+#: ../functions.php:245
 msgid "No photos found"
 msgstr "Ninguna fotografía encontrada"
 
-#: ../functions.php:220
+#: ../functions.php:246
 msgid "No photos in trash"
 msgstr "Ninguna fotografía en la papelera"
 
-#: ../functions.php:241
+#: ../functions.php:268
 msgid "Digital resources"
 msgstr "Recursos digitales"
 
-#: ../functions.php:242
+#: ../functions.php:269
 msgid "Digital resource"
 msgstr "Documento"
 
-#: ../functions.php:243
+#: ../functions.php:270
 msgid "Add a digital resource"
 msgstr "Añadir un documento"
 
-#: ../functions.php:245
+#: ../functions.php:272
 msgid "Edit this digital resource"
 msgstr "Editar este documento"
 
-#: ../functions.php:246
+#: ../functions.php:273
 msgid "New digital resource"
 msgstr "Nuevo documento"
 
-#: ../functions.php:247
+#: ../functions.php:274
 msgid "View digital resource"
 msgstr "Ver documento"
 
-#: ../functions.php:248
+#: ../functions.php:275
 msgid "View this digital resource"
 msgstr "Ver este documento"
 
-#: ../functions.php:249
+#: ../functions.php:276
 msgid "Search digital resource"
 msgstr "Buscar recurso digital"
 
-#: ../functions.php:250
+#: ../functions.php:277
 msgid "No digital resources found"
 msgstr "Ningún documento encontrado"
 
-#: ../functions.php:251
+#: ../functions.php:278
 msgid "No digital resources in trash"
 msgstr "Ningún documento en la papelera"
 
-#: ../functions.php:272
+#: ../functions.php:300
 msgid "News"
 msgstr "Noticias"
 
-#: ../functions.php:273
+#: ../functions.php:301
 msgid "New"
 msgstr "Noticia"
 
-#: ../functions.php:274
+#: ../functions.php:302
 msgid "Add a new"
 msgstr "Añadir una noticia"
 
-#: ../functions.php:276
+#: ../functions.php:304
 msgid "Edit this new"
 msgstr "Editar esta noticia"
 
-#: ../functions.php:277
+#: ../functions.php:305
 msgid "New new"
 msgstr "Nueva noticia"
 
-#: ../functions.php:278
+#: ../functions.php:306
 msgid "View new"
 msgstr "Ver notcia"
 
-#: ../functions.php:279
+#: ../functions.php:307
 msgid "View this new"
 msgstr "Ver esta noticia"
 
-#: ../functions.php:280
+#: ../functions.php:308
 msgid "Search news"
 msgstr "Buscar noticias"
 
-#: ../functions.php:281
+#: ../functions.php:309
 msgid "No news found"
 msgstr "Ninguna noticia encontrada"
 
-#: ../functions.php:282
+#: ../functions.php:310
 msgid "No news in trash"
 msgstr "Ninguna noticia en la papelera"
 
-#: ../functions.php:303
+#: ../functions.php:332
 msgid "Calls"
 msgstr "Convocatorias"
 
-#: ../functions.php:304 ../index.php:147
+#: ../functions.php:333 ../index.php:147
 msgid "Call"
 msgstr "Convocatoria"
 
-#: ../functions.php:305
+#: ../functions.php:334
 msgid "Add a call"
 msgstr "Añadir una convocatoria"
 
-#: ../functions.php:307
+#: ../functions.php:336
 msgid "Edit this call"
 msgstr "Editar esta convocatoria"
 
-#: ../functions.php:308
+#: ../functions.php:337
 msgid "New call"
 msgstr "Nueva convocatoria"
 
-#: ../functions.php:309
+#: ../functions.php:338
 msgid "View call"
 msgstr "Ver convocatoria"
 
-#: ../functions.php:310
+#: ../functions.php:339
 msgid "View this call"
 msgstr "Ver esta convocatoria"
 
-#: ../functions.php:311
+#: ../functions.php:340
 msgid "Search calls"
 msgstr "Buscar convocatorias"
 
-#: ../functions.php:312
+#: ../functions.php:341
 msgid "No calls found"
 msgstr "Ninguna convocatoria encontrada"
 
-#: ../functions.php:313
+#: ../functions.php:342
 msgid "No calls in trash"
 msgstr "Ninguna convocatoria en la papelera"
 
-#: ../functions.php:334
+#: ../functions.php:364
 msgid "Publications"
 msgstr "Publicaciones"
 
-#: ../functions.php:335
+#: ../functions.php:365
 msgid "Publication"
 msgstr "Publicación"
 
-#: ../functions.php:336
+#: ../functions.php:366
 msgid "Add a publication"
 msgstr "Añadir una publicación"
 
-#: ../functions.php:338
+#: ../functions.php:368
 msgid "Edit this publication"
 msgstr "Editar esta publicación"
 
-#: ../functions.php:339
+#: ../functions.php:369
 msgid "New publication"
 msgstr "Nueva publicación"
 
-#: ../functions.php:340
+#: ../functions.php:370
 msgid "View publication"
 msgstr "Ver publicación"
 
-#: ../functions.php:341
+#: ../functions.php:371
 msgid "View this publication"
 msgstr "Ver esta publicación"
 
-#: ../functions.php:342
+#: ../functions.php:372
 msgid "Search publications"
 msgstr "Buscar publicaciones"
 
-#: ../functions.php:343
+#: ../functions.php:373
 msgid "No publications found"
 msgstr "Ninguna publicación encontrada"
 
-#: ../functions.php:344
+#: ../functions.php:374
 msgid "No publications in trash"
 msgstr "Ninguna publicación en la papelera"
 
-#: ../functions.php:369 ../index.php:133 ../single.php:30 ../single.php:53
+#: ../functions.php:400 ../index.php:133 ../single.php:32 ../single.php:57
 msgid "Year"
 msgstr "Año"
 
-#: ../functions.php:370
+#: ../functions.php:401
 msgid "Years"
 msgstr "Años"
 
-#: ../functions.php:378
+#: ../functions.php:410
 msgid "City"
 msgstr "Ciudad"
 
-#: ../functions.php:379
+#: ../functions.php:411
 msgid "Cities"
 msgstr "Ciudades"
 
-#: ../functions.php:386
+#: ../functions.php:419
 msgid "State"
 msgstr "Región"
 
-#: ../functions.php:387
+#: ../functions.php:420
 msgid "States"
 msgstr "Regiones"
 
-#: ../functions.php:394
+#: ../functions.php:428
 msgid "Contry"
 msgstr "País"
 
-#: ../functions.php:395
+#: ../functions.php:429
 msgid "Countries"
 msgstr "Países"
 
-#: ../functions.php:403
+#: ../functions.php:438
 msgid "Collection"
 msgstr "Colección"
 
-#: ../functions.php:404
+#: ../functions.php:439
 msgid "Collections"
 msgstr "Colecciones"
 
-#: ../functions.php:411
+#: ../functions.php:447
 msgid "Editorial"
 msgstr "Editorial"
 
-#: ../functions.php:412
+#: ../functions.php:448
 msgid "Editorials"
 msgstr "Editoriales"
 
-#: ../functions.php:419
+#: ../functions.php:456
 msgid "Publisher"
 msgstr "Editor"
 
-#: ../functions.php:420
+#: ../functions.php:457
 msgid "Publishers"
 msgstr "Editores"
 
-#: ../functions.php:429
+#: ../functions.php:467
 msgid "Archive"
 msgstr "Fondo fotográfico"
 
-#: ../functions.php:430
+#: ../functions.php:468
 msgid "Archives"
 msgstr "Fondos fotográficos"
 
-#: ../functions.php:438
+#: ../functions.php:477
 msgid "Format"
 msgstr "Formato"
 
-#: ../functions.php:439
+#: ../functions.php:478
 msgid "Formats"
 msgstr "Formatos"
 
-#: ../functions.php:447 ../index.php:122 ../index.php:127
+#: ../functions.php:487 ../index.php:122 ../index.php:127
 msgid "Type"
 msgstr "Tipo"
 
-#: ../functions.php:448
+#: ../functions.php:488
 msgid "Types"
 msgstr "Género"
 
-#: ../functions.php:463
+#: ../functions.php:504
 msgid "Extra information"
 msgstr "Información adicional"
 
-#: ../functions.php:470
+#: ../functions.php:511
 msgid "First name"
 msgstr "Nombre\t"
 
-#: ../functions.php:475
+#: ../functions.php:516
 msgid "Last name"
 msgstr "Apellidos"
 
-#: ../functions.php:480
+#: ../functions.php:521
 msgid "URL to interview audio file"
 msgstr "URL a la entrevista"
 
-#: ../functions.php:489 ../index.php:135 ../single.php:33 ../single.php:56
-#: ../single.php:105 ../single.php:143
+#: ../functions.php:530 ../index.php:135 ../single.php:35 ../single.php:60
+#: ../single.php:115 ../single.php:161
 msgid "Authors"
 msgstr "Autores"
 
-#: ../functions.php:496
+#: ../functions.php:537
 msgid "Author 1: firstname"
 msgstr "Autor 1: nombre"
 
-#: ../functions.php:502
+#: ../functions.php:543
 msgid "Author 1: lastname"
 msgstr "Autor 1: apellido"
 
-#: ../functions.php:508
+#: ../functions.php:549
 msgid "Author 2: firsname"
 msgstr "Autor 2: nombre"
 
-#: ../functions.php:514
+#: ../functions.php:555
 msgid "Author 2: lastname"
 msgstr "Autor 2: apellido"
 
-#: ../functions.php:520
+#: ../functions.php:561
 msgid "Author 3: firstname"
 msgstr "Autor 3: nombre"
 
-#: ../functions.php:526
+#: ../functions.php:567
 msgid "Author 3: lastname"
 msgstr "Autor 3: apellido"
 
-#: ../functions.php:536
+#: ../functions.php:577
 msgid "Dates"
 msgstr "Fechas"
 
-#: ../functions.php:543
+#: ../functions.php:584
 msgid "Begining date"
 msgstr "Fecha de inicio"
 
-#: ../functions.php:549
+#: ../functions.php:590
 msgid "Ending date"
 msgstr "Fecha de fin"
 
-#: ../functions.php:559
+#: ../functions.php:600
 msgid "Book data"
 msgstr "Datos del libro"
 
-#: ../functions.php:566
+#: ../functions.php:607
 msgid "Number of pages"
 msgstr "Número de páginas"
 
-#: ../functions.php:571
+#: ../functions.php:612
 msgid "ISBN"
 msgstr "ISBN"
 
-#: ../functions.php:576
+#: ../functions.php:617
 msgid "Downloadable file"
 msgstr "Archivo descargable"
 
-#: ../functions.php:586
+#: ../functions.php:627
 msgid "Not include in home"
 msgstr "No incluir en la portada"
 
-#: ../functions.php:593
+#: ../functions.php:634
 msgid "Check to not show in home page"
 msgstr "Marcar para no incluir este contenido en la portada"
 
@@ -493,7 +493,7 @@ msgstr "Página %s"
 
 #: ../header.php:67
 msgid "international brigades, spanish civil war, international brigadiers"
-msgstr "Brigadas internacionales, Guerra Civil, brigadistas internacionales"
+msgstr "brigadas internacionales, Guerra Civil, brigadistas internacionales"
 
 #: ../header.php:107
 msgid "Toggle menu"
@@ -549,11 +549,11 @@ msgstr "Título"
 msgid "Extract"
 msgstr "Extracto"
 
-#: ../index.php:140 ../single.php:72
+#: ../index.php:140 ../single.php:78
 msgid "Date"
 msgstr "Fecha"
 
-#: ../index.php:146 ../single.php:83 ../single.php:157
+#: ../index.php:146 ../single.php:91 ../single.php:175
 msgid "Validity"
 msgstr "Vigencia"
 
@@ -657,7 +657,7 @@ msgstr "Últimas %s"
 
 #: ../loop.lista.php:17
 msgid "No image"
-msgstr "sin imagen"
+msgstr "Sin imagen"
 
 #: ../loop.lista.php:28
 msgid "There is no interview to"
@@ -688,7 +688,7 @@ msgstr "Buscar"
 msgid "Advanced"
 msgstr "Avanzada"
 
-#: ../searchform.php:27 ../single.php:190
+#: ../searchform.php:27 ../single.php:208
 msgid "Complete archive"
 msgstr "Archivo completo"
 
@@ -705,33 +705,40 @@ msgstr "Archivo de %s"
 msgid "Origin"
 msgstr "Origen"
 
-#: ../single.php:27
+#: ../single.php:29
 msgid "Photo archive"
 msgstr "Fondos fotográficos"
 
-#: ../single.php:49
+#: ../single.php:53
 msgid "Format/Type"
 msgstr "Formato/Género"
 
-#: ../single.php:87
+#: ../single.php:95
 msgid "Place"
 msgstr "Lugar"
 
-#: ../single.php:98
+#: ../single.php:108
 msgid "Editorial and collection"
 msgstr "Editorial y colección"
 
-#: ../single.php:102
+#: ../single.php:112
 msgid "Year of publication"
 msgstr "Año de publicación"
 
-#: ../single.php:113
+#: ../single.php:123
 msgid "ISBN / pag. num."
 msgstr "ISBN / núm. pág."
 
-#: ../single.php:163
+#: ../single.php:181
 msgid "pages"
 msgstr "páginas"
+
+#~ msgid ""
+#~ "Designed and developed by <a href=\"http://montera34.com\">m34</a> using "
+#~ "<a href=\"/creditos\">free software</a>."
+#~ msgstr ""
+#~ "Diseñado y desarrollado por <a href=\"http://montera34.com\">m34</a> "
+#~ "usando <a href=\"/creditos\">software libre</a>."
 
 #~ msgid "Filter"
 #~ msgstr "Mostrar"

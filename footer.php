@@ -37,7 +37,7 @@ if ( count($links) >= 1 ) {
 					<li><a href="http://iealbacetenses.com" title="Instituto de Estudios Albacetenses Don Juan Manuel"><img src="<?php echo CEDOBI_BLOGTHEME. "/images/cedobi-patrocina-iea.png" ?>" alt="Instituto de Estudios Albacetenses Don Juan Manuel" /></a></li>
 				</ul>
 				<div id="epi-credit">
-					<?php _e('Designed and developed by <a href="http://montera34.com">m34</a> using <a href="/creditos">free software</a>.','cedobi'); ?>
+					<?php _e('Designed and developed by <a href="https://montera34.com">m34</a> using <a href="/creditos">free software</a>.','cedobi'); ?>
 				</div>
 			</div><!-- .col-md-4 -->
 		</div><!-- .row -->
