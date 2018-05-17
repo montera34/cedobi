@@ -103,7 +103,9 @@ h1 {
 	padding: 0;
 }
 #pre-nav .navbar-nav>li {
-	margin: 2px 4px 2px 0;
+	float: none;
+	display: inline-block;
+	margin: 3px 2px 3px 0;
 }
 .menu-item-has-children .sub-menu>li>a,
 #pre-nav .navbar-nav>li>a {
