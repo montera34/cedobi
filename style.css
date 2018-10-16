@@ -140,6 +140,30 @@ h1 {
 	opacity: 0.6;
 }
 */
+/* to animate background color of an element */
+.animate a {
+  -webkit-animation: bgcolorchange 4s infinite; /* Chrome, Safari, Opera */ 
+  animation: 4s infinite bgcolorchange;
+}
+@keyframes bgcolorchange {
+	0% {
+		background-color: black;
+	}
+	50% {
+		background-color: red;
+	}
+	100% {
+		background-color: black;
+	}
+}
+/* Chrome, Safari, Opera */
+ @-webkit-keyframes bgcolorchange {
+	0%   {background: black;}
+	25%  {background: red;}
+	75%  {background: red;}
+	100% {background: black;}
+}
+
 #pre-nav .navbar-toggle {
 	float: left;
 	margin-top: 10px;
